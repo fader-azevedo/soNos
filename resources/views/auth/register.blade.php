@@ -55,14 +55,13 @@ use App\Disciplina;
                                         <div class="col-sm-6">
                                             <fieldset>
                                                 <legend style="margin-bottom: -25px; font-size: 15px;" class="center">Sexo</legend>
-                                                <div class="input-field">
-                                                    <input id="cke1" type="radio" checked class="form-control flat-red" name="sexo" value="Feminino">
-                                                    <label for="cke1"><i></i>Feminino</label>
-
-                                                    <div class="pull-right" style="margin-right: 30px">
-                                                        <input id="cke2" type="radio" class="form-control flat-red" name="sexo" value="Masculino">
-                                                        <label for="cke2"><i class=""></i>Masculino</label>
-                                                    </div>
+                                                <div class="input-field" >
+                                                    <input id="cke1" type="radio" checked class="form-control" name="sexo" value="Feminino">
+                                                    <label style="margin-right: 25px" for="cke1">Feminino</label>
+                                                    {{--<div class="right" style="background-color: red; margin-right: 10px">--}}
+                                                    <input id="cke2" type="radio" class="form-control" name="sexo" value="Masculino">
+                                                    <label for="cke2"><i class=""></i>Masculino</label>
+                                                    {{--</div>--}}
                                                 </div>
                                             </fieldset>
                                         </div>
@@ -89,7 +88,6 @@ use App\Disciplina;
                                     </div>
 
                                     <div class="row">
-
                                         <div class="col-sm-6 input-field">
                                             <input id="contacto" class="form-control" type="text" name="numero" data-inputmask='"mask": "89-9999999"' data-mask>
                                             <label for="contacto"><i class="fa fa-phone"></i>&nbsp;Contacto <i class="inputObrigatio">*</i></label>
@@ -103,21 +101,28 @@ use App\Disciplina;
                                                     <strong>{{ $errors->first('email') }}</strong>
                                                 </span>
                                             @endif
-                                            <br/>
                                         </div>
                                     </div>
 
-                                    <fieldset >
-                                        <legend style="margin-bottom: -15px; font-size: 15px;" class="center">Encarregado</legend>
-                                        <div class="col-sm-6 input-field">
-                                            <input id="nomeEncarregado" name="nomeEncarregado" class="form-control" type="text">
-                                            <label for="nomeEncarregado"><i class="fa fa-user"></i>&nbsp;Nome</label>
+                                    <div class="row">
+                                        <div class="col-sm-11">
+                                            <fieldset >
+                                                <legend style="margin-bottom: -15px; font-size: 15px;" class="center">Encarregado</legend>
+                                                <div class="col-sm-6 input-field">
+                                                    <input id="nomeEncarregado" name="nomeEncarregado" class="form-control" type="text">
+                                                    <label for="nomeEncarregado"><i class="fa fa-user"></i>&nbsp;Nome</label>
+                                                </div>
+                                                <div class="col-sm-6 input-field">
+                                                    <input id="contactoEncarregado" name="contactoEncarregado" class="form-control" type="text" data-inputmask='"mask": "89-9999999"' data-mask>
+                                                    <label for="contactoEncarregado"><i class="fa fa-phone"></i>&nbsp;Contacto</label>
+                                                </div>
+                                            </fieldset>
                                         </div>
-                                        <div class="col-sm-6 input-field">
-                                            <input id="contactoEncarregado" name="contactoEncarregado" class="form-control" type="text" data-inputmask='"mask": "89-9999999"' data-mask>
-                                            <label for="contactoEncarregado"><i class="fa fa-phone"></i>&nbsp;Contacto</label>
+
+                                        <div class="pull-right col-sm-1" style="padding-top: 30px">
+                                            <a class="btn btn-default right no-border"   href="#Kar" data-slide-to="1"><i style="font-size: 40px" class="fa fa-chevron-circle-right but"></i></a>
                                         </div>
-                                    </fieldset>
+                                    </div>
 
                                     <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                         <div class="col-md-6">
@@ -224,18 +229,20 @@ use App\Disciplina;
                                                 </div>
                                             </fieldset>
 
-                                            <button type="submit" class="btn btn-success right">&nbsp;&nbsp;&nbsp;Salvar&nbsp;&nbsp;&nbsp;</button>
                                         </div>
+                                    </div>
+                                    <div class="">
+                                        <a class="btn btn-default"  href="#Kar" data-slide-to="0"><i class="fa fa-chevron-circle-left but"></i>&nbsp;&nbsp;Voltar&nbsp;&nbsp;&nbsp;</a>
+                                        <a type="submit" class="btn btn-primary right">&nbsp;&nbsp;&nbsp;Salvar&nbsp;&nbsp;&nbsp;</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </form>
                 </div>
-                <div class="box-footer">
-                    <a class="btn btn-default" href="#Kar" data-slide-to="0"><i class="fa fa-chevron-circle-left but"></i>&nbsp;&nbsp;Voltar&nbsp;&nbsp;&nbsp;</a>
-                    <a class="btn btn-default right"  href="#Kar" data-slide-to="1">Proximo &nbsp; <i class="fa fa-chevron-circle-right but"></i></a>
-                </div>
+                {{--<div class="box-footer">--}}
+                {{--</div>--}}
             </div>
         </div>
     </div>
@@ -256,6 +263,8 @@ use App\Disciplina;
         $('#fotoFinal').click(function () {
 //            alert('');
         });
+
+
 
 
         $('[data-mask]').inputmask();

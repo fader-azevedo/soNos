@@ -106,8 +106,12 @@ ul.sidebar-menu li a{
     margin-left: 0;
   }
 
+
+  fieldset{
+    margin-top: -100px;
+  }
   #divKar{
-    height: 780px;
+    height: 1045px;
   }
 }
 @media (min-width: 768px) {

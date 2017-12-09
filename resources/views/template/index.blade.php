@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('css/material-design-iconic-font.min.css')!!}"/>
 </head>
 <body class="hold-transition skin-black sidebar-mini ">
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-default navbar-fixed-top" >
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
@@ -53,6 +53,10 @@
             </div>
         </div>
     </nav>
+    <br>
+    <br>
+    <br>
+    <br>
     @yield('filhote')
     @include('template.script')
     @yield('scripts')

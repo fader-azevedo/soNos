@@ -15,50 +15,39 @@ use App\Disciplina;
                     {{--<h3 class="box-title"><i class="zmdi zmdi-edit"></i>&nbsp;Faça Pre-Inscrição</h3>--}}
                 {{--</div>--}}
                 <div class="box-body" style="background-color: #f8f8f8">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('register') }}" autocomplete="off">
                         {{ csrf_field() }}
                         <div id="Kar" class="carousel slide" data-ride="carousel" data-interval="false">
                             <div  class="carousel-inner" id="divKar">
                                 <div class="item active">
                                     <div class="row">
 
+                                        <div class="col-sm-6">
+                                            <fieldset >
+                                                <legend style="margin-bottom: -5px; font-size: 15px;" class="center">Fotografia</legend>
+                                                <div class="input-group container-fluid">
+                                                    <img style="cursor: hand"  height="128" width="128" id="fotoFinal" class="img-rounded center" src="{{asset('img/fotogr.jpg')}}">
+                                                </div>
+                                            </fieldset>
+                                        </div>
 
+                                        <div class="col-sm-6">
+                                            <div class="row">
+                                                <div class="col-sm-12 input-field" >
+                                                    <input id="apelido" type="text" class="form-control" name="apelido"  autofocus>
+                                                    <label for="apelido"><i class="zmdi zmdi-account"></i>&nbsp;Apelido <i class="inputObrigatio">*</i></label>
+                                                </div>
+                                                <div class="col-sm-12 input-field {{ $errors->has('name') ? ' has-error' : '' }}" >
+                                                    <input id="name" type="text" class="form-control" name="name"  value="{{ old('name') }}" >
+                                                    <label for="name"><i class="zmdi zmdi-account"></i>&nbsp;Nomes Proprios <i class="inputObrigatio">*</i></label>
 
-                                        <div class="panel panel-default">
-                                            <div class="panel-body" style="padding-bottom: 0">
-
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <label>Anexa Uma Foto</label>
-                                                        <div class="input-group">
-                                                            <img  height="130" width="180" id="fotoFinal" class="img-rounded">
-                                                        </div>
-                                                        <input id="noPik" name="nomePicture" type="hidden">
-                                                    </div>
-                                                    <div class="col-sm-1"></div>
-                                                    <div class="col-sm-4">
-                                                        <div class="input-group margin-bottom-sm">
-                                                            <input type="button"  class="btn btn-info" value="Clica Aqui" data-toggle="modal" data-target="#modalFoto">
-                                                        </div>
-                                                    </div>
+                                                    @if ($errors->has('name'))
+                                                        <span class="help-block">
+                                                            <strong>{{ $errors->first('name') }}</strong>
+                                                        </span>
+                                                    @endif
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        <div class="col-sm-6 input-field" >
-                                            <input id="apelido" type="text" class="form-control" name="apelido"  autofocus>
-                                            <label for="apelido"><i class="zmdi zmdi-account"></i>&nbsp;Apelido <i class="inputObrigatio">*</i></label>
-                                        </div>
-
-                                        <div class="col-sm-6 input-field {{ $errors->has('name') ? ' has-error' : '' }}">
-                                            <input id="name" type="text" class="form-control" name="name"  value="{{ old('name') }}">
-                                            <label for="name"><i class="zmdi zmdi-account"></i>&nbsp;Nomes Proprios <i class="inputObrigatio">*</i></label>
-
-                                            @if ($errors->has('name'))
-                                                <span class="help-block">
-                                                    <strong>{{ $errors->first('name') }}</strong>
-                                                </span>
-                                            @endif
                                         </div>
                                     </div>
 
@@ -85,11 +74,15 @@ use App\Disciplina;
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-sm-6 input-field">
+                                        <div class="col-sm-4 input-field" >
+                                            <input id="bi" type="text" class="form-control" name="apelido" >
+                                            <label for="bi"><i class="zmdi zmdi-format-list-numbered"></i>&nbsp;Numero de BI <i class="inputObrigatio">*</i></label>
+                                        </div>
+                                        <div class="col-sm-4 input-field">
                                             <input id="naturalidade" class="form-control" type="text" name="naturalidade">
                                             <label for="naturaldade"><i class="fa fa-location-arrow"></i>&nbsp;Naturalidade <i class="inputObrigatio">*</i></label>
                                         </div>
-                                        <div class="col-sm-6 input-field">
+                                        <div class="col-sm-4 input-field">
                                             <input id="residencia" class="form-control" type="text" name="residencia">
                                             <label for="residencia"><i class="fa fa-map-marker"></i>&nbsp;Residencia <i class="inputObrigatio">*</i></label>
                                         </div>
@@ -259,6 +252,11 @@ use App\Disciplina;
     <script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.date.extensions.js')!!}"></script>
     <script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.extensions.js')!!}"></script>
     <script>
+
+        $('#fotoFinal').click(function () {
+//            alert('');
+        });
+
 
         $('[data-mask]').inputmask();
         $('#numDis').change(function () {

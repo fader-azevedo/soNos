@@ -21,6 +21,30 @@ use App\Disciplina;
                             <div  class="carousel-inner" id="divKar">
                                 <div class="item active">
                                     <div class="row">
+
+
+
+                                        <div class="panel panel-default">
+                                            <div class="panel-body" style="padding-bottom: 0">
+
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <label>Anexa Uma Foto</label>
+                                                        <div class="input-group">
+                                                            <img  height="130" width="180" id="fotoFinal" class="img-rounded">
+                                                        </div>
+                                                        <input id="noPik" name="nomePicture" type="hidden">
+                                                    </div>
+                                                    <div class="col-sm-1"></div>
+                                                    <div class="col-sm-4">
+                                                        <div class="input-group margin-bottom-sm">
+                                                            <input type="button"  class="btn btn-info" value="Clica Aqui" data-toggle="modal" data-target="#modalFoto">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div class="col-sm-6 input-field" >
                                             <input id="apelido" type="text" class="form-control" name="apelido"  autofocus>
                                             <label for="apelido"><i class="zmdi zmdi-account"></i>&nbsp;Apelido <i class="inputObrigatio">*</i></label>
@@ -217,7 +241,7 @@ use App\Disciplina;
                 </div>
                 <div class="box-footer">
                     <a class="btn btn-default" href="#Kar" data-slide-to="0"><i class="fa fa-chevron-circle-left but"></i>&nbsp;&nbsp;Voltar&nbsp;&nbsp;&nbsp;</a>
-                    <a class="btn btn-default right"  href="#Kar" data-slide="next">Proximo &nbsp; <i class="fa fa-chevron-circle-right but"></i></a>
+                    <a class="btn btn-default right"  href="#Kar" data-slide-to="1">Proximo &nbsp; <i class="fa fa-chevron-circle-right but"></i></a>
                 </div>
             </div>
         </div>

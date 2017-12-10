@@ -332,8 +332,8 @@ use App\Disciplina;
                 enableExif: true,
                 viewport: {
                     width: 150,
-                    height: 150
-//                    type: 'circle'
+                    height: 150,
+                    type: 'square'
                 },
                 boundary: {
                     width: 250,

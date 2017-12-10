@@ -98,7 +98,7 @@ ul.sidebar-menu li a{
   margin-left: 0;
 }
 #divKar{
-  height: 600px;
+  /*height: 620px;*/
 }
 @media (max-width: 767px) {
   .content-wrapper,
@@ -110,9 +110,9 @@ ul.sidebar-menu li a{
   fieldset{
     margin-top: -100px;
   }
-  #divKar{
-    height: 1045px;
-  }
+  /*#divKar{*/
+    /*height: 1045px;*/
+  /*}*/
 }
 @media (min-width: 768px) {
   .sidebar-collapse .content-wrapper,

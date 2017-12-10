@@ -380,7 +380,7 @@
         viewport.setAttribute('tabindex', 0);
 
         addClass(self.elements.preview, 'cr-image');
-        setAttributes(self.elements.preview, { 'alt': 'preview', 'aria-grabbed': 'false' });
+        setAttributes(self.elements.preview, { 'alt': '', 'aria-grabbed': 'false' });
         addClass(overlay, 'cr-overlay');
 
         self.element.appendChild(boundary);

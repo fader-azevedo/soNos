@@ -24,11 +24,12 @@ use App\Disciplina;
 
                                         <div class="col-sm-6">
                                             <fieldset >
-                                                <legend style="margin-bottom: -5px; font-size: 15px;" class="center">Fotografia</legend>
-                                                <div class="input-group container-fluid">
+                                                <legend style="margin-bottom: 0; font-size: 15px;" class="center btn btn-info" id="openModal">Fotografia</legend>
+                                                {{--<a class="btn btn-info" >upload</a>--}}
+                                                <div class="input-group container-fluid" id="uploadLast" style="height: 160px">
                                                     {{--accept="image/jpeg"--}}
-                                                    <input type="file"  id="upload">
-                                                    <img height="128" width="128" id="fotoFinal" class="img-rounded center" src="{{asset('img/fotogr.jpg')}}">
+                                                    {{--<input type="file"  id="fotoAluno">--}}
+                                                    {{--<img height="128" width="128" id="fotoFinal" class="img-rounded center" src="{{asset('img/fotogr.jpg')}}">--}}
                                                 </div>
                                             </fieldset>
                                         </div>
@@ -49,23 +50,30 @@ use App\Disciplina;
                                                         </span>
                                                     @endif
                                                 </div>
+
+                                                <div class="col-sm-12">
+                                                    <fieldset>
+                                                        <legend style="margin-bottom: -25px; font-size: 15px;" class="center">Sexo</legend>
+                                                        <div class="input-field col-md-6">
+                                                            <input id="cke1" type="radio" checked class="form-control" name="sexo" value="Feminino">
+                                                            <label for="cke1" style="margin-right: 20px">Feminino</label>
+                                                        </div>
+                                                        <div class="input-field col-md-6">
+                                                            {{--<div class="right" style="background-color: red; margin-right: 10px">--}}
+                                                            <input id="cke2" type="radio" class="form-control" name="sexo" value="Masculino">
+                                                            <label for="cke2"><i class=""></i>Masculino</label>
+                                                            {{--</div>--}}
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <fieldset>
-                                                <legend style="margin-bottom: -25px; font-size: 15px;" class="center">Sexo</legend>
-                                                <div class="input-field" >
-                                                    <input id="cke1" type="radio" checked class="form-control" name="sexo" value="Feminino">
-                                                    <label style="margin-right: 25px" for="cke1">Feminino</label>
-                                                    {{--<div class="right" style="background-color: red; margin-right: 10px">--}}
-                                                    <input id="cke2" type="radio" class="form-control" name="sexo" value="Masculino">
-                                                    <label for="cke2"><i class=""></i>Masculino</label>
-                                                    {{--</div>--}}
-                                                </div>
-                                            </fieldset>
+                                    <div class="row" style="margin-top: -30px">
+                                        <div class="col-sm-6 input-field">
+                                            <input id="naturalidade" class="form-control" type="text" name="naturalidade">
+                                            <label for="naturaldade"><i class="fa fa-location-arrow"></i>&nbsp;Naturalidade <i class="inputObrigatio">*</i></label>
                                         </div>
 
                                         <div class="col-sm-6 input-field">
@@ -74,22 +82,19 @@ use App\Disciplina;
                                         </div>
                                     </div>
 
-                                    <div class="row">
-                                        <div class="col-sm-4 input-field" >
+                                    <div class="row" style="margin-top: -30px">
+                                        <div class="col-sm-6 input-field" >
                                             <input id="bi" type="text" class="form-control" name="apelido" >
                                             <label for="bi"><i class="zmdi zmdi-format-list-numbered"></i>&nbsp;Numero de BI <i class="inputObrigatio">*</i></label>
                                         </div>
-                                        <div class="col-sm-4 input-field">
-                                            <input id="naturalidade" class="form-control" type="text" name="naturalidade">
-                                            <label for="naturaldade"><i class="fa fa-location-arrow"></i>&nbsp;Naturalidade <i class="inputObrigatio">*</i></label>
-                                        </div>
-                                        <div class="col-sm-4 input-field">
+
+                                        <div class="col-sm-6 input-field">
                                             <input id="residencia" class="form-control" type="text" name="residencia">
                                             <label for="residencia"><i class="fa fa-map-marker"></i>&nbsp;Residencia <i class="inputObrigatio">*</i></label>
                                         </div>
                                     </div>
 
-                                    <div class="row">
+                                    <div class="row" style="margin-top: -30px">
                                         <div class="col-sm-6 input-field">
                                             <input id="contacto" class="form-control" type="text" name="numero" data-inputmask='"mask": "89-9999999"' data-mask>
                                             <label for="contacto"><i class="fa fa-phone"></i>&nbsp;Contacto <i class="inputObrigatio">*</i></label>
@@ -106,7 +111,7 @@ use App\Disciplina;
                                         </div>
                                     </div>
 
-                                    <div class="row">
+                                    <div class="row" style="margin-bottom: 0">
                                         <div class="col-sm-11">
                                             <fieldset >
                                                 <legend style="margin-bottom: -15px; font-size: 15px;" class="center">Encarregado</legend>
@@ -122,7 +127,7 @@ use App\Disciplina;
                                         </div>
 
                                         <div class=" col-sm-1" style="padding-top: 30px">
-                                            <a class="btn btn-default right no-border"   href="#Kar" data-slide-to="1"><i style="font-size: 40px" class="fa fa-chevron-circle-right but"></i></a>
+                                            <a class="btn btn-default right no-border" style="background-color: transparent"  href="#Kar" data-slide-to="1"><i style="font-size: 40px" class="fa fa-chevron-circle-right but"></i></a>
                                         </div>
                                     </div>
 
@@ -257,16 +262,21 @@ use App\Disciplina;
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Default Modal</h4>
+                <h4 class="modal-title center">Fotografia</h4>
             </div>
             <div class="modal-body">
-                <div class="col-md-12 text-center">Crop
+                <h3 class="center">
+                    <label class="btn btn-info" for="upload">upload <i class="fa fa-file-image-o"></i></label>
+                    <label class="btn btn-info" >Camera <i class="fa fa-camera"></i></label>
+                </h3>
+                <input type="file"  id="upload">
+                <div class="container">
                     <div id="upload-demo" style="width:350px"></div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Cancelar</button>
+                <button type="button" id="btnSendImage" class="btn btn-info" data-dismiss="modal">Salvar</button>
             </div>
         </div>
     </div>
@@ -278,6 +288,7 @@ use App\Disciplina;
     <script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.js')!!}"></script>
     <script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.date.extensions.js')!!}"></script>
     <script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.extensions.js')!!}"></script>
+    {{--<script type="text/javascript" src="{!! asset('croppie/croppie.min.js')!!}"></script>--}}
     <script type="text/javascript" src="{!! asset('croppie/croppie.js')!!}"></script>
 
 
@@ -286,8 +297,11 @@ use App\Disciplina;
     <script type="text/javascript">
 
         $(document).ready(function() {
-            $('#fotoFinal').click(function () {
-                $('#upload').trigger('click');
+            $('#openModal').on('click',function () {
+                $('#modalFoto').modal({
+                    show: true,
+                    backdrop: "static"
+                });
             });
 
 
@@ -313,19 +327,17 @@ use App\Disciplina;
             var password = ano + '00' + lastId + '' + numMes;
             document.getElementById('password').value = password;
             document.getElementById('password-confirm').value = password;
-            {{--</script>--}}
 
-                    {{--<script type="text/javascript">--}}
-                $uploadCrop = $('#upload-demo').croppie({
+            $uploadCrop = $('#upload-demo').croppie({
                 enableExif: true,
                 viewport: {
-                    width: 200,
-                    height: 200,
-                    type: 'circle'
+                    width: 150,
+                    height: 150
+//                    type: 'circle'
                 },
                 boundary: {
-                    width: 300,
-                    height: 300
+                    width: 250,
+                    height: 250
                 }
             });
 
@@ -338,33 +350,27 @@ use App\Disciplina;
                         console.log('Foto Carregada co sucesso');
                     });
                 };
-
-                $('#modalFoto').modal({
-                    show: true,
-                    backdrop: "static"
-                });
                 reader.readAsDataURL(this.files[0]);
-
             });
 //
-//        $('.upload-result').on('click', function (ev) {
-//            $uploadCrop.croppie('result', {
-//                type: 'canvas',
-//                size: 'viewport'
-//            }).then(function (resp) {
-//
-//                $.ajax({
-//                    url: "ajaxPro.php",
-//                    type: "POST",
-//                    data: {"image":resp},
-//                    success: function (data) {
-//                        html = '<img src="' + resp + '" />';
-//                        $("#upload-demo-i").html(html);
-//                    }
-//                });
-//            });
-//        });
-        })
+        $('#btnSendImage').on('click', function (ev) {
+            $uploadCrop.croppie('result', {
+                type: 'canvas',
+                size: 'viewport'
+            }).then(function (resp) {
+
+                $.ajax({
+                    url: "api/criarFoto",
+                    type: "POST",
+                    data: {"image":resp},
+                    success: function () {
+                        var html = '<img src="' + resp + '" />';
+                        $("#uploadLast").html(html);
+                    }
+                });
+            });
+        });
+        });
     </script>
 @endsection
 

@@ -1,6 +1,6 @@
-<html><head><meta charset="windows-1252"></head><body><pre style="word-wrap: break-word; white-space: pre-wrap;">.croppie-container {
-	padding: 30px;
-}
+/*<html><head><meta charset="windows-1252"></head><body><pre style="word-wrap: break-word; white-space: pre-wrap;">.croppie-container {*/
+	/*padding: 30px;*/
+/*}*/
 .croppie-container .cr-image {
 	z-index: -1;
 	position: absolute;
@@ -172,4 +172,5 @@
 }
 .cr-rotate-r i:before {
     content: '↻';
-}</pre></body></html>
+}
+/*</pre></body></html>*/

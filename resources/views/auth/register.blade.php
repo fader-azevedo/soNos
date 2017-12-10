@@ -15,7 +15,7 @@ use App\Disciplina;
                     {{--<h3 class="box-title"><i class="zmdi zmdi-edit"></i>&nbsp;Faça Pre-Inscrição</h3>--}}
                 {{--</div>--}}
                 <div class="box-body" style="background-color: #f8f8f8">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}" autocomplete="off">
+                    <form class="form-horizontal" method="POST" action="{{ route('register') }}" autocomplete="off" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div id="Kar" class="carousel slide" data-ride="carousel" data-interval="false">
                             <div  class="carousel-inner" id="divKar">
@@ -26,7 +26,9 @@ use App\Disciplina;
                                             <fieldset >
                                                 <legend style="margin-bottom: -5px; font-size: 15px;" class="center">Fotografia</legend>
                                                 <div class="input-group container-fluid">
-                                                    <img style="cursor: hand"  height="128" width="128" id="fotoFinal" class="img-rounded center" src="{{asset('img/fotogr.jpg')}}">
+                                                    {{--accept="image/jpeg"--}}
+                                                    <input type="file"  id="upload">
+                                                    <img height="128" width="128" id="fotoFinal" class="img-rounded center" src="{{asset('img/fotogr.jpg')}}">
                                                 </div>
                                             </fieldset>
                                         </div>
@@ -119,7 +121,7 @@ use App\Disciplina;
                                             </fieldset>
                                         </div>
 
-                                        <div class="pull-right col-sm-1" style="padding-top: 30px">
+                                        <div class=" col-sm-1" style="padding-top: 30px">
                                             <a class="btn btn-default right no-border"   href="#Kar" data-slide-to="1"><i style="font-size: 40px" class="fa fa-chevron-circle-right but"></i></a>
                                         </div>
                                     </div>
@@ -149,15 +151,16 @@ use App\Disciplina;
                                             <div class="box-body">
                                                 <fieldset >
                                                     <legend style="margin-bottom: 5px; font-size: 15px;" class="center">Selecione a disciplina</legend>
-                                                    <div class="col-sm-2">
+                                                    <div class="col-sm-3 ">
                                                         <select style="height: 36px"  id="numDis" class="form-control" name="numDis">
-                                                            <option id="uma" value="1">Uma</option>
-                                                            <option id="duas" value="2">Duas</option>
+                                                            <option selected disabled id="" value="0">Tipo de Cuso</option>
+                                                            <option id="uma" value="1">Presencial</option>
+                                                            <option id="duas" value="2">Online</option>
                                                         </select>
                                                         <br/>
                                                     </div>
 
-                                                    <div class="col-sm-5">
+                                                    <div class="col-sm-4">
                                                         <div class="input-group">
                                                             <span class="input-group-addon">
                                                                 <input type="checkbox" id="check1" name="check1" checked>
@@ -248,9 +251,26 @@ use App\Disciplina;
     </div>
 </div>
 
-    {{--<script>--}}
-        {{--})--}}
-        {{--</script>--}}
+<div class="modal fade" id="modalFoto">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Default Modal</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 text-center">Crop
+                    <div id="upload-demo" style="width:350px"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 @endsection
 
@@ -258,48 +278,93 @@ use App\Disciplina;
     <script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.js')!!}"></script>
     <script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.date.extensions.js')!!}"></script>
     <script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.extensions.js')!!}"></script>
-    <script>
-
-        $('#fotoFinal').click(function () {
-//            alert('');
-        });
+    <script type="text/javascript" src="{!! asset('croppie/croppie.js')!!}"></script>
 
 
+    {{--<script type="text/javascript" src="{!! asset('js/custom.js')!!}"></script>--}}
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            $('#fotoFinal').click(function () {
+                $('#upload').trigger('click');
+            });
 
 
-        $('[data-mask]').inputmask();
-        $('#numDis').change(function () {
-            var v = $(this).val();
-            if(v === '2'){
-                document.getElementById('listDisc2').removeAttribute('disabled');
-                document.getElementById('check2').setAttribute('checked','true');
-            }else{
-                document.getElementById('listDisc2').setAttribute('disabled','true');
-                document.getElementById('check2').removeAttribute('checked');
+            $('[data-mask]').inputmask();
+            $('#check2').change(function () {
+                if ($(this).is(':checked')) {
+                    document.getElementById('listDisc2').removeAttribute('disabled');
+                    document.getElementById('duas').setAttribute('selected', 'true');
+                    document.getElementById('uma').removeAttribute('selected');
+                } else {
+                    document.getElementById('listDisc2').setAttribute('disabled', 'true');
+                    document.getElementById('uma').setAttribute('selected', 'true');
+                    document.getElementById('duas').removeAttribute('selected');
+                }
+            });
+
+            var ano = new Date().getFullYear();
+            var numMes = new Date().getUTCMonth();
+            if (numMes < 10) {
+                numMes = '0' + numMes;
             }
-        });
+            var lastId = JSON.parse("{{json_encode($lastId)}}");
+            var password = ano + '00' + lastId + '' + numMes;
+            document.getElementById('password').value = password;
+            document.getElementById('password-confirm').value = password;
+            {{--</script>--}}
 
-        $('#check2').change(function () {
-            if($(this).is(':checked')){
-                document.getElementById('listDisc2').removeAttribute('disabled');
-                document.getElementById('duas').setAttribute('selected','true');
-                document.getElementById('uma').removeAttribute('selected');
-            }else{
-                document.getElementById('listDisc2').setAttribute('disabled','true');
-                document.getElementById('uma').setAttribute('selected','true');
-                document.getElementById('duas').removeAttribute('selected');
-            }
-        });
+                    {{--<script type="text/javascript">--}}
+                $uploadCrop = $('#upload-demo').croppie({
+                enableExif: true,
+                viewport: {
+                    width: 200,
+                    height: 200,
+                    type: 'circle'
+                },
+                boundary: {
+                    width: 300,
+                    height: 300
+                }
+            });
 
-        var ano = new Date().getFullYear();
-        var numMes = new Date().getUTCMonth();
-        if(numMes<10) {
-            numMes = '0' + numMes;
-        }
-        var lastId = JSON.parse("{{json_encode($lastId)}}");
-        var password = ano+'00'+lastId+''+numMes;
-        document.getElementById('password').value = password;
-        document.getElementById('password-confirm').value = password;
+            $('#upload').on('change', function () {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $uploadCrop.croppie('bind', {
+                        url: e.target.result
+                    }).then(function () {
+                        console.log('Foto Carregada co sucesso');
+                    });
+                };
+
+                $('#modalFoto').modal({
+                    show: true,
+                    backdrop: "static"
+                });
+                reader.readAsDataURL(this.files[0]);
+
+            });
+//
+//        $('.upload-result').on('click', function (ev) {
+//            $uploadCrop.croppie('result', {
+//                type: 'canvas',
+//                size: 'viewport'
+//            }).then(function (resp) {
+//
+//                $.ajax({
+//                    url: "ajaxPro.php",
+//                    type: "POST",
+//                    data: {"image":resp},
+//                    success: function (data) {
+//                        html = '<img src="' + resp + '" />';
+//                        $("#upload-demo-i").html(html);
+//                    }
+//                });
+//            });
+//        });
+        })
     </script>
 @endsection
 

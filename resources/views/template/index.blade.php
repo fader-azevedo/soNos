@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('css/materialize.min.css')!!}"/>
     <link rel="stylesheet" type="text/css" href="{!! asset('css/normalize.css')!!}"/>
     <link rel="stylesheet" type="text/css" href="{!! asset('css/material-design-iconic-font.min.css')!!}"/>
+    <link rel="stylesheet" type="text/css" href="{!! asset('croppie/croppie.css')!!}"/>
 </head>
 <body class="hold-transition skin-black sidebar-mini ">
     <nav class="navbar navbar-default navbar-fixed-top" >

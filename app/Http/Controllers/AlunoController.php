@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class AlunoController extends Controller{
 
     public function getFoto(){
-//        $data = $_POST['image'];
-//        list($type, $data) = explode(';', $data);
-//        list(, $data)      = explode(',', $data);
-//
-//        $data = base64_decode($data);
-//        $imageName = time().'.png';
-//        file_put_contents(public_path().'\img\alunos\_'.$imageName, $data);
+        $data = $_POST['image'];
+        list(, $data) = explode(';', $data);
+        list(, $data) = explode(',', $data);
+
+        $data = base64_decode($data);
+        $imageName = $_POST['codigo'].'.png';
+        file_put_contents(public_path().'\img\alunos\foto_'.$imageName, $data);
     }
 }

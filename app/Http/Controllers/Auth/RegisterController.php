@@ -41,28 +41,34 @@ class RegisterController extends Controller{
         $this->middleware('guest');
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
     protected function validator(array $data){
         return Validator::make($data, [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+//            'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\User
-     */
+    private function criarEmail($nome, $apelido,$id){
+        $apelido = str_replace(' ', '', $apelido);
+        if (str_word_count($nome) > 1) {
+            $nome = explode(' ', $nome);
+            $email = $nome[0] . '.' .$apelido .$id. '@sonos.mz';
+        } else {
+            $email = $nome.'.'. $apelido.$id.'@sonoos.mz';
+        }
+        return strtolower($email);
+    }
     protected function create(array $data){
-        $user =  User::create(['username' => $data['name'], 'email' => $data['email'], 'password' => bcrypt($data['password']), 'perfil' => 'aluno', 'foto' => 'foto_'.$data['password'].'.jpg']);
+
+        $id = $data['id'];
+        $apelido = $data['apelido'];
+        $nome =$data['name'];
+        $email = $data['email'];
+        if($email == ''){
+            $email = $this->criarEmail($nome,$apelido,$id);
+        }
+        $user =  User::create(['username' => $data['name'], 'email' => $email, 'password' => bcrypt($data['password']), 'perfil' => 'aluno', 'foto' => 'foto_'.$data['password'].'.jpg']);
         $idUser = $user->id;
 
         if($data['nomeEncarregado'] == '' && $data['contactoEncarregado']==''){
@@ -73,12 +79,13 @@ class RegisterController extends Controller{
             $idEncarregado = $encarregado->id;
         }
 
+
         $contacto = new Contacto();
-        $contacto = $contacto->create(['numero'=>$data['numero'], 'email'=>$data['email']]);
+        $contacto = $contacto->create(['numero'=>$data['numero'], 'email'=>$email]);
         $idContacto = $contacto->id;
 
         $aluno = new Aluno();
-        $aluno = $aluno->create(['apelido'=>$data['apelido'],'nome'=>$data['name'],'sexo'=>$data['sexo'],'dataNasc'=>$data['dataNasc'],'naturalidade'=>$data['naturalidade'], 'residencia'=>$data['residencia'],'idContacto'=>$idContacto,'idUser'=>$idUser, 'idEncarregado'=>$idEncarregado,'foto'=>$data['password'].'.jpg']);
+        $aluno = $aluno->create(['codigo'=>$data['password'],'apelido'=>$data['apelido'],'nome'=>$data['name'],'sexo'=>$data['sexo'],'dataNasc'=>$data['dataNasc'],'numBi'=>$data['numBi'],'naturalidade'=>$data['naturalidade'], 'residencia'=>$data['residencia'],'idContacto'=>$idContacto,'idUser'=>$idUser, 'idEncarregado'=>$idEncarregado,'foto'=>$data['password'].'.jpg']);
         $idAluno = $aluno->id;
 
         $inscricao = new Inscricao();
@@ -90,35 +97,24 @@ class RegisterController extends Controller{
                 $inscricao->create(['idAluno' => $idAluno, 'idDisciplina' =>$idDisciplina,'estado'=>'pre-inscrito']);
             }
         }
-
-
-
-        $this->criarFoto($data['name'],$data['apelido'],$data['password']);
         return $user;
     }
 
-    public function criarFoto($nome, $apelido,$codigo){
-        $pasta = public_path().'\img\alunos\foto_'.$codigo.'.jpg';
-        $fonte = public_path().'\fonts\Roboto-Bold.ttf';
-        $char1 = strtoupper(substr($nome,0,1));
-        $char2 = strtoupper(substr($apelido,0,1));
-
-        $imagem = imagecreate( 250, 250 );
-        imagecolorallocate( $imagem, 171, 255, 253 );
-        $text_colour = imagecolorallocate( $imagem, 66, 74, 93);
-
-        imagettftext($imagem,90,0,40,170,$text_colour,$fonte,$char1.$char2);
-
-        imagejpeg($imagem,$pasta,100);
-        imagedestroy( $imagem );
-    }
-
-//    protected function create(array $data)
-//    {
-//        return User::create([
-//            'name' => $data['name'],
-//            'email' => $data['email'],
-//            'password' => bcrypt($data['password']),
-//        ]);
+//    public function criarFoto($nome, $apelido,$codigo){
+//        $pasta = public_path().'\img\alunos\foto_'.$codigo.'.jpg';
+//        $fonte = public_path().'\fonts\Roboto-Bold.ttf';
+//        $char1 = strtoupper(substr($nome,0,1));
+//        $char2 = strtoupper(substr($apelido,0,1));
+//
+//        $imagem = imagecreate( 250, 250 );
+//        imagecolorallocate( $imagem, 171, 255, 253 );
+//        $text_colour = imagecolorallocate( $imagem, 66, 74, 93);
+//
+//        imagettftext($imagem,90,0,40,170,$text_colour,$fonte,$char1.$char2);
+//
+//        imagejpeg($imagem,$pasta,100);
+//        imagedestroy( $imagem );
 //    }
+
+
 }

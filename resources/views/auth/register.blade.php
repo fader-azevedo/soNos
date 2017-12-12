@@ -14,22 +14,22 @@ use App\Disciplina;
                 {{--<div class="box-header with-border">--}}
                     {{--<h3 class="box-title"><i class="zmdi zmdi-edit"></i>&nbsp;Faça Pre-Inscrição</h3>--}}
                 {{--</div>--}}
+                {{--action="{{ route('register') }}"--}}
                 <div class="box-body" style="background-color: #f8f8f8">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}" autocomplete="off" enctype="multipart/form-data">
+                    <form id="formulario" class="form-horizontal" method="POST"  autocomplete="off" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div id="Kar" class="carousel slide" data-ride="carousel" data-interval="false">
                             <div  class="carousel-inner" id="divKar">
                                 <div class="item active">
                                     <div class="row">
-
                                         <div class="col-sm-6">
                                             <fieldset >
                                                 <legend style="margin-bottom: 0; font-size: 15px;" class="center btn btn-info" id="openModal">Fotografia</legend>
+                                                <input type="hidden" id="id" name="id">
+                                                <input type="file" name="inputFoto" id="inputFoto">
                                                 {{--<a class="btn btn-info" >upload</a>--}}
                                                 <div class="input-group container-fluid" id="uploadLast" style="height: 160px">
-                                                    {{--accept="image/jpeg"--}}
-                                                    {{--<input type="file"  id="fotoAluno">--}}
-                                                    {{--<img height="128" width="128" id="fotoFinal" class="img-rounded center" src="{{asset('img/fotogr.jpg')}}">--}}
+                                                    <img height="128" width="128" id="fotoFinal" class="img-rounded center" src="{{asset('img/user.jpg')}}">
                                                 </div>
                                             </fieldset>
                                         </div>
@@ -73,7 +73,7 @@ use App\Disciplina;
                                     <div class="row" style="margin-top: -30px">
                                         <div class="col-sm-6 input-field">
                                             <input id="naturalidade" class="form-control" type="text" name="naturalidade">
-                                            <label for="naturaldade"><i class="fa fa-location-arrow"></i>&nbsp;Naturalidade <i class="inputObrigatio">*</i></label>
+                                            <label for="naturalidade"><i class="fa fa-location-arrow"></i>&nbsp;Naturalidade <i class="inputObrigatio">*</i></label>
                                         </div>
 
                                         <div class="col-sm-6 input-field">
@@ -84,7 +84,7 @@ use App\Disciplina;
 
                                     <div class="row" style="margin-top: -30px">
                                         <div class="col-sm-6 input-field" >
-                                            <input id="bi" type="text" class="form-control" name="apelido" >
+                                            <input id="bi" type="text" class="form-control" name="numBi" >
                                             <label for="bi"><i class="zmdi zmdi-format-list-numbered"></i>&nbsp;Numero de BI <i class="inputObrigatio">*</i></label>
                                         </div>
 
@@ -96,43 +96,45 @@ use App\Disciplina;
 
                                     <div class="row" style="margin-top: -30px">
                                         <div class="col-sm-6 input-field">
-                                            <input id="contacto" class="form-control" type="text" name="numero" data-inputmask='"mask": "89-9999999"' data-mask>
+                                            {{--data-inputmask='"mask": "89-9999999"' data-mask--}}
+                                            <input id="contacto" class="form-control" type="text" name="numero" >
                                             <label for="contacto"><i class="fa fa-phone"></i>&nbsp;Contacto <i class="inputObrigatio">*</i></label>
                                         </div>
-                                        <div class="col-sm-6 input-field {{ $errors->has('email') ? ' has-error' : '' }}">
+                                        {{--<div class="col-sm-6 input-field {{ $errors->has('email') ? ' has-error' : '' }}">--}}
+                                        <div class="col-sm-6 input-field">
                                             <input id="email" class="form-control" type="email" name="email" value="{{ old('email') }}">
                                             <label for="email"><i class="">@</i>&nbsp;Email</label>
 
-                                            @if ($errors->has('email'))
-                                                <span class="help-block">
-                                                    <strong>{{ $errors->first('email') }}</strong>
-                                                </span>
-                                            @endif
+                                            {{--@if ($errors->has('email'))--}}
+                                                {{--<span class="help-block">--}}
+                                                    {{--<strong>{{ $errors->first('email') }}</strong>--}}
+                                                {{--</span>--}}
+                                            {{--@endif--}}
                                         </div>
                                     </div>
 
                                     <div class="row" style="margin-bottom: 0">
-                                        <div class="col-sm-11">
-                                            <fieldset >
+                                        <div class="col-sm-11" style="margin-bottom: 0">
+                                            <fieldset>
                                                 <legend style="margin-bottom: -15px; font-size: 15px;" class="center">Encarregado</legend>
                                                 <div class="col-sm-6 input-field">
                                                     <input id="nomeEncarregado" name="nomeEncarregado" class="form-control" type="text">
                                                     <label for="nomeEncarregado"><i class="fa fa-user"></i>&nbsp;Nome</label>
                                                 </div>
                                                 <div class="col-sm-6 input-field">
-                                                    <input id="contactoEncarregado" name="contactoEncarregado" class="form-control" type="text" data-inputmask='"mask": "89-9999999"' data-mask>
+                                                    <input id="contactoEncarregado" name="contactoEncarregado" class="form-control" type="text" >
                                                     <label for="contactoEncarregado"><i class="fa fa-phone"></i>&nbsp;Contacto</label>
                                                 </div>
                                             </fieldset>
                                         </div>
 
-                                        <div class=" col-sm-1" style="padding-top: 30px">
-                                            <a class="btn btn-default right no-border" style="background-color: transparent"  href="#Kar" data-slide-to="1"><i style="font-size: 40px" class="fa fa-chevron-circle-right but"></i></a>
+                                        <div class=" col-md-1 pull-right" style="padding-top: 30px; position: relative">
+                                            <a class="btn btn-default right no-border" style="background-color: transparent; "  href="#Kar" data-slide-to="1"><i style="font-size: 40px" class="fa fa-chevron-circle-right but"></i></a>
                                         </div>
                                     </div>
 
-                                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                        <div class="col-md-6">
+                                    {{--<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}" >--}}
+                                        {{--<div class="col-md-6">--}}
                                             <input id="password" type="hidden" class="form-control" name="password" required>
 
                                             @if ($errors->has('password'))
@@ -140,14 +142,14 @@ use App\Disciplina;
                                                     <strong>{{ $errors->first('password') }}</strong>
                                                 </span>
                                             @endif
-                                        </div>
-                                    </div>
+                                        {{--</div>--}}
+                                    {{--</div>--}}
 
-                                    <div class="form-group">
-                                        <div class="col-md-6">
+                                    {{--<div class="form-group">--}}
+                                        {{--<div class="col-md-6">--}}
                                             <input id="password-confirm" type="hidden" class="form-control" name="password_confirmation" >
-                                        </div>
-                                    </div>
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                 </div>
 
                                 <div class="item">
@@ -157,43 +159,35 @@ use App\Disciplina;
                                                 <fieldset >
                                                     <legend style="margin-bottom: 5px; font-size: 15px;" class="center">Selecione a disciplina</legend>
                                                     <div class="col-sm-3 ">
-                                                        <select style="height: 36px"  id="numDis" class="form-control" name="numDis">
+                                                        <select style="height: 36px" id="tipoCurso" class="form-control" >
                                                             <option selected disabled id="" value="0">Tipo de Cuso</option>
-                                                            <option id="uma" value="1">Presencial</option>
-                                                            <option id="duas" value="2">Online</option>
+                                                            <option id="presencial" value="presencial">Presencial</option>
+                                                            <option id="Online" disabled value="onine">Online</option>
                                                         </select>
-                                                        <br/>
+                                                        <label for="tipoCurso"></label>
+                                                        <input type="hidden" value="1" name="numDis" id="numDis">
                                                     </div>
 
                                                     <div class="col-sm-4">
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon">
-                                                                <input type="checkbox" id="check1" name="check1" checked>
-                                                                <label style="height: 0.5px; top: -3px" for="check1">&nbsp;</label>
-                                                            </span>
-                                                            <select style="height: 36px" class="form-control"  name="disciplina1" id="disc1">
-                                                                @foreach($disciplinas as $d)
-                                                                    <option value="{{$d->id}}">{{$d->nome}}</option>
-                                                                @endforeach
-                                                            </select>
-                                                            <br/>
-                                                        </div>
-                                                        <br/>
+                                                        <select style="height: 36px" class="form-control"  name="disciplina1" id="disc1">
+                                                            @foreach($disciplinas as $d)
+                                                                <option value="{{$d->id}}">{{$d->nome}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                        <label for="disc1"></label>
                                                     </div>
 
-                                                    <div class="col-sm-5">
-                                                        <div class="input-group">
-                                                            <span class="input-group-addon">
-                                                                <input type="checkbox" id="check2" name="check2">
-                                                                <label style="height: 0; top: -3px; left: 5.5px" for="check2">&nbsp;</label>
-                                                            </span>
-                                                            <select style="height: 36px" disabled class="form-control"  name="disciplina2" id="listDisc2">
-                                                                @foreach($disciplinas as $d)
-                                                                    <option value="{{$d->id}}">{{$d->nome}}</option>
-                                                                @endforeach
-                                                            </select>
-                                                        </div>
-
+                                                    <div class="col-sm-5 input-group">
+                                                        <span class="input-group-addon">
+                                                            <input type="checkbox" id="check2" name="check2">
+                                                            <label style="height: 0; top: -3px; left: 5.5px" for="check2">&nbsp;</label>
+                                                        </span>
+                                                        <label for="listDisc2"></label>
+                                                        <select style="height: 35px" disabled class="form-control"  name="disciplina2" id="listDisc2">
+                                                            @foreach($disciplinas as $d)
+                                                                <option value="{{$d->id}}">{{$d->nome}}</option>
+                                                            @endforeach
+                                                        </select>
                                                     </div>
                                                 </fieldset>
                                             </div>
@@ -241,7 +235,7 @@ use App\Disciplina;
                                     </div>
                                     <div class="">
                                         <a class="btn btn-default"  href="#Kar" data-slide-to="0"><i class="fa fa-chevron-circle-left but"></i>&nbsp;&nbsp;Voltar&nbsp;&nbsp;&nbsp;</a>
-                                        <a type="submit" class="btn btn-primary right">&nbsp;&nbsp;&nbsp;Salvar&nbsp;&nbsp;&nbsp;</a>
+                                        <button type="submit" class="btn btn-primary right">&nbsp;&nbsp;&nbsp;Salvar&nbsp;&nbsp;&nbsp;</button>
                                     </div>
                                 </div>
                             </div>
@@ -257,21 +251,25 @@ use App\Disciplina;
 </div>
 
 <div class="modal fade" id="modalFoto">
-    <div class="modal-dialog">
+    <div class="modal-dialog" style="width: 30%">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title center">Fotografia</h4>
-            </div>
             <div class="modal-body">
                 <h3 class="center">
-                    <label class="btn btn-info" for="upload">upload <i class="fa fa-file-image-o"></i></label>
-                    <label class="btn btn-info" >Camera <i class="fa fa-camera"></i></label>
+                    <label class="btn btn-info" id="btnUpload" for="imgUpoad">upload <i class="fa fa-file-image-o"></i></label>
+                    <label class="btn btn-info" id="btnCamera">Camera <i class="fa fa-camera"></i></label>
                 </h3>
-                <input type="file"  id="upload">
-                <div class="container">
-                    <div id="upload-demo" style="width:350px"></div>
+                <input type="file"  id="imgUpoad">
+                <div id="karFoto" class="carousel slide" data-ride="carousel" data-interval="false">
+                    <div class="carousel-inner" style="height: 250px">
+                        <div class="item active">
+                            <div id="upload-demo" class="center" style="width:350px; margin: auto"></div>
+                        </div>
+                        <div class="item">
+                            <div id="FotoCam" class="center" style="width:350px; margin: auto">
+                                <img  height="230" width="320" src="" id="foto-cliente"  class="img-rounded">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">
@@ -285,12 +283,21 @@ use App\Disciplina;
 @endsection
 
 @section('scripts')
-    <script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.js')!!}"></script>
-    <script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.date.extensions.js')!!}"></script>
-    <script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.extensions.js')!!}"></script>
-    {{--<script type="text/javascript" src="{!! asset('croppie/croppie.min.js')!!}"></script>--}}
+    {{--<script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.js')!!}"></script>--}}
+    {{--<script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.date.extensions.js')!!}"></script>--}}
+    {{--<script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.extensions.js')!!}"></script>--}}
     <script type="text/javascript" src="{!! asset('croppie/croppie.js')!!}"></script>
+    {{--<script type="text/javascript" src="{!! asset('croppie/demo.js')!!}"></script>--}}
+    {{--<script type="text/javascript" src="{!! asset('ca/demo.js')!!}"></script>--}}
+    <script type="text/javascript" src="{!! asset('camera/respond.min.js')!!}"></script>
+    <script type="text/javascript" src="{!! asset('camera/html5shiv.js')!!}"></script>
+    <script type="text/javascript" src="{!! asset('camera/jpeg_camera_with_dependencies.min.js')!!}"></script>
+    <script type="text/javascript" src="{!! asset('camera/validacao.js')!!}"></script>
 
+    {{--<script src="../assets/js/camera/respond.min.js" type="text/javascript"></script>--}}
+    {{--<script src="../assets/js/camera/html5shiv.js" type="text/javascript"></script>--}}
+    {{--<script src="../assets/js/camera/jpeg_camera_with_dependencies.min.js" type="text/javascript"></script>--}}
+    {{--<script src="../assets/js/validacao.js"></script>--}}
 
     {{--<script type="text/javascript" src="{!! asset('js/custom.js')!!}"></script>--}}
 
@@ -304,17 +311,26 @@ use App\Disciplina;
                 });
             });
 
+            $('#btnUpload').click(function () {
+                $('#karFoto').carousel(0);
+            });
+            $('#btnCamera').click(function () {
+                $('#karFoto').carousel(1);
+                var options = {
+//                    shutter_ogg_url: "jpeg_camera/shutter.ogg",
+//                    shutter_mp3_url: "jpeg_camera/shutter.mp3",
+//                    swf_url: "jpeg_camera/jpeg_camera.swf"
+                };
+                var camera = new JpegCamera("#FotoCam", options);
+            });
 
-            $('[data-mask]').inputmask();
             $('#check2').change(function () {
                 if ($(this).is(':checked')) {
                     document.getElementById('listDisc2').removeAttribute('disabled');
-                    document.getElementById('duas').setAttribute('selected', 'true');
-                    document.getElementById('uma').removeAttribute('selected');
+                    document.getElementById('numDis').value=2;
                 } else {
+                    document.getElementById('numDis').value=1;
                     document.getElementById('listDisc2').setAttribute('disabled', 'true');
-                    document.getElementById('uma').setAttribute('selected', 'true');
-                    document.getElementById('duas').removeAttribute('selected');
                 }
             });
 
@@ -327,49 +343,50 @@ use App\Disciplina;
             var password = ano + '00' + lastId + '' + numMes;
             document.getElementById('password').value = password;
             document.getElementById('password-confirm').value = password;
+            document.getElementById('id').value = lastId+1;
 
             $uploadCrop = $('#upload-demo').croppie({
                 enableExif: true,
                 viewport: {
                     width: 150,
-                    height: 150,
-                    type: 'square'
+                    height: 150
+//                    type: 'square'
                 },
                 boundary: {
-                    width: 250,
-                    height: 250
+                    width: 350,
+                    height: 200
                 }
             });
+            var reader = new FileReader();
 
-            $('#upload').on('change', function () {
-                var reader = new FileReader();
+            $('#imgUpoad').on('change', function () {
                 reader.onload = function (e) {
                     $uploadCrop.croppie('bind', {
                         url: e.target.result
                     }).then(function () {
-                        console.log('Foto Carregada co sucesso');
+                        console.log('Foto Carregada com sucesso');
                     });
                 };
                 reader.readAsDataURL(this.files[0]);
             });
 //
-        $('#btnSendImage').on('click', function (ev) {
-            $uploadCrop.croppie('result', {
-                type: 'canvas',
-                size: 'viewport'
-            }).then(function (resp) {
+            $('#btnSendImage').on('click', function (ev) {
+                $uploadCrop.croppie('result', {
+                    type: 'canvas',
+                    size: 'viewport'
+                }).then(function (resp) {
 
-                $.ajax({
-                    url: "api/criarFoto",
-                    type: "POST",
-                    data: {"image":resp},
-                    success: function () {
-                        var html = '<img src="' + resp + '" />';
-                        $("#uploadLast").html(html);
-                    }
+                    $.ajax({
+                        url: "api/criarFoto",
+                        type: "POST",
+                        data: {"image":resp,"codigo":password},
+                        success: function () {
+                            var html = '<img class="img-rounded" src="' + resp + '" />';
+                            $("#uploadLast").html(html);
+                        }
+                    });
                 });
             });
-        });
         });
     </script>
 @endsection

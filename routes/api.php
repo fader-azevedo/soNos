@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('criarFoto','AlunoController@getFoto')->name('criarFoto');//salvar foto no diretorio
+Route::post('kappa', 'RegisterController@create1')->name('kappa');

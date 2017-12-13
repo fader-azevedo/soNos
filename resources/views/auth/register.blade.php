@@ -29,16 +29,22 @@ use App\Disciplina;
                                                 <input type="file" name="inputFoto" id="inputFoto">
                                                 {{--<a class="btn btn-info" >upload</a>--}}
                                                 <div class="input-group container-fluid" id="uploadLast" style="height: 160px">
-                                                    <img height="128" width="128" id="fotoFinal" class="img-rounded center" src="{{asset('img/user.jpg')}}">
+                                                    <img height="128" width="128" id="fotoFinal" class="img-rounded center" src="{{asset('img/aluno1.png')}}">
                                                 </div>
                                             </fieldset>
                                         </div>
 
                                         <div class="col-sm-6">
                                             <div class="row">
-                                                <div class="col-sm-12 input-field" >
-                                                    <input id="apelido" type="text" class="form-control" name="apelido"  autofocus>
+                                                <div class="col-sm-12 input-field {{ $errors->has('apelido') ? ' has-error' : '' }}" >
+                                                    <input id="apelido" type="text" class="form-control" name="apelido"  required oninvalid="this.setCustomValidity('Wua biwa')" oninput="this.setCustomValidity('')">
                                                     <label for="apelido"><i class="zmdi zmdi-account"></i>&nbsp;Apelido <i class="inputObrigatio">*</i></label>
+
+                                                    @if ($errors->has('apelido'))
+                                                        <span class="help-block">
+                                                            <strong>{{ $errors->first('apelido') }}</strong>
+                                                        </span>
+                                                    @endif
                                                 </div>
                                                 <div class="col-sm-12 input-field {{ $errors->has('name') ? ' has-error' : '' }}" >
                                                     <input id="name" type="text" class="form-control" name="name"  value="{{ old('name') }}" >
@@ -84,8 +90,8 @@ use App\Disciplina;
 
                                     <div class="row" style="margin-top: -30px">
                                         <div class="col-sm-6 input-field" >
-                                            <input id="bi" type="text" class="form-control" name="numBi" >
-                                            <label for="bi"><i class="zmdi zmdi-format-list-numbered"></i>&nbsp;Numero de BI <i class="inputObrigatio">*</i></label>
+                                            <input id="numBi" type="text" class="form-control" name="numBi" >
+                                            <label for="numBi"><i class="zmdi zmdi-format-list-numbered"></i>&nbsp;Numero de BI <i class="inputObrigatio">*</i></label>
                                         </div>
 
                                         <div class="col-sm-6 input-field">
@@ -100,16 +106,16 @@ use App\Disciplina;
                                             <input id="contacto" class="form-control" type="text" name="numero" >
                                             <label for="contacto"><i class="fa fa-phone"></i>&nbsp;Contacto <i class="inputObrigatio">*</i></label>
                                         </div>
-                                        {{--<div class="col-sm-6 input-field {{ $errors->has('email') ? ' has-error' : '' }}">--}}
-                                        <div class="col-sm-6 input-field">
+                                        <div class="col-sm-6 input-field {{ $errors->has('email') ? ' has-error' : '' }}">
+                                        {{--<div class="col-sm-6 input-field">--}}
                                             <input id="email" class="form-control" type="email" name="email" value="{{ old('email') }}">
                                             <label for="email"><i class="">@</i>&nbsp;Email</label>
 
-                                            {{--@if ($errors->has('email'))--}}
-                                                {{--<span class="help-block">--}}
-                                                    {{--<strong>{{ $errors->first('email') }}</strong>--}}
-                                                {{--</span>--}}
-                                            {{--@endif--}}
+                                            @if ($errors->has('email'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('email') }}</strong>
+                                                </span>
+                                            @endif
                                         </div>
                                     </div>
 
@@ -129,7 +135,7 @@ use App\Disciplina;
                                         </div>
 
                                         <div class=" col-md-1 pull-right" style="padding-top: 30px; position: relative">
-                                            <a class="btn btn-default right no-border" style="background-color: transparent; "  href="#Kar" data-slide-to="1"><i style="font-size: 40px" class="fa fa-chevron-circle-right but"></i></a>
+                                            <a class="btn btn-default right no-border" style="background-color: transparent; "   id="btnNext"><i style="font-size: 40px" class="fa fa-chevron-circle-right but"></i></a>
                                         </div>
                                     </div>
 
@@ -233,6 +239,8 @@ use App\Disciplina;
 
                                         </div>
                                     </div>
+                                    {{--<input id="" type="text" class="form-control" name="" required oninvalid="this.setCustomValidity('Wua biwa')" oninput="this.setCustomValidity('')">--}}
+
                                     <div class="">
                                         <a class="btn btn-default"  href="#Kar" data-slide-to="0"><i class="fa fa-chevron-circle-left but"></i>&nbsp;&nbsp;Voltar&nbsp;&nbsp;&nbsp;</a>
                                         <button type="submit" class="btn btn-primary right">&nbsp;&nbsp;&nbsp;Salvar&nbsp;&nbsp;&nbsp;</button>
@@ -272,13 +280,28 @@ use App\Disciplina;
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer" style="background-color: #a0a2a6">
                 <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Cancelar</button>
                 <button type="button" id="btnSendImage" class="btn btn-info" data-dismiss="modal">Salvar</button>
             </div>
         </div>
     </div>
 </div>
+<div class="modal fade " id="modalErro">
+    <div class="modal-dialog box box-danger" style="width: 30%; top: 220px">
+        <div class="modal-content ">
+            <div class="modal-body center">
+                <div class="container center">
+                    <i style="color: #e78473" class="zmdi zmdi-alert-triangle zmdi-hc-5x"></i>
+                </div>
+                <h5 style="color: #e78473; margin: 10px" class="center">Por favor, preenche todos campos obrigatorios</h5>
+                <p><i class="inputObrigatio">*</i>&nbsp; Campo Obrigatório</p>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Esta Bem</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 @endsection
 
@@ -287,23 +310,17 @@ use App\Disciplina;
     {{--<script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.date.extensions.js')!!}"></script>--}}
     {{--<script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.extensions.js')!!}"></script>--}}
     <script type="text/javascript" src="{!! asset('croppie/croppie.js')!!}"></script>
-    {{--<script type="text/javascript" src="{!! asset('croppie/demo.js')!!}"></script>--}}
-    {{--<script type="text/javascript" src="{!! asset('ca/demo.js')!!}"></script>--}}
-    <script type="text/javascript" src="{!! asset('camera/respond.min.js')!!}"></script>
-    <script type="text/javascript" src="{!! asset('camera/html5shiv.js')!!}"></script>
-    <script type="text/javascript" src="{!! asset('camera/jpeg_camera_with_dependencies.min.js')!!}"></script>
-    <script type="text/javascript" src="{!! asset('camera/validacao.js')!!}"></script>
+    <script type="text/javascript" src="{!! asset('js/sweet-alert.min.js')!!}"></script>
+    {{--<script type="text/javascript" src="{!! asset('camera/respond.min.js')!!}"></script>--}}
+    {{--<script type="text/javascript" src="{!! asset('camera/html5shiv.js')!!}"></script>--}}
+    {{--<script type="text/javascript" src="{!! asset('camera/jpeg_camera_with_dependencies.min.js')!!}"></script>--}}
+    {{--<script type="text/javascript" src="{!! asset('camera/validacao.js')!!}"></script>--}}
 
-    {{--<script src="../assets/js/camera/respond.min.js" type="text/javascript"></script>--}}
-    {{--<script src="../assets/js/camera/html5shiv.js" type="text/javascript"></script>--}}
-    {{--<script src="../assets/js/camera/jpeg_camera_with_dependencies.min.js" type="text/javascript"></script>--}}
-    {{--<script src="../assets/js/validacao.js"></script>--}}
-
-    {{--<script type="text/javascript" src="{!! asset('js/custom.js')!!}"></script>--}}
 
     <script type="text/javascript">
 
         $(document).ready(function() {
+            /*Fotografia*/
             $('#openModal').on('click',function () {
                 $('#modalFoto').modal({
                     show: true,
@@ -321,7 +338,72 @@ use App\Disciplina;
 //                    shutter_mp3_url: "jpeg_camera/shutter.mp3",
 //                    swf_url: "jpeg_camera/jpeg_camera.swf"
                 };
-                var camera = new JpegCamera("#FotoCam", options);
+//                var camera = new JpegCamera("#FotoCam", options);
+            });
+
+            /*Inputs*/
+
+            $("input").on('keyup',function() {
+                if ($(this).length > 0) {
+                    $(this).css({"border-bottom": "1px solid #a0a2a6"});
+                }
+            });
+            $("input#dataN").on('change',function() {
+                if ($(this).length > 0) {
+                    $(this).css({"border-bottom": "1px solid #a0a2a6"});
+                }
+            });
+
+            $('#btnNext').click(function () {
+                var ctl = true;
+                var apelido = $('#apelido').val().trim();
+                var nome = $('#name').val().trim();
+                var natulidade = $('#naturalidade').val().trim();
+                var numBi = $('#numBi').val().trim();
+                var residencia = $('#residencia').val().trim();
+                var contacto = $('#contacto').val().trim();
+                var dataNas = $('#dataN').val().trim();
+                if(apelido ===''){
+                    $("input#apelido").css({"border-bottom": "1px solid #EE6464"});
+                    ctl =false;
+                }
+                if(nome ===''){
+                    $("input#name").css({"border-bottom": "1px solid #EE6464"});
+                    ctl =false;
+                }
+                if(natulidade ===''){
+                    $("input#naturalidade").css({"border-bottom": "1px solid #EE6464"});
+                    ctl =false;
+                }
+                if(numBi ===''){
+                    $("input#numBi").css({"border-bottom": "1px solid #EE6464"});
+                    ctl =false;
+                }
+                if(residencia ===''){
+                    $("input#residencia").css({"border-bottom": "1px solid #EE6464"});
+                    ctl =false;
+                }
+                if(contacto ===''){
+                    $("input#contacto").css({"border-bottom": "1px solid #EE6464"});
+                    ctl =false;
+                }
+                if(contacto ===''){
+                    $("input#contacto").css({"border-bottom": "1px solid #EE6464"});
+                    ctl =false;
+                }
+                if(dataNas ===''){
+                    $("input#dataN").css({"border-bottom": "1px solid #EE6464"});
+                    ctl =false;
+                }
+
+                if(ctl === true) {
+                    $('#Kar').carousel(1);
+                }else{
+                    $('#modalErro').modal({
+                        show: true,
+                        backdrop: "static"
+                    });
+                }
             });
 
             $('#check2').change(function () {
@@ -369,7 +451,7 @@ use App\Disciplina;
                 };
                 reader.readAsDataURL(this.files[0]);
             });
-//
+
             $('#btnSendImage').on('click', function (ev) {
                 $uploadCrop.croppie('result', {
                     type: 'canvas',

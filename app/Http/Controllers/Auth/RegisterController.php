@@ -42,11 +42,22 @@ class RegisterController extends Controller{
     }
 
     protected function validator(array $data){
-        return Validator::make($data, [
-            'name' => 'required|string|max:255',
-//            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
+
+        if($data['email']==''){
+            $validate = Validator::make($data, [
+                'apelido' => 'required|string|max:255',
+                'name' => 'required|string|max:255',
+                'password' => 'required|string|min:6|confirmed',
+            ]);
+        }else{
+            $validate = Validator::make($data, [
+                'apelido' => 'required|string|max:255',
+                'name' => 'required|string|max:255',
+                'email' => 'required|string|email|max:255|unique:users',
+                'password' => 'required|string|min:6|confirmed',
+            ]);
+        }
+        return $validate;
     }
 
     private function criarEmail($nome, $apelido,$id){
@@ -61,12 +72,12 @@ class RegisterController extends Controller{
     }
     protected function create(array $data){
 
-        $id = $data['id'];
+//        $id = $data['id'];
         $apelido = $data['apelido'];
         $nome =$data['name'];
         $email = $data['email'];
         if($email == ''){
-            $email = $this->criarEmail($nome,$apelido,$id);
+            $email = $this->criarEmail($nome,$apelido,$data['id']);
         }
         $user =  User::create(['username' => $data['name'], 'email' => $email, 'password' => bcrypt($data['password']), 'perfil' => 'aluno', 'foto' => 'foto_'.$data['password'].'.jpg']);
         $idUser = $user->id;
@@ -79,7 +90,6 @@ class RegisterController extends Controller{
             $idEncarregado = $encarregado->id;
         }
 
-
         $contacto = new Contacto();
         $contacto = $contacto->create(['numero'=>$data['numero'], 'email'=>$email]);
         $idContacto = $contacto->id;
@@ -89,14 +99,14 @@ class RegisterController extends Controller{
         $idAluno = $aluno->id;
 
         $inscricao = new Inscricao();
-        if($data['numDis']==1){
-            $inscricao->create(['idAluno'=>$idAluno,'idDisciplina'=>$data['disciplina1'],'estado'=>'pre-inscrito']);
-        }else {
+//        if($data['numDis']==1){
+//            $inscricao->create(['idAluno'=>$idAluno,'idDisciplina'=>$data['disciplina1'],'estado'=>'pre-inscrito']);
+//        }else {
             for ($i = 0; $i < $data['numDis']; $i++) {
                 $idDisciplina =$data['disciplina'.($i+1)];
                 $inscricao->create(['idAluno' => $idAluno, 'idDisciplina' =>$idDisciplina,'estado'=>'pre-inscrito']);
             }
-        }
+//        }
         return $user;
     }
 

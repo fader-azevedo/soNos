@@ -263,7 +263,7 @@ use App\Disciplina;
         <div class="modal-content">
             <div class="modal-body">
                 <h3 class="center">
-                    <label class="btn btn-info" id="btnUpload" for="imgUpoad">upload <i class="fa fa-file-image-o"></i></label>
+                    <label class="btn btn-info" id="btnUpload" for="imgUpoad">Upload <i class="fa fa-file-image-o"></i></label>
                     <label class="btn btn-info" id="btnCamera">Camera <i class="fa fa-camera"></i></label>
                 </h3>
                 <input type="file"  id="imgUpoad">
@@ -288,20 +288,20 @@ use App\Disciplina;
     </div>
 </div>
 <div class="modal fade " id="modalErro">
-    <div class="modal-dialog box box-danger" style="width: 30%; top: 220px">
-        <div class="modal-content ">
+    <div class="modal-dialog box box-danger" style="width: 30%; top: 220px;">
+        <div class="modal-content" style="border-radius: 6px;">
             <div class="modal-body center">
                 <div class="container center">
+                    {{--<i style="color: #e78473" class="zmdi zmdi-alert-triangle zmdi-hc-5x"></i>--}}
                     <i style="color: #e78473" class="zmdi zmdi-alert-triangle zmdi-hc-5x"></i>
                 </div>
-                <h5 style="color: #e78473; margin: 10px" class="center">Por favor, preenche todos campos obrigatorios</h5>
+                <h5 style="color: #e78473; margin: 10px" class="center">preenche todos campos obrigatórios</h5>
                 <p><i class="inputObrigatio">*</i>&nbsp; Campo Obrigatório</p>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Esta Bem</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Est Bem</button>
             </div>
         </div>
     </div>
 </div>
-
 
 @endsection
 
@@ -310,7 +310,7 @@ use App\Disciplina;
     {{--<script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.date.extensions.js')!!}"></script>--}}
     {{--<script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.extensions.js')!!}"></script>--}}
     <script type="text/javascript" src="{!! asset('croppie/croppie.js')!!}"></script>
-    <script type="text/javascript" src="{!! asset('js/sweet-alert.min.js')!!}"></script>
+    {{--<script type="text/javascript" src="{!! asset('js/sweet-alert.min.js')!!}"></script>--}}
     {{--<script type="text/javascript" src="{!! asset('camera/respond.min.js')!!}"></script>--}}
     {{--<script type="text/javascript" src="{!! asset('camera/html5shiv.js')!!}"></script>--}}
     {{--<script type="text/javascript" src="{!! asset('camera/jpeg_camera_with_dependencies.min.js')!!}"></script>--}}

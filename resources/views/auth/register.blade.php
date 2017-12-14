@@ -259,22 +259,24 @@ use App\Disciplina;
 </div>
 
 <div class="modal fade" id="modalFoto">
-    <div class="modal-dialog" style="width: 30%">
-        <div class="modal-content">
+    <div class="modal-dialog box box-info" style="width: 30%">
+        <div class="modal-content" style="border-radius: 6px;">
             <div class="modal-body">
-                <h3 class="center">
+                <h4 class="center">
                     <label class="btn btn-info" id="btnUpload" for="imgUpoad">Upload <i class="fa fa-file-image-o"></i></label>
                     <label class="btn btn-info" id="btnCamera">Camera <i class="fa fa-camera"></i></label>
-                </h3>
+                </h4>
                 <input type="file"  id="imgUpoad">
                 <div id="karFoto" class="carousel slide" data-ride="carousel" data-interval="false">
-                    <div class="carousel-inner" style="height: 250px">
+                    <div class="carousel-inner" style="height: 250px;">
                         <div class="item active">
-                            <div id="upload-demo" class="center" style="width:350px; margin: auto"></div>
+                            <div id="upload-demo" class="center" style="width:350px; margin: auto;"></div>
                         </div>
                         <div class="item">
-                            <div id="FotoCam" class="center" style="width:350px; margin: auto">
-                                <img  height="230" width="320" src="" id="foto-cliente"  class="img-rounded">
+                            <div class="row" id="FotoCam" style="padding-left: 35px;" >
+                                <video autoplay style="width: 300px; margin: auto; position: absolute;border-radius: 6px;"></video>
+                                <img id="fotoWebCam" class="img-rounded" style="position: absolute;" width="120" height="90">
+                                <canvas style="display:none; "></canvas>
                             </div>
                         </div>
                     </div>
@@ -292,7 +294,6 @@ use App\Disciplina;
         <div class="modal-content" style="border-radius: 6px;">
             <div class="modal-body center">
                 <div class="container center">
-                    {{--<i style="color: #e78473" class="zmdi zmdi-alert-triangle zmdi-hc-5x"></i>--}}
                     <i style="color: #e78473" class="zmdi zmdi-alert-triangle zmdi-hc-5x"></i>
                 </div>
                 <h5 style="color: #e78473; margin: 10px" class="center">preenche todos campos obrigatórios</h5>
@@ -310,17 +311,12 @@ use App\Disciplina;
     {{--<script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.date.extensions.js')!!}"></script>--}}
     {{--<script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.extensions.js')!!}"></script>--}}
     <script type="text/javascript" src="{!! asset('croppie/croppie.js')!!}"></script>
-    {{--<script type="text/javascript" src="{!! asset('js/sweet-alert.min.js')!!}"></script>--}}
-    {{--<script type="text/javascript" src="{!! asset('camera/respond.min.js')!!}"></script>--}}
-    {{--<script type="text/javascript" src="{!! asset('camera/html5shiv.js')!!}"></script>--}}
-    {{--<script type="text/javascript" src="{!! asset('camera/jpeg_camera_with_dependencies.min.js')!!}"></script>--}}
-    {{--<script type="text/javascript" src="{!! asset('camera/validacao.js')!!}"></script>--}}
+
 
 
     <script type="text/javascript">
 
         $(document).ready(function() {
-            /*Fotografia*/
             $('#openModal').on('click',function () {
                 $('#modalFoto').modal({
                     show: true,
@@ -333,12 +329,7 @@ use App\Disciplina;
             });
             $('#btnCamera').click(function () {
                 $('#karFoto').carousel(1);
-                var options = {
-//                    shutter_ogg_url: "jpeg_camera/shutter.ogg",
-//                    shutter_mp3_url: "jpeg_camera/shutter.mp3",
-//                    swf_url: "jpeg_camera/jpeg_camera.swf"
-                };
-//                var camera = new JpegCamera("#FotoCam", options);
+                camera();
             });
 
             /*Inputs*/
@@ -427,16 +418,17 @@ use App\Disciplina;
             document.getElementById('password-confirm').value = password;
             document.getElementById('id').value = lastId+1;
 
+            //upload de imagem
             $uploadCrop = $('#upload-demo').croppie({
                 enableExif: true,
                 viewport: {
                     width: 150,
                     height: 150
-//                    type: 'square'
+//                    type: 'circle'
                 },
                 boundary: {
                     width: 350,
-                    height: 200
+                    height: 200,
                 }
             });
             var reader = new FileReader();
@@ -469,6 +461,31 @@ use App\Disciplina;
                     });
                 });
             });
+
+
+            function camera() {
+                var video = document.querySelector('video');
+                var canvas = document.querySelector('canvas');
+                var ctx = canvas.getContext('2d');
+                var localMediaStream = null;
+
+                var errorCallback = function (e) {
+                    console.log('Rejected',e);
+                };
+
+                function snapshot() {
+                    if (localMediaStream) {
+                        ctx.drawImage(video, 0, 0,340,180);
+                        document.getElementById('fotoWebCam').src = canvas.toDataURL('image/png');
+                    }
+                }
+
+                video.addEventListener('click', snapshot, false);
+                navigator.getUserMedia({video: true}, function(stream) {
+                    video.src = window.URL.createObjectURL(stream);
+                    localMediaStream = stream;
+                }, errorCallback);
+            }
         });
     </script>
 @endsection

@@ -329,7 +329,7 @@ use App\Disciplina;
             });
             $('#btnCamera').click(function () {
                 $('#karFoto').carousel(1);
-                camera();
+                openWebCam();
             });
 
             /*Inputs*/
@@ -445,46 +445,54 @@ use App\Disciplina;
             });
 
             $('#btnSendImage').on('click', function (ev) {
-                $uploadCrop.croppie('result', {
-                    type: 'canvas',
-                    size: 'viewport'
-                }).then(function (resp) {
-
+                var index = $('#karFoto .active').index();
+                if(index === 0) {
+                    $uploadCrop.croppie('result', {
+                        type: 'canvas',
+                        size: 'viewport'
+                    }).then(function (resp) {
+                        $.ajax({
+                            url: "api/criarFoto",
+                            type: "POST",
+                            data: {"image": resp, "codigo": password},
+                            success: function () {
+                                var html = '<img class="img-rounded" src="' + resp + '" />';
+                                $("#uploadLast").html(html);
+                            }
+                        });
+                    });
+                }else {
                     $.ajax({
                         url: "api/criarFoto",
                         type: "POST",
-                        data: {"image":resp,"codigo":password},
+                        data: {"image": snapshot(), "codigo": password},
                         success: function () {
-                            var html = '<img class="img-rounded" src="' + resp + '" />';
+                            var html = '<img class="img-rounded" src="' + snapshot() + '" />';
                             $("#uploadLast").html(html);
                         }
                     });
-                });
+                }
             });
 
+            /*WebCam*/
+            var errorCallback = function (e) {console.log('Rejeitado',e);};
+            var canvas = document.querySelector('canvas');
+            var localMediaStream = null;
+            var ctx = canvas.getContext('2d');
+            var video = document.querySelector('video');
 
-            function camera() {
-                var video = document.querySelector('video');
-                var canvas = document.querySelector('canvas');
-                var ctx = canvas.getContext('2d');
-                var localMediaStream = null;
-
-                var errorCallback = function (e) {
-                    console.log('Rejected',e);
-                };
-
-                function snapshot() {
-                    if (localMediaStream) {
-                        ctx.drawImage(video, 0, 0,340,180);
-                        document.getElementById('fotoWebCam').src = canvas.toDataURL('image/png');
-                    }
-                }
-
+            function openWebCam() {
                 video.addEventListener('click', snapshot, false);
                 navigator.getUserMedia({video: true}, function(stream) {
                     video.src = window.URL.createObjectURL(stream);
                     localMediaStream = stream;
                 }, errorCallback);
+            }
+            function snapshot() {
+                if (localMediaStream) {
+                    ctx.drawImage(video, 0, 0,340,180);
+                    return document.getElementById('fotoWebCam').src = canvas.toDataURL('image/png');
+                }
             }
         });
     </script>

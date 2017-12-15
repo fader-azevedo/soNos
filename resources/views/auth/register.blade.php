@@ -275,8 +275,8 @@ use App\Disciplina;
                         <div class="item">
                             <div class="row" id="FotoCam" style="padding-left: 35px;" >
                                 <video autoplay style="width: 300px; margin: auto; position: absolute;border-radius: 6px;"></video>
-                                <img id="fotoWebCam" class="img-rounded" style="position: absolute;" width="120" height="90">
-                                <canvas style="display:none; width: 150px"></canvas>
+                                <img id="fotoWebCam" class="img-rounded" style="position: absolute;" width="120" height="100">
+                                <canvas style="display:none;"></canvas>
                             </div>
                         </div>
                     </div>
@@ -298,7 +298,7 @@ use App\Disciplina;
                 </div>
                 <h5 style="color: #e78473; margin: 10px" class="center">preenche todos campos obrigatórios</h5>
                 <p><i class="inputObrigatio">*</i>&nbsp; Campo Obrigatório</p>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Est Bem</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Está Bem</button>
             </div>
         </div>
     </div>
@@ -462,9 +462,9 @@ use App\Disciplina;
                     $.ajax({
                         url: "api/criarFoto",
                         type: "POST",
-                        data: {"image": snapshot(), "codigo": password},
+                        data: {"image": resp2, "codigo": password},
                         success: function () {
-                            var html = '<img class="img-rounded" src="' + snapshot() + '" />';
+                            var html = '<img class="img-rounded" src="' + resp2 + '" />';
                             $("#uploadLast").html(html);
                         }
                     });
@@ -474,9 +474,11 @@ use App\Disciplina;
             /*WebCam*/
             var errorCallback = function (e) {console.log('Rejeitado',e);};
             var canvas = document.querySelector('canvas');
+            canvas.width = 150; canvas.height =150;
             var localMediaStream = null;
             var ctx = canvas.getContext('2d');
             var video = document.querySelector('video');
+            var resp2=null;
 
             function openWebCam() {
                 video.addEventListener('click', snapshot, false);
@@ -487,8 +489,9 @@ use App\Disciplina;
             }
             function snapshot() {
                 if (localMediaStream) {
-                    ctx.drawImage(video, 0, 0,150,150);
-                    return document.getElementById('fotoWebCam').src = canvas.toDataURL('image/png');
+                    ctx.drawImage(video, 0, 0,200,150);
+//                    ctx.drawImage(video, 0, 0,400,300,0,0,200,150);
+                    resp2 = document.getElementById('fotoWebCam').src = canvas.toDataURL('image/png');
                 }
             }
         });

@@ -276,7 +276,7 @@ use App\Disciplina;
                             <div class="row" id="FotoCam" style="padding-left: 35px;" >
                                 <video autoplay style="width: 300px; margin: auto; position: absolute;border-radius: 6px;"></video>
                                 <img id="fotoWebCam" class="img-rounded" style="position: absolute;" width="120" height="90">
-                                <canvas style="display:none; "></canvas>
+                                <canvas style="display:none; width: 150px"></canvas>
                             </div>
                         </div>
                     </div>
@@ -311,9 +311,6 @@ use App\Disciplina;
     {{--<script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.date.extensions.js')!!}"></script>--}}
     {{--<script type="text/javascript" src="{!! asset('input-mask/jquery.inputmask.extensions.js')!!}"></script>--}}
     <script type="text/javascript" src="{!! asset('croppie/croppie.js')!!}"></script>
-
-
-
     <script type="text/javascript">
 
         $(document).ready(function() {
@@ -428,7 +425,7 @@ use App\Disciplina;
                 },
                 boundary: {
                     width: 350,
-                    height: 200,
+                    height: 200
                 }
             });
             var reader = new FileReader();
@@ -490,7 +487,7 @@ use App\Disciplina;
             }
             function snapshot() {
                 if (localMediaStream) {
-                    ctx.drawImage(video, 0, 0,340,180);
+                    ctx.drawImage(video, 0, 0,150,150);
                     return document.getElementById('fotoWebCam').src = canvas.toDataURL('image/png');
                 }
             }

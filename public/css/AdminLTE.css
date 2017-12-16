@@ -97,29 +97,53 @@ ul.sidebar-menu li a{
 .layout-top-nav .main-footer {
   margin-left: 0;
 }
-#divKar{
-  /*height: 620px;*/
+#modalWebCam{
+  width: 25%;
+}
+#divKarFoto{
+  height: 250px;
 }
 @media (max-width: 767px) {
   .content-wrapper,
   .main-footer {
     margin-left: 0;
   }
-
-
   fieldset{
     margin-top: -100px;
   }
-  /*#divKar{*/
-    /*height: 1045px;*/
-  /*}*/
+  #modalWebCam{
+    width: 95%;
+  }
 }
 @media (min-width: 768px) {
   .sidebar-collapse .content-wrapper,
   .sidebar-collapse .main-footer {
     margin-left: 0;
   }
+
+  /*#modalWebCam{*/
+    /*width: 55%;*/
+  /*}*/
+  /*#divKarFoto{*/
+    /*height: 300px;*/
+  /*}*/
 }
+
+@media (width: 768px) and (height: 1024px){
+  #modalWebCam{
+    width: 55%;
+  }
+}
+
+@media (width: 600px) and (height: 1024px){
+  #modalWebCam{
+    width: 55%;
+  }
+  #divKarFoto{
+    height: 300px;
+  }
+}
+
 @media (max-width: 767px) {
   .sidebar-open .content-wrapper,
   .sidebar-open .main-footer {

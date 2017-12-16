@@ -365,8 +365,9 @@
         bw = self.options.boundary.width;
         bh = self.options.boundary.height;
         css(boundary, {
-            width: (bw + (isNaN(bw) ? '' : 'px')),
-            height: (bh + (isNaN(bh) ? '' : 'px')),
+            // width: (bw + (isNaN(bw) ? '' : 'px')),
+            width: (bw + (isNaN(bw) ? '' : '%')),
+            height: (bh + (isNaN(bh) ? '' : 'px'))
         });
 
         addClass(viewport, 'cr-viewport');

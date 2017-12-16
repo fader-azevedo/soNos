@@ -259,7 +259,7 @@ use App\Disciplina;
 </div>
 
 <div class="modal fade" id="modalFoto">
-    <div class="modal-dialog box box-info" style="width: 30%">
+    <div class="modal-dialog box box-info" id="modalWebCam">
         <div class="modal-content" style="border-radius: 6px;">
             <div class="modal-body">
                 <h4 class="center">
@@ -268,14 +268,15 @@ use App\Disciplina;
                 </h4>
                 <input type="file"  id="imgUpoad">
                 <div id="karFoto" class="carousel slide" data-ride="carousel" data-interval="false">
-                    <div class="carousel-inner" style="height: 250px;">
-                        <div class="item active">
-                            <div id="upload-demo" class="center" style="width:350px; margin: auto;"></div>
-                        </div>
+                    <div class="carousel-inner" id="divKarFoto">
                         <div class="item">
-                            <div class="row" id="FotoCam" style="padding-left: 35px;" >
-                                <video autoplay style="width: 300px; margin: auto; position: absolute;border-radius: 6px;"></video>
-                                <img id="fotoWebCam" class="img-rounded" style="position: absolute;" width="120" height="100">
+                            <div id="upload-demo"></div>
+                        </div>
+                        <div class="item active">
+                            <div class="" id="FotoCam">
+                                <video autoplay style="width: 100%;border-radius: 6px; position: absolute"></video>
+                                <img id="fotoWebCam" class="img-rounded" style="position: absolute; border: none" >
+                                {{--width="120" height="110"--}}
                                 <canvas style="display:none;"></canvas>
                             </div>
                         </div>
@@ -314,6 +315,22 @@ use App\Disciplina;
     <script type="text/javascript">
 
         $(document).ready(function() {
+
+            const mq = window.matchMedia("(max-width: 500px)");
+            $uploadCrop = $('#upload-demo').croppie({
+                enableExif: true,
+                viewport: {
+                    width: 150,
+                    height: 150
+//                    type: 'circle'
+                },
+                boundary: {
+                    width: 100,
+                    height: 200
+                }
+            });
+
+
             $('#openModal').on('click',function () {
                 $('#modalFoto').modal({
                     show: true,
@@ -325,8 +342,8 @@ use App\Disciplina;
                 $('#karFoto').carousel(0);
             });
             $('#btnCamera').click(function () {
-                $('#karFoto').carousel(1);
                 openWebCam();
+                $('#karFoto').carousel(1);
             });
 
             /*Inputs*/
@@ -416,18 +433,7 @@ use App\Disciplina;
             document.getElementById('id').value = lastId+1;
 
             //upload de imagem
-            $uploadCrop = $('#upload-demo').croppie({
-                enableExif: true,
-                viewport: {
-                    width: 150,
-                    height: 150
-//                    type: 'circle'
-                },
-                boundary: {
-                    width: 350,
-                    height: 200
-                }
-            });
+
             var reader = new FileReader();
 
             $('#imgUpoad').on('change', function () {
@@ -490,10 +496,11 @@ use App\Disciplina;
             function snapshot() {
                 if (localMediaStream) {
                     ctx.drawImage(video, 0, 0,200,150);
-//                    ctx.drawImage(video, 0, 0,400,300,0,0,200,150);
                     resp2 = document.getElementById('fotoWebCam').src = canvas.toDataURL('image/png');
+                    video.setAttribute('poster',resp2);
                 }
             }
+            openWebCam();
         });
     </script>
 @endsection

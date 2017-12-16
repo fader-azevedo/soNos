@@ -276,7 +276,9 @@ use App\Disciplina;
                             <div class="" id="FotoCam">
                                 <video autoplay style="width: 100%;border-radius: 6px; position: absolute"></video>
                                 <img id="fotoWebCam" class="img-rounded" style="position: absolute; border: none" >
-                                {{--width="120" height="110"--}}
+                                <a class="no-border" id="btnTakePik"
+                                   style="position:absolute; background-color: red; top: 180px; left: 150px;
+                                   border-radius: 100px">&nbsp;<i style="color: whitesmoke" class="zmdi zmdi-camera-switch zmdi-hc-2x"></i></a>
                                 <canvas style="display:none;"></canvas>
                             </div>
                         </div>
@@ -496,12 +498,18 @@ use App\Disciplina;
             function snapshot() {
                 if (localMediaStream) {
                     ctx.drawImage(video, 0, 0,200,150);
+                    document.getElementById('fotoWebCam').setAttribute('width','100');
+                    document.getElementById('fotoWebCam').setAttribute('height','100');
                     resp2 = document.getElementById('fotoWebCam').src = canvas.toDataURL('image/png');
                     video.setAttribute('poster',resp2);
                 }
             }
-            openWebCam();
+            $('#btnTakePik').click(function () {
+               snapshot();
+            });
+//            openWebCam();
         });
     </script>
 @endsection
 
+{{--width="120" height="110"--}}

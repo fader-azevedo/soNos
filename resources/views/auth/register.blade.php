@@ -1,13 +1,16 @@
 <?php
-use App\User;
+use App\Aluno;
 use App\Disciplina;
-    $lastId = User::all()->count();
+    $lastId = Aluno::query()->max('id');
     $disciplinas = Disciplina::all();
 ?>
+
 @extends('template.index')
 
 @section('filhote')
 <div class="container">
+    {{--{{ $lastId+1}}--}}
+
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="box box-info">
@@ -428,14 +431,13 @@ use App\Disciplina;
             if (numMes < 10) {
                 numMes = '0' + numMes;
             }
-            var lastId = JSON.parse("{{json_encode($lastId)}}");
+            var lastId = JSON.parse("{{json_encode($lastId)}}")+1;
             var password = ano + '00' + lastId + '' + numMes;
             document.getElementById('password').value = password;
             document.getElementById('password-confirm').value = password;
-            document.getElementById('id').value = lastId+1;
+            document.getElementById('id').value = lastId;
 
             //upload de imagem
-
             var reader = new FileReader();
 
             $('#imgUpoad').on('change', function () {

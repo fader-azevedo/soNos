@@ -1647,7 +1647,7 @@ PANELS CONFIGURATIONS
 }
 .stock .stock-chart #chart {
     height: 10.7em;
-    background: url(http://i.imgbox.com/abmuNQx2) center bottom no-repeat;
+    /*background: url(http://i.imgbox.com/abmuNQx2) center bottom no-repeat;*/
 }
 .stock .current-price {
   background: #1d2122;

@@ -24,7 +24,7 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('css/bootstrap.css') !!}"/>
     <link rel="stylesheet" type="text/css" href="{!! asset('font-awesome/css/font-awesome.css')!!}"  />
     <link rel="stylesheet" type="text/css" href="{!! asset('ionicons/css/ionicons.min.css')!!}"  />
-    <link rel="stylesheet" type="text/css" href="{!! asset('js/gritter/css/jquery.gritter.css')!!}" />
+    {{--<link rel="stylesheet" type="text/css" href="{!! asset('js/gritter/css/jquery.gritter.css')!!}" />--}}
     <link rel="stylesheet" type="text/css" href="{!! asset('lineicons/style.css')!!}"/>
 
     <link rel="stylesheet" type="text/css" href="{!! asset('css/style.css')!!}" />

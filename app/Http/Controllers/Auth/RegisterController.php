@@ -66,18 +66,14 @@ class RegisterController extends Controller{
             $nome = explode(' ', $nome);
             $email = $nome[0] . '.' .$apelido .$id. '@sonos.mz';
         } else {
-            $email = $nome.'.'. $apelido.$id.'@sonoos.mz';
+            $email = $nome.'.'. $apelido.$id.'@sonos.mz';
         }
         return strtolower($email);
     }
     protected function create(array $data){
-
-//        $id = $data['id'];
-        $apelido = $data['apelido'];
-        $nome =$data['name'];
         $email = $data['email'];
         if($email == ''){
-            $email = $this->criarEmail($nome,$apelido,$data['id']);
+            $email = $this->criarEmail($data['name'],$data['apelido'],$data['id']);
         }
         $user =  User::create(['username' => $data['name'], 'email' => $email, 'password' => bcrypt($data['password']), 'perfil' => 'aluno', 'foto' => 'foto_'.$data['password'].'.jpg']);
         $idUser = $user->id;
@@ -99,14 +95,10 @@ class RegisterController extends Controller{
         $idAluno = $aluno->id;
 
         $inscricao = new Inscricao();
-//        if($data['numDis']==1){
-//            $inscricao->create(['idAluno'=>$idAluno,'idDisciplina'=>$data['disciplina1'],'estado'=>'pre-inscrito']);
-//        }else {
-            for ($i = 0; $i < $data['numDis']; $i++) {
-                $idDisciplina =$data['disciplina'.($i+1)];
-                $inscricao->create(['idAluno' => $idAluno, 'idDisciplina' =>$idDisciplina,'estado'=>'pre-inscrito']);
-            }
-//        }
+        for ($i = 0; $i < $data['numDis']; $i++) {
+            $idDisciplina =$data['disciplina'.($i+1)];
+            $inscricao->create(['idAluno' => $idAluno, 'idDisciplina' =>$idDisciplina,'estado'=>'pre-inscrito']);
+        }
         return $user;
     }
 

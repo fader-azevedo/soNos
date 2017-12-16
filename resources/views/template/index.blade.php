@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Gestão de Mensalidades</title>
+    <title>Só Ciências Só Nós</title>
 
     <link rel="stylesheet" type="text/css" href="{!! asset('css/bootstrap.css') !!}"/>
     <link rel="stylesheet" type="text/css" href="{!! asset('font-awesome/css/font-awesome.css')!!}"  />

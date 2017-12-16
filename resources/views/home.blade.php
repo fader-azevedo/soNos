@@ -1,7 +1,14 @@
 @extends('template.app')
 
-@section('menu')
+@section('navbar')
+    @if(Auth::user()->perfil == 'admin')
+        @include('admin.adminNav')
+    @else
+        @include('aluno.alunoNav')
+    @endif
+@endsection
 
+@section('menu')
     @if(Auth::user()->perfil == 'admin')
         @include('admin.adminMenu')
     @else

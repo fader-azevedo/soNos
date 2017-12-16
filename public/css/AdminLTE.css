@@ -97,6 +97,9 @@ ul.sidebar-menu li a{
 .layout-top-nav .main-footer {
   margin-left: 0;
 }
+a{
+  cursor: pointer;
+}
 #modalWebCam{
   width: 25%;
   margin: auto;

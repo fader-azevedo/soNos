@@ -9,12 +9,11 @@ use App\Inscricao;
             <span class="label label-warning">{{$numPrIns}}</span>
         </a>
         <ul class="dropdown-menu">
-            <li class="header"></li>
+            <li class="header center" style="background-color:#f3a323; color: white"><h6>Notificaçõe</h6></li>
             <li>
-                <!-- inner menu: contains the actual data -->
                 <ul class="menu">
                     <li>
-                        <a href="#">
+                        <a>
                             <i class="fa fa-warning text-yellow">{{$numPrIns}} Pre-Inscrições</i>
                         </a>
                     </li>
@@ -27,24 +26,24 @@ use App\Inscricao;
     <li class="dropdown user user-menu">
         <a class="dropdown-toggle no-border" data-toggle="dropdown">
             <img src="{{asset('img/aluno.png')}}" class="user-image" alt="User Image">
-            <span class="hidden-xs">Nome</span>
+            <span class="hidden-xs">{{Auth::user()->username}}</span>
         </a>
         <ul class="dropdown-menu">
             <!-- User image -->
             <li class="user-header">
                 <img src="{{asset('img/logo1.jpg')}}" class="img-circle" alt="">
                 <p style="color: #3c3f41">
-                    So Nos
+                    {{Auth::user()->username}}
                     <small></small>
                 </p>
             </li>
             <!-- Menu Footer-->
             <li class="user-footer">
                 <div class="pull-left">
-                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    <a href="#" class="btn btn-default ">Profile</a>
                 </div>
                 <div class="pull-right">
-                    <a class="btn btn-default btn-flat" data-toggle="modal" href="#myModalLogOut">Sair</a>
+                    <a class="btn btn-default" data-toggle="modal" href="#myModalLogOut">Sair</a>
                 </div>
             </li>
         </ul>

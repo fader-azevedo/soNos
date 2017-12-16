@@ -269,16 +269,16 @@ use App\Disciplina;
                 <input type="file"  id="imgUpoad">
                 <div id="karFoto" class="carousel slide" data-ride="carousel" data-interval="false">
                     <div class="carousel-inner" id="divKarFoto">
-                        <div class="item">
+                        <div class="item active">
                             <div id="upload-demo"></div>
                         </div>
-                        <div class="item active">
+                        <div class="item">
                             <div class="" id="FotoCam">
                                 <video autoplay style="width: 100%;border-radius: 6px; position: absolute"></video>
                                 <img id="fotoWebCam" class="img-rounded" style="position: absolute; border: none" >
-                                <a class="no-border" id="btnTakePik"
-                                   style="position:absolute; background-color: red; top: 180px; left: 150px;
-                                   border-radius: 100px">&nbsp;<i style="color: whitesmoke" class="zmdi zmdi-camera-switch zmdi-hc-2x"></i></a>
+                                <a class="no-border center blue" id="btnTakePik"
+                                   style="position:absolute; cursor: pointer; padding-top: 10px; width: 50px; height:50px;  top: 180px; left: 150px;
+                                   border-radius: 100px"><i style="color: whitesmoke" class="zmdi zmdi-camera-add zmdi-hc-2x"></i></a>
                                 <canvas style="display:none;"></canvas>
                             </div>
                         </div>

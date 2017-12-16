@@ -99,6 +99,7 @@ ul.sidebar-menu li a{
 }
 #modalWebCam{
   width: 25%;
+  margin: auto;
 }
 #divKarFoto{
   height: 250px;

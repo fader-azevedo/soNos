@@ -17,11 +17,6 @@
 @endsection
 
 @section('content')
-    {{--@if(Auth::user()->perfil == 'admin')--}}
-        {{--@include('admin.adminHome')--}}
-    {{--@else--}}
-        {{--@include('aluno.alunoHome')--}}
-    {{--@endif--}}
     @yield('conteudo')
 @endsection
 

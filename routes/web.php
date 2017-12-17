@@ -32,7 +32,7 @@ Route::group(['prefix'=>'mensalidade'], function (){
     Route::get('registar','MensalidadeController@registarMensalidade')->middleware(Mdw::class,'auth');
 });
 
-Route::get('/candidato','AlunoController@candidato')->name('candidato');
+Route::get('/candidato','AlunoController@candidato')->name('candidato')->middleware(Mdw::class,'auth');
 
 
     Route::get('aa', 'AlunoController@aa')->name('aa');

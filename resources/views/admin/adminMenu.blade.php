@@ -1,6 +1,6 @@
 
-    <li id="li-Inicio" class="treeview">
-        <a href="{{url('/')}}">
+    <li id="li-Inicio">
+        <a href="{{url('/home')}}">
             <i class="fa fa-home"></i>
             <span>Inicio</span>
         </a>

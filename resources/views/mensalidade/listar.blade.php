@@ -7,8 +7,9 @@
             <li class="active">Lista</li>
         </ol>
     </section>
+@endsection
 
-    @include('template.script')
+@section('scripts')
     <script>
         $('#li-Mensalidade').addClass('active');
         $('#li-ListarMensalidade').addClass('active');

@@ -102,3 +102,9 @@ use App\Turma,App\Inscricao,App\Disciplina;
         </section>
     </div>
 @endsection
+
+@section('scripts')
+    <script>
+        $('#li-Inicio').addClass('active');
+    </script>
+@endsection

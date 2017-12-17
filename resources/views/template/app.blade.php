@@ -336,7 +336,7 @@
             return dia+'-'+meses[mesIndex]+'-'+ano;
         }
     </script>
-    {{--@yield('scripts')--}}
+    @yield('scripts')
     {{--@yield('scripts2')--}}
     {{--<script src="{{ asset('js/app.js') }}"></script>--}}
 </body>

@@ -1,4 +1,6 @@
+
 <?php
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +19,20 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+/*Rotas de Admin*/
+
+//    Route::get('aa', 'AlunoController@aa')->name('aa');
+    Route::get('men/{user}', function (App\User $user){
+        if($user->perfil == 'admin'){
+            return view('aluno.alunoList',compact('user'));
+        }else{
+            return view('aluno.alunoList',compact('user'));
+        }
+    });

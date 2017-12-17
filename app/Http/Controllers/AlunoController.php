@@ -13,4 +13,8 @@ class AlunoController extends Controller{
         $imageName = $_POST['codigo'].'.jpg';
         file_put_contents(public_path().'\img\alunos\foto_'.$imageName, $data);
     }
+
+    public function aa(){
+        return view('aluno.alunoList');
+    }
 }

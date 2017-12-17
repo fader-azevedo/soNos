@@ -15,7 +15,7 @@
     </span>
         </a>
         <ul class="treeview-menu">
-            <li><a href="{{'/mensalidade/registar'}}"><i class="fa fa-pencil"></i> Registar Mensalidades</a></li>
+            <li id="li-RegistarMensalidade"><a href="{{'/mensalidade/registar'}}"><i class="fa fa-pencil"></i> Registar Mensalidades</a></li>
             <li id="li-ListarMensalidade"><a href="{{'/mensalidade'}}"><i class="fa fa-list"></i> Listar Mensalidades</a></li>
         </ul>
     </li>

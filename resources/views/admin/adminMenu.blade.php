@@ -1,12 +1,12 @@
 
-    <li class="treeview active">
+    <li id="li-Inicio" class="treeview">
         <a href="{{url('/')}}">
             <i class="fa fa-home"></i>
             <span>Inicio</span>
         </a>
     </li>
 
-    <li class="treeview">
+    <li id="li-Mensalidade" class="treeview">
         <a href="#">
             <i class="fa fa-money"></i>
             <span>Mensalidades</span>
@@ -16,7 +16,7 @@
         </a>
         <ul class="treeview-menu">
             <li><a href="{{'/mensalidade/registar'}}"><i class="fa fa-pencil"></i> Registar Mensalidades</a></li>
-            <li><a href="{{'/mensalidade'}}"><i class="fa fa-list"></i> Listar Mensalidades</a></li>
+            <li id="li-ListarMensalidade"><a href="{{'/mensalidade'}}"><i class="fa fa-list"></i> Listar Mensalidades</a></li>
         </ul>
     </li>
     <li class="treeview">

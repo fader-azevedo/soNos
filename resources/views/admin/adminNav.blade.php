@@ -40,10 +40,10 @@ use App\Inscricao;
             <!-- Menu Footer-->
             <li class="user-footer">
                 <div class="pull-left">
-                    <a href="#" class="btn btn-default ">Profile</a>
+                    <a class="btn btn-info">Perfil&nbsp;<i class="fa fa-user"></i></a>
                 </div>
                 <div class="pull-right">
-                    <a class="btn btn-default" data-toggle="modal" href="#myModalLogOut">Sair</a>
+                    <a class="btn btn-danger" data-toggle="modal" href="#myModalLogOut">&nbsp;Sair&nbsp;<i class="fa fa-sign-out"></i></a>
                 </div>
             </li>
         </ul>

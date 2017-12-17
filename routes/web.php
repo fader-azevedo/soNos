@@ -1,6 +1,6 @@
 
 <?php
-
+use App\Http\Middleware\Mdw;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,15 +26,24 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+Route::group(['prefix'=>'mensalidade'], function (){
+    Route::get('/','MensalidadeController@index')->middleware(Mdw::class,'auth');
+//    Route::get('registar','MensalidadeController@registarMensalidade');
+});
+
 /*Rotas de Admin*/
 
-//    Route::get('aa', 'AlunoController@aa')->name('aa');
+    Route::get('aa', 'AlunoController@aa')->name('aa');
+    Route::get('aa',function (){
+        return view('aluno.alunoList');
+    })->middleware(Mdw::class);
 
-$u = App\User::query()->find(1);
-    Route::get('men/{user?}', function (App\User $user){
-        if($user->perfil == 'admin'){
-            return view('aluno.alunoList',compact('user'));
-        }else{
-            return view('aluno.alunoList',compact('user'));
-        }
-    });
+//$u = App\User::query()->find(1);
+//    Route::get('men/{user?}', function (App\User $user){
+//        if($user->perfil == 'admin'){
+//            return view('aluno.alunoList',compact('user'));
+//        }else{
+//            return view('aluno.alunoList',compact('user'));
+//        }
+//    });

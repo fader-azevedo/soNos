@@ -108,7 +108,7 @@ use App\Turma,App\Inscricao,App\Disciplina;
 
             <div class="item">
                 <div class="row">
-                    <h1>Canditdatos</h1>
+                    <h1>Ainda Nao tenh Ideia</h1>
                 </div>
             </div>
         </div>

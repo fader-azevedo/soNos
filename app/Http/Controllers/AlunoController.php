@@ -17,4 +17,8 @@ class AlunoController extends Controller{
     public function aa(){
         return view('aluno.alunoList');
     }
+
+    public function candidato(){
+        return view('aluno.candidato');
+    }
 }

@@ -19,6 +19,13 @@
             <li id="li-ListarMensalidade"><a href="{{'/mensalidade'}}"><i class="fa fa-list"></i> Listar Mensalidades</a></li>
         </ul>
     </li>
+
+    <li id="li-Candidato">
+        <a href="{{url('/candidato')}}">
+            <i class="fa fa-users"></i>
+            <span>Candidatos</span>
+        </a>
+    </li>
     <li class="treeview">
         <a href="#">
             <i class="fa fa-users"></i>

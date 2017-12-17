@@ -19,7 +19,7 @@
 
 
 
-    <title>Gestão de Mensalidades</title>
+    <title>Só Ciência Só Nós</title>
 
     <link rel="stylesheet" type="text/css" href="{!! asset('css/bootstrap.css') !!}"/>
     <link rel="stylesheet" type="text/css" href="{!! asset('font-awesome/css/font-awesome.css')!!}"  />

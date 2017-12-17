@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Aluno;
+use App\Inscricao;
+
 class AlunoController extends Controller{
 
+    private $aluno;
     public function getFoto(){
         $data = $_POST['image'];
         list(, $data) = explode(';', $data);
@@ -19,6 +23,8 @@ class AlunoController extends Controller{
     }
 
     public function candidato(){
-        return view('aluno.candidato');
+        $candidato = Inscricao::query()->join('alunos','inscricaos.idAluno','=','alunos.id')
+            ->select('alunos.*')->distinct('idAluno')->where('estado','=','pre-inscrito')->get();
+        return view('aluno.candidato',compact('candidato'));
     }
 }

@@ -7,7 +7,7 @@
 
         <title>Só Ciência Só Nós</title>
         <link rel="stylesheet" type="text/css" href="{!! asset('fonts/fonts-Rel/css.css')!!}"/>
-
+        @include('template.css')
         <style>
             html, body {
                 background-color: #fff;
@@ -68,8 +68,8 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Pre-Inscrição</a>
+                        <a href="{{ route('login') }}">Login&nbsp;<i class="fa fa-user"></i></a>
+                        <a href="{{ route('register') }}">Pre-Inscrição&nbsp;<i class="fa fa-edit"></i></a>
                     @endauth
                 </div>
             @endif

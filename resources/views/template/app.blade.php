@@ -83,8 +83,8 @@
             <!-- Header Navbar: style can be found in header.less -->
             <div class="navbar navbar-fixed-top">
                 <!-- Sidebar toggle button-->
-                {{--<a style="border: none" href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">--}}
-                {{--</a>--}}
+                <a style="border: none" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                </a>
 
                 <div class="navbar-custom-menu">
                     @yield('navbar')

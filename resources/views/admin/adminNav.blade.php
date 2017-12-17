@@ -13,7 +13,7 @@ use App\Inscricao;
             <li>
                 <ul class="menu">
                     <li>
-                        <a href="{{url('/candidatos')}}" data-slide-to="1">
+                        <a href="{{url('/candidato')}}" data-slide-to="1">
                             <i class="fa fa-warning text-yellow">{{$numPrIns}} Pre-Inscrições</i>
                         </a>
                     </li>

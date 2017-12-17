@@ -23,8 +23,7 @@ class AlunoController extends Controller{
     }
 
     public function candidato(){
-        $candidato = Inscricao::query()->join('alunos','inscricaos.idAluno','=','alunos.id')
-            ->select('alunos.*')->distinct('idAluno')->where('estado','=','pre-inscrito')->get();
+        $candidato = Inscricao::query()->join('alunos','inscricaos.idAluno','=','alunos.id')->select('alunos.*')->distinct('idAluno')->where('estado','=','pre-inscrito')->get();
         return view('aluno.candidato',compact('candidato'));
     }
 }

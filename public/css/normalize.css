@@ -437,6 +437,7 @@ thead tr th{
   color: #222d32;
   border: 3px solid white;
   border-radius: 1px ;
+  cursor: pointer;
 }thead tr2 th{
   /*background-color: #f0408f;*/
   border-radius: 0;

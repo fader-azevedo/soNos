@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="77bd011e-7eac-43b4-9cf5-60ad60258165" name="Default" comment="redimensionamento d foto de aluno">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aluno.php" afterPath="$PROJECT_DIR$/app/Aluno.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AlunoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AlunoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/aluno/candidato.blade.php" afterPath="$PROJECT_DIR$/resources/views/aluno/candidato.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,20 +19,20 @@
       <file leaf-file-name="candidato.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/aluno/candidato.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="22" column="96" lean-forward="false" selection-start-line="22" selection-start-column="96" selection-end-line="22" selection-end-column="96" />
+            <state relative-caret-position="459">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
-                <element signature="e#1090#1096#1#HTML" expanded="true" />
-                <element signature="e#1213#1219#1#HTML" expanded="true" />
-                <marker date="1513546962858" expanded="true" signature="9:15" ph="..." />
-                <marker date="1513546962858" expanded="true" signature="26:36" ph="..." />
-                <marker date="1513546962858" expanded="true" signature="657:696" ph="..." />
-                <marker date="1513546962858" expanded="true" signature="796:805" ph="..." />
-                <marker date="1513546962858" expanded="true" signature="796:822" ph="..." />
-                <marker date="1513546962858" expanded="true" signature="856:865" ph="..." />
-                <marker date="1513546962858" expanded="true" signature="899:912" ph="..." />
-                <marker date="1513546962858" expanded="true" signature="1173:1180" ph="..." />
-                <marker date="1513546962858" expanded="true" signature="1335:1344" ph="..." />
+                <element signature="e#1085#1091#1#HTML" expanded="true" />
+                <element signature="e#1208#1214#1#HTML" expanded="true" />
+                <marker date="1513547087485" expanded="true" signature="9:15" ph="..." />
+                <marker date="1513547087485" expanded="true" signature="26:36" ph="..." />
+                <marker date="1513547087485" expanded="true" signature="657:691" ph="..." />
+                <marker date="1513547087485" expanded="true" signature="791:800" ph="..." />
+                <marker date="1513547087485" expanded="true" signature="791:817" ph="..." />
+                <marker date="1513547087485" expanded="true" signature="851:860" ph="..." />
+                <marker date="1513547087485" expanded="true" signature="894:907" ph="..." />
+                <marker date="1513547087485" expanded="true" signature="1168:1175" ph="..." />
+                <marker date="1513547087485" expanded="true" signature="1330:1339" ph="..." />
               </folding>
             </state>
           </provider>
@@ -127,7 +126,6 @@
         <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/public/css/app.css" />
         <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
         <option value="$PROJECT_DIR$/public/css/AdminLTE.css" />
         <option value="$PROJECT_DIR$/resources/views/aluno/alunoMenu.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/aluno/alunoHome.blade.php" />
@@ -150,6 +148,7 @@
         <option value="$PROJECT_DIR$/resources/views/admin/adminMenu.blade.php" />
         <option value="$PROJECT_DIR$/app/Aluno.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AlunoController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
         <option value="$PROJECT_DIR$/resources/views/aluno/candidato.blade.php" />
       </list>
     </option>
@@ -225,20 +224,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="soNos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="soNos" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -384,12 +369,12 @@
       <workItem from="1512812191252" duration="97581000" />
       <workItem from="1513284432951" duration="4858000" />
       <workItem from="1513309262398" duration="9703000" />
-      <workItem from="1513417040586" duration="55953000" />
+      <workItem from="1513417040586" duration="56204000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171089000" />
+    <option name="totallyTimeSpent" value="171340000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -589,14 +574,6 @@
             <marker date="1511981403930" expanded="true" signature="20026:20040" ph="..." />
             <marker date="1511981403930" expanded="true" signature="21675:21688" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="55" column="45" lean-forward="true" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1039,22 +1016,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="88" column="35" lean-forward="true" selection-start-line="88" selection-start-column="35" selection-end-line="88" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/aluno/candidato.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="96" lean-forward="false" selection-start-line="22" selection-start-column="96" selection-end-line="22" selection-end-column="96" />
+        <state relative-caret-position="459">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <element signature="e#1090#1096#1#HTML" expanded="true" />
-            <element signature="e#1213#1219#1#HTML" expanded="true" />
-            <marker date="1513546962858" expanded="true" signature="9:15" ph="..." />
-            <marker date="1513546962858" expanded="true" signature="26:36" ph="..." />
-            <marker date="1513546962858" expanded="true" signature="657:696" ph="..." />
-            <marker date="1513546962858" expanded="true" signature="796:805" ph="..." />
-            <marker date="1513546962858" expanded="true" signature="796:822" ph="..." />
-            <marker date="1513546962858" expanded="true" signature="856:865" ph="..." />
-            <marker date="1513546962858" expanded="true" signature="899:912" ph="..." />
-            <marker date="1513546962858" expanded="true" signature="1173:1180" ph="..." />
-            <marker date="1513546962858" expanded="true" signature="1335:1344" ph="..." />
+            <element signature="e#1085#1091#1#HTML" expanded="true" />
+            <element signature="e#1208#1214#1#HTML" expanded="true" />
+            <marker date="1513547087485" expanded="true" signature="9:15" ph="..." />
+            <marker date="1513547087485" expanded="true" signature="26:36" ph="..." />
+            <marker date="1513547087485" expanded="true" signature="657:691" ph="..." />
+            <marker date="1513547087485" expanded="true" signature="791:800" ph="..." />
+            <marker date="1513547087485" expanded="true" signature="791:817" ph="..." />
+            <marker date="1513547087485" expanded="true" signature="851:860" ph="..." />
+            <marker date="1513547087485" expanded="true" signature="894:907" ph="..." />
+            <marker date="1513547087485" expanded="true" signature="1168:1175" ph="..." />
+            <marker date="1513547087485" expanded="true" signature="1330:1339" ph="..." />
           </folding>
         </state>
       </provider>

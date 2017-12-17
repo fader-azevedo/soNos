@@ -20,7 +20,7 @@
             @foreach($candidato  as $ms)
                 <tr>
                     <td>
-                        <img src="{{asset('img/alunos/').'/foto_'.$ms->foto}}" class="img-circle " width="50" height="50">
+                        <img src="{{asset('img/alunos/').'/'.$ms->foto}}" class="img-circle " width="50" height="50">
                     </td>
                     <td>{{$ms->nome.' '.$ms->apelido}}</td>
                     <td>{{$ms->sexo}}</td>

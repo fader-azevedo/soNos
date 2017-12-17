@@ -91,7 +91,7 @@ class RegisterController extends Controller{
         $idContacto = $contacto->id;
 
         $aluno = new Aluno();
-        $aluno = $aluno->create(['codigo'=>$data['password'],'apelido'=>$data['apelido'],'nome'=>$data['name'],'sexo'=>$data['sexo'],'dataNasc'=>$data['dataNasc'],'numBi'=>$data['numBi'],'naturalidade'=>$data['naturalidade'], 'residencia'=>$data['residencia'],'idContacto'=>$idContacto,'idUser'=>$idUser, 'idEncarregado'=>$idEncarregado,'foto'=>$data['password'].'.jpg']);
+        $aluno = $aluno->create(['codigo'=>$data['password'],'apelido'=>$data['apelido'],'nome'=>$data['name'],'sexo'=>$data['sexo'],'dataNasc'=>$data['dataNasc'],'numBi'=>$data['numBi'],'naturalidade'=>$data['naturalidade'], 'residencia'=>$data['residencia'],'idContacto'=>$idContacto,'idUser'=>$idUser, 'idEncarregado'=>$idEncarregado,'foto'=> 'foto_'.$data['password'].'.jpg']);
         $idAluno = $aluno->id;
 
         $inscricao = new Inscricao();

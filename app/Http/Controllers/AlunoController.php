@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Inscricao;
+use App\User;
 
 class AlunoController extends Controller{
 
@@ -20,5 +21,10 @@ class AlunoController extends Controller{
         $ano = date('Y');
         $candidato = Inscricao::query()->join('alunos','inscricaos.idAluno','=','alunos.id')->select('alunos.*')->distinct('idAluno')->where('estado','=','pre-inscrito')->where('ano',$ano)->get();
         return view('aluno.candidato',compact('candidato'));
+    }
+
+    public  function index(){
+        $users = User::all();
+        return view('users.index')->with(compact('users'));
     }
 }

@@ -5,13 +5,13 @@
             <li><a href="#"><i class="fa fa-money"></i>&nbsp; Candidatos</a></li>
         </ol>
     </section>
-    <div class="row">
+    <div class="row"  style="margin-top: -10px">
         <div class="input-field col-sm-4">
             <input type="text" id="txtPesquisar" onkeyup="filtrar()">
             <label for="txtPesquisar"><i class="fa fa-search"></i>&nbsp;Pesquisar</label>
         </div>
     </div>
-    <div class="row">
+    <div class="row" style=" margin-bottom: -20px" >
         <div class="col-sm-8 col-md-8 col-lg-8" id="divTableCandidatos">
             @include('aluno.candidatoLoad')
         </div>

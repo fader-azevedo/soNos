@@ -1,8 +1,8 @@
 <table class="table-striped" id="tabela1">
     <thead>
     <tr>
-        <th style="width: 20%">Fotografia</th>
-        <th style="width: 20%">Nome Completo</th>
+        <th style="width: 10%">Fotografia</th>
+        <th style="width: 30%">Nome Completo</th>
         <th style="width: 20%">Sexo</th>
         <th style="width: 20%">Num BI</th>
         <th style="width: 20%">Data Nasc</th>

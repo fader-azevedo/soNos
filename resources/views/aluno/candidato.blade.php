@@ -23,24 +23,11 @@
                         <th >Data Nasc</th>
                     </tr>
                 </thead>
-                <tbody id="tabela1Corpo">
-                    @foreach($candidato  as $ms)
-                        <tr>
-                            <td>
-                                <img src="{{asset('img/alunos/').'/'.$ms->foto}}" class="img-circle " width="50" height="50">
-                            </td>
-                            <td>{{$ms->nome.' '.$ms->apelido}}</td>
-                            <td>{{$ms->sexo}}</td>
-                            <td>{{$ms->numBi}}</td>
-                            <td>{{$ms->dataNasc}}</td>
-
-                            <td><a class="btn btn-info btn-ver" data-id="{{$ms->id}}"><i class="zmdi zmdi-eye"></i>&nbsp;</a></td>
-                            <td><a class="btn btn-warning"><i class="fa fa-check"></i></a></td>
-                            <td><a class="btn btn-danger"><i class="zmdi zmdi-delete"></i>&nbsp;</a></td>
-                        </tr>
-                    @endforeach
+                <tbody id="tabela1Corpo" class="dados">
+                    @include('aluno.candidatoLoad')
                 </tbody>
             </table>
+            {{$candidato->links()}}
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4">
             <div class="box box-widget widget-user" style="display: flex; padding: 5px; background-color: #f5f5f5;">
@@ -129,6 +116,40 @@
                     }
                 }
             }
+        }
+
+        $(window).on('hashchange', function() {
+            if (window.location.hash) {
+                var page = window.location.hash.replace('#', '');
+                if (page == Number.NaN || page <= 0) {
+                    return false;
+                } else {
+                    getPosts(page);
+                }
+            }
+        });
+
+        $(document).ready(function() {
+            $(document).on('click', '.pagination a', function (e) {
+                e.preventDefault();
+                getPosts($(this).attr('href').split('page=')[1]);
+            });
+        });
+
+        function getPosts(page) {
+
+            $.ajax({
+//                url : '?page=' + page,
+                url : '?page='+page
+//                type: 'GET',
+//                dataType: 'json'
+//                dataType: 'html'
+            }).done(function (data) {
+//                $('.dados').html(data);
+                location.hash = page;
+            }).fail(function () {
+                alert('Posts could not be loaded.');
+            });
         }
     </script>
 @endsection

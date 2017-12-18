@@ -36,4 +36,6 @@ Route::get('/candidato','AlunoController@candidato')->name('candidato')->middlew
 
 /*vue*/
 
-Route::get('usuarios',['as'=>'users.index','uses'=>'AlunoController@index']);
+//Route::get('usuarios',['as'=>'users.index','uses'=>'AlunoController@index']);
+
+Route::resource('aluno','AlunoController');

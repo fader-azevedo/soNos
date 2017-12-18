@@ -24,6 +24,6 @@
                 <td><a class="btn btn-danger"><i class="zmdi zmdi-delete"></i>&nbsp;</a></td>
             </tr>
         @endforeach
-        {{$candidato->links()}}
     </tbody>
 </table>
+{{$candidato->links()}}

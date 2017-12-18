@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-8 col-md-8 col-lg-8">
+        <div class="col-sm-8 col-md-8 col-lg-8" id="divTableCandidatos">
             @include('aluno.candidatoLoad')
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4">
@@ -131,9 +131,9 @@
 //                dataType: 'json'
 //                dataType: 'html'
             }).done(function (data) {
-                alert(data);
-//                $('#tabela1').html(data);
-                location.hash = page;
+//                alert(data);
+                $('#divTableCandidatos').html(data);
+//                location.hash = page;
             }).fail(function () {
                 alert('Posts could not be loaded.');
             });

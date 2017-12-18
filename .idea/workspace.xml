@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77bd011e-7eac-43b4-9cf5-60ad60258165" name="Default" comment="redimensionamento d foto de aluno">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/aluno/candidato.blade.php" afterPath="$PROJECT_DIR$/resources/views/aluno/candidato.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aluno.php" afterPath="$PROJECT_DIR$/app/Aluno.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,7 +14,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="candidato.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="candidato.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/aluno/candidato.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
@@ -68,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Aluno.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Aluno.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Aluno.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -171,7 +171,6 @@
         <option value="$PROJECT_DIR$/resources/views/admin/adminHome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/aluno/alunoNav.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/adminMenu.blade.php" />
-        <option value="$PROJECT_DIR$/app/Aluno.php" />
         <option value="$PROJECT_DIR$/resources/views/template/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/adminNav.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AlunoController.php" />
@@ -180,6 +179,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
         <option value="$PROJECT_DIR$/public/css/normalize.css" />
         <option value="$PROJECT_DIR$/resources/views/aluno/candidato.blade.php" />
+        <option value="$PROJECT_DIR$/app/Aluno.php" />
       </list>
     </option>
   </component>
@@ -417,12 +417,12 @@
       <workItem from="1512812191252" duration="97581000" />
       <workItem from="1513284432951" duration="4858000" />
       <workItem from="1513309262398" duration="9703000" />
-      <workItem from="1513417040586" duration="64269000" />
+      <workItem from="1513417040586" duration="64302000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179405000" />
+    <option name="totallyTimeSpent" value="179438000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -965,14 +965,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Aluno.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/adminNav.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1083,6 +1075,14 @@
             <marker date="1513557304487" expanded="true" signature="5185:5194" ph="..." />
             <marker date="1513557304487" expanded="true" signature="5207:5218" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Aluno.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>

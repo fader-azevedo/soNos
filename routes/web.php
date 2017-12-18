@@ -26,7 +26,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
 Route::group(['prefix'=>'mensalidade'], function (){
     Route::get('/','MensalidadeController@index')->middleware(Mdw::class,'auth');
     Route::get('registar','MensalidadeController@registarMensalidade')->middleware(Mdw::class,'auth');

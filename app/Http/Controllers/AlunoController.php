@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Aluno;
 use App\Inscricao;
 
 class AlunoController extends Controller{
@@ -16,10 +15,6 @@ class AlunoController extends Controller{
         $data = base64_decode($data);
         $imageName = $_POST['codigo'].'.jpg';
         file_put_contents(public_path().'\img\alunos\foto_'.$imageName, $data);
-    }
-
-    public function aa(){
-        return view('aluno.alunoList');
     }
 
     public function candidato(){

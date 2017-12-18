@@ -446,3 +446,6 @@ thead tr .anoExport{
   height: 10px;
   font-size: 0px;
 }
+td .label{
+  /*font-size: 16px;*/
+}

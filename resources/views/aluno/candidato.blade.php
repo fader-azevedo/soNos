@@ -8,8 +8,8 @@
     </section>
     <div class="row">
         <div class="input-field col-sm-4">
-            <input type="text" id="pesquisar">
-            <label><i class="fa fa-search"></i>&nbsp;Pesquisar</label>
+            <input type="text" id="txtPesquisar" onkeyup="filtrar()">
+            <label for="txtPesquisar"><i class="fa fa-search"></i>&nbsp;Pesquisar</label>
         </div>
     </div>
     <div class="row">
@@ -114,5 +114,23 @@
 @section('scripts')
     <script>
         $('#li-Candidato').addClass('active');
+
+        function filtrar() {
+
+            var input = document.getElementById("txtPesquisar");
+            var tabela = document.getElementById("tabela1");
+            var linhas = tabela.getElementsByTagName("tr");
+
+            for (var indice = 0; indice < linhas.length; indice++) {
+                var coluna = linhas[indice].getElementsByTagName("td")[1];
+                if (coluna) {
+                    if (coluna.innerHTML.toLowerCase().indexOf(input.value.toLowerCase()) > -1) {
+                        linhas[indice].style.display = "";
+                    } else {
+                        linhas[indice].style.display = "none";
+                    }
+                }
+            }
+        }
     </script>
 @endsection

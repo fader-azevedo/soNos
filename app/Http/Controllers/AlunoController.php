@@ -30,7 +30,7 @@ class AlunoController extends Controller{
             ->where('ano',$ano)->paginate(5);
 
         if(request()->ajax()){
-            return view('aluno.candidato',compact('candidato'))->render();
+            return view('aluno.candidatoLoad',['candidato'=>$candidato])->render();
         }
 
         return view('aluno.candidato',compact('candidato'));

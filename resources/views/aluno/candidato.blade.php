@@ -13,21 +13,7 @@
     </div>
     <div class="row">
         <div class="col-sm-8 col-md-8 col-lg-8">
-            <table class="table-striped" id="tabela1">
-                <thead>
-                    <tr>
-                        <th >Fotografia</th>
-                        <th >Nome Completo</th>
-                        <th >Sexo</th>
-                        <th >Num BI</th>
-                        <th >Data Nasc</th>
-                    </tr>
-                </thead>
-                <tbody id="tabela1Corpo" class="dados">
-                    @include('aluno.candidatoLoad')
-                </tbody>
-            </table>
-            {{$candidato->links()}}
+            @include('aluno.candidatoLoad')
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4">
             <div class="box box-widget widget-user" style="display: flex; padding: 5px; background-color: #f5f5f5;">
@@ -145,7 +131,8 @@
 //                dataType: 'json'
 //                dataType: 'html'
             }).done(function (data) {
-//                $('.dados').html(data);
+                alert(data);
+//                $('#tabela1').html(data);
                 location.hash = page;
             }).fail(function () {
                 alert('Posts could not be loaded.');

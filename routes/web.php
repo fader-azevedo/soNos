@@ -32,3 +32,10 @@ Route::group(['prefix'=>'mensalidade'], function (){
 });
 
 Route::get('/candidato','AlunoController@candidato')->name('candidato')->middleware(Mdw::class,'auth');
+
+
+/*vue*/
+
+Route::get('ususario',['as'=>'users.index',function(){
+    return 'users';
+}]);

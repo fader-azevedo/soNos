@@ -18,7 +18,6 @@
                 <thead>
                 <tr>
                     <th >Fotografia</th>
-                    {{--<th >Apelido</th>--}}
                     <th >Nome Completo</th>
                     <th >Sexo</th>
                     <th >Num BI</th>

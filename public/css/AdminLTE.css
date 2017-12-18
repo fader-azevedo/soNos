@@ -107,6 +107,7 @@ a{
 #divKarFoto{
   height: 250px;
 }
+
 @media (max-width: 767px) {
   .content-wrapper,
   .main-footer {

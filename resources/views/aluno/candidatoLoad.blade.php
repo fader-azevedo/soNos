@@ -1,11 +1,11 @@
 <table class="table-striped" id="tabela1">
     <thead>
     <tr>
-        <th >Fotografia</th>
-        <th >Nome Completo</th>
-        <th >Sexo</th>
-        <th >Num BI</th>
-        <th >Data Nasc</th>
+        <th style="width: 20%">Fotografia</th>
+        <th style="width: 20%">Nome Completo</th>
+        <th style="width: 20%">Sexo</th>
+        <th style="width: 20%">Num BI</th>
+        <th style="width: 20%">Data Nasc</th>
     </tr>
     </thead>
     <tbody id="tabela1Corpo" class="dados">
@@ -26,4 +26,4 @@
         @endforeach
     </tbody>
 </table>
-{{$candidato->links()}}
+<h6 class="center">{{$candidato->links()}}</h6>

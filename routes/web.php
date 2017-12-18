@@ -33,18 +33,3 @@ Route::group(['prefix'=>'mensalidade'], function (){
 });
 
 Route::get('/candidato','AlunoController@candidato')->name('candidato')->middleware(Mdw::class,'auth');
-
-
-    Route::get('aa', 'AlunoController@aa')->name('aa');
-    Route::get('aa',function (){
-        return view('aluno.alunoList');
-    })->middleware(Mdw::class);
-
-//$u = App\User::query()->find(1);
-//    Route::get('men/{user?}', function (App\User $user){
-//        if($user->perfil == 'admin'){
-//            return view('aluno.alunoList',compact('user'));
-//        }else{
-//            return view('aluno.alunoList',compact('user'));
-//        }
-//    });

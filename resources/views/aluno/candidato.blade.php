@@ -16,13 +16,13 @@
         <div class="col-sm-8 col-md-8 col-lg-8">
             <table class="table-striped" id="tabela1">
                 <thead>
-                <tr>
-                    <th >Fotografia</th>
-                    <th >Nome Completo</th>
-                    <th >Sexo</th>
-                    <th >Num BI</th>
-                    <th >Data Nasc</th>
-                </tr>
+                    <tr>
+                        <th >Fotografia</th>
+                        <th >Nome Completo</th>
+                        <th >Sexo</th>
+                        <th >Num BI</th>
+                        <th >Data Nasc</th>
+                    </tr>
                 </thead>
                 <tbody id="tabela1Corpo">
                 @foreach($candidato  as $ms)

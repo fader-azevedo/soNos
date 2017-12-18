@@ -97,7 +97,7 @@ class RegisterController extends Controller{
         $inscricao = new Inscricao();
         for ($i = 0; $i < $data['numDis']; $i++) {
             $idDisciplina =$data['disciplina'.($i+1)];
-            $inscricao->create(['idAluno' => $idAluno, 'idDisciplina' =>$idDisciplina,'estado'=>'pre-inscrito']);
+            $inscricao->create(['idAluno' => $idAluno, 'idDisciplina' =>$idDisciplina,'estado'=>'pre-inscrito','ano'=>date('Y')]);
         }
         return $user;
     }

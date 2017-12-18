@@ -6,7 +6,6 @@ use App\Inscricao;
 
 class AlunoController extends Controller{
 
-    private $aluno;
     public function getFoto(){
         $data = $_POST['image'];
         list(, $data) = explode(';', $data);

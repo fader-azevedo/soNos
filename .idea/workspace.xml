@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77bd011e-7eac-43b4-9cf5-60ad60258165" name="Default" comment="redimensionamento d foto de aluno">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/aluno/candidatoLoad.blade.php" afterPath="$PROJECT_DIR$/resources/views/aluno/candidatoLoad.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,11 +37,10 @@
       <file leaf-file-name="candidatoLoad.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/aluno/candidatoLoad.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="19" column="55" lean-forward="false" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+            <state relative-caret-position="68">
+              <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
               <folding>
                 <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
@@ -51,13 +51,13 @@
                 <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-                <marker date="1513659863996" expanded="true" signature="519:553" ph="..." />
-                <marker date="1513659863996" expanded="true" signature="664:690" ph="..." />
-                <marker date="1513659863996" expanded="true" signature="739:748" ph="..." />
-                <marker date="1513659863996" expanded="true" signature="797:807" ph="..." />
-                <marker date="1513659863996" expanded="true" signature="856:869" ph="..." />
-                <marker date="1513659863996" expanded="true" signature="999:1006" ph="..." />
-                <marker date="1513659863996" expanded="true" signature="1425:1444" ph="..." />
+                <marker date="1513659987932" expanded="true" signature="519:553" ph="..." />
+                <marker date="1513659987932" expanded="true" signature="664:690" ph="..." />
+                <marker date="1513659987932" expanded="true" signature="739:748" ph="..." />
+                <marker date="1513659987932" expanded="true" signature="797:807" ph="..." />
+                <marker date="1513659987932" expanded="true" signature="856:869" ph="..." />
+                <marker date="1513659987932" expanded="true" signature="1014:1021" ph="..." />
+                <marker date="1513659987932" expanded="true" signature="1440:1459" ph="..." />
               </folding>
             </state>
           </provider>
@@ -511,12 +511,12 @@
       <workItem from="1513417040586" duration="65087000" />
       <workItem from="1513573667499" duration="5200000" />
       <workItem from="1513592886983" duration="3068000" />
-      <workItem from="1513596117677" duration="8866000" />
+      <workItem from="1513596117677" duration="8990000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197357000" />
+    <option name="totallyTimeSpent" value="197481000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1058,11 +1058,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/aluno/candidatoLoad.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="55" lean-forward="false" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+        <state relative-caret-position="68">
+          <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
           <folding>
             <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#!!top" expanded="true" />
@@ -1073,13 +1072,13 @@
             <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#!!top" expanded="true" />
-            <marker date="1513659863996" expanded="true" signature="519:553" ph="..." />
-            <marker date="1513659863996" expanded="true" signature="664:690" ph="..." />
-            <marker date="1513659863996" expanded="true" signature="739:748" ph="..." />
-            <marker date="1513659863996" expanded="true" signature="797:807" ph="..." />
-            <marker date="1513659863996" expanded="true" signature="856:869" ph="..." />
-            <marker date="1513659863996" expanded="true" signature="999:1006" ph="..." />
-            <marker date="1513659863996" expanded="true" signature="1425:1444" ph="..." />
+            <marker date="1513659987932" expanded="true" signature="519:553" ph="..." />
+            <marker date="1513659987932" expanded="true" signature="664:690" ph="..." />
+            <marker date="1513659987932" expanded="true" signature="739:748" ph="..." />
+            <marker date="1513659987932" expanded="true" signature="797:807" ph="..." />
+            <marker date="1513659987932" expanded="true" signature="856:869" ph="..." />
+            <marker date="1513659987932" expanded="true" signature="1014:1021" ph="..." />
+            <marker date="1513659987932" expanded="true" signature="1440:1459" ph="..." />
           </folding>
         </state>
       </provider>

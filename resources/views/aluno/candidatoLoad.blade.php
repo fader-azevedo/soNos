@@ -1,12 +1,12 @@
 <table class="table-striped" id="tabela1">
     <thead>
     <tr>
-        <th style="width: 10%">Fotografia</th>
-        <th style="width: 30%">Nome Completo</th>
-        <th style="width: 15%">Sexo</th>
-        <th style="width: 20%">Num BI</th>
-        <th style="width: 20%">Data Nasc</th>
-        <th style="width: 20%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Opções&nbsp;</th>
+        <th style="width: 8%">Foto</th>
+        <th style="width: 20%">Nome Completo</th>
+        <th style="width: 18%">Sexo</th>
+        <th style="width: 18%">Num BI</th>
+        <th style="width: 18%">Data Nasc</th>
+        <th style="width: 18%">Opções</th>
     </tr>
     </thead>
     <tbody id="tabela1Corpo" class="dados">

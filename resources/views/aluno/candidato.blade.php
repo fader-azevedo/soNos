@@ -19,6 +19,7 @@
             <div  class="box box-widget widget-user" style="display: flex; padding: 5px; background-color: #f5f5f5;">
                 <div class="col-sm-9 text-center" id="divFoto" style="margin-left: -20px">
                     <img id="idFoto" class="img-circle" src="{!! asset('img/aluno.png') !!}" alt="" height="110"><br/><br/>
+                    <input id="idCandidato" type="hidden" value="0">
                     <h6 style="margin: -10px 0 0 1px; font-size: 19px" class="label label-default" id="nomeAluno">Nome</h6>
                 </div>
                 <div class="col-sm-12 box" style="padding: 2px">
@@ -130,18 +131,24 @@
         }
 
         $('.btn-ver').click(function () {
+            var idCandidato = $(this).attr('data-id');
+            var ultimoId = parseInt(document.getElementById('idCandidato').value);
+            if (parseInt(idCandidato) === ultimoId) {
+                return;
+            }
+            buscarDadosCandidato(idCandidato);
             $('#box-Info').animate({
                 left: '0px'
-            },"fast",voltar())
+            },"fast",voltar());
         });
 
         function voltar() {
             $('#box-Info').animate({
                 left: '+=380px'
-            },"fast")
+            },"slow")
         }
 
-        var anoActual = new Date().getYear();
+        var anoActual =  (new Date()).getFullYear();
         function buscarDadosCandidato(idCandidato) {
             $.ajax({
                 url: '/api/getInscricao',
@@ -149,16 +156,14 @@
                 data: {'idAluno': idCandidato, 'ano': anoActual},
                 success: function (rs) {
 
-                    var ultimoId = parseInt(document.getElementById('idAl').value);
-                    if (idCandidato == ultimoId) {
-                        return;
-                    }
-                    document.getElementById('idAl').value = idCandidato;
-                    $('.cont').remove();
+                    document.getElementById('idCandidato').value = idCandidato;
+                    document.getElementById('nomeAluno').innerHTML = rs.inscricao[0].nome;
+                    document.getElementById('idFoto').src =  '{{asset('img/upload/')}}'.concat('/' + rs.inscricao[0].picture);
+
+//                    $('.cont').remove();
                     $('.crs').remove();
                     for (var i = 0; i < rs.inscricao.length; i++) {
-                        document.getElementById('nomeAluno').innerHTML = rs.inscricao[i].nome + ' ' + rs.inscricao[i].apelido;
-                        $('#curso').append('<li class="crs" style="margin-bottom: 3px"> <span class="handle"> <i style="color: #00a7d0;" class="fa fa-book"></i> </span> <span class="text">' + rs.inscricao[i].curso + '</span> <div class="tools"> <i class="fa fa-eye"></i> </div> </li>')
+                        $('#curso').append('<li class="crs" style="margin-bottom: 3px"> <span class="handle"> <i style="color: #00a7d0;" class="fa fa-book"></i> </span> <span class="text">' + rs.inscricao[i].disciplina + '</span> <div class="tools"> <i class="fa fa-eye"></i> </div> </li>')
                     }
                 }
             });

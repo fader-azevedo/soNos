@@ -6,7 +6,7 @@
         <th style="width: 15%">Sexo</th>
         <th style="width: 20%">Num BI</th>
         <th style="width: 20%">Data Nasc</th>
-        <th style="width: 20%">Acoes</th>
+        <th style="width: 20%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Opções&nbsp;</th>
     </tr>
     </thead>
     <tbody id="tabela1Corpo" class="dados">

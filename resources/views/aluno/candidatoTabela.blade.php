@@ -1,13 +1,13 @@
 <table class="table-striped" id="tabela1" >
     <thead>
-    <tr>
-        <th style="width: 8%">Foto</th>
-        <th style="width: 26%">Nome Completo</th>
-        <th style="width: 15%">Sexo</th>
-        <th style="width: 18%">Num BI</th>
-        <th style="width: 18%">Data Nasc</th>
-        <th style="width: 15%">Opções</th>
-    </tr>
+        <tr>
+            <th style="width: 8%">Foto</th>
+            <th style="width: 26%">Nome Completo</th>
+            <th style="width: 15%">Sexo</th>
+            <th style="width: 18%">Num BI</th>
+            <th style="width: 18%">Data Nasc</th>
+            <th style="width: 15%">Opções</th>
+        </tr>
     </thead>
     <tbody id="tabela1Corpo" class="dados">
         @foreach($candidato  as $ms)

@@ -142,8 +142,7 @@
                 alert('Posts could not be loaded.');
             });
         }
-
-
+        
         $('.btn-ver').click(function () {
             var idCandidato = $(this).attr('data-id');
             var ultimoId = parseInt(document.getElementById('idCandidato').value);

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77bd011e-7eac-43b4-9cf5-60ad60258165" name="Default" comment="redimensionamento d foto de aluno">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AlunoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AlunoController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/InscricaoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/InscricaoController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,11 +15,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="InscricaoController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InscricaoController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/InscricaoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="51">
+              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -55,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AlunoController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AlunoController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AlunoController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="28" column="33" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="33" />
+            <state relative-caret-position="236">
+              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -202,13 +203,13 @@
         <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/aluno/candidatoLoad.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AlunoController.php" />
         <option value="$PROJECT_DIR$/public/css/normalize.css" />
         <option value="$PROJECT_DIR$/resources/views/admin/adminNav.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/aluno/candidato.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/aluno/candidatoTabela.blade.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/InscricaoController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AlunoController.php" />
       </list>
     </option>
   </component>
@@ -471,12 +472,12 @@
       <workItem from="1513417040586" duration="65087000" />
       <workItem from="1513573667499" duration="5200000" />
       <workItem from="1513592886983" duration="3068000" />
-      <workItem from="1513596117677" duration="20498000" />
+      <workItem from="1513596117677" duration="20627000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208989000" />
+    <option name="totallyTimeSpent" value="209118000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -994,14 +995,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AlunoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="28" column="33" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="28" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../projectoSoNos/resources/views/aluno/listar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
@@ -1087,8 +1080,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/InscricaoController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AlunoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding />
         </state>
       </provider>

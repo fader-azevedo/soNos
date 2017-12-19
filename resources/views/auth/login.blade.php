@@ -5,21 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title>Login</title>
 
     <link rel="stylesheet" type="text/css" href="{!! asset('css/bootstrap.css') !!}"/>
     <link rel="stylesheet" type="text/css" href="{!! asset('font-awesome/css/font-awesome.css')!!}"  />
-    <link rel="stylesheet" type="text/css" href="{!! asset('ionicons/css/ionicons.min.css')!!}"  />
-    {{--<link rel="stylesheet" type="text/css" href="{!! asset('js/gritter/css/jquery.gritter.css')!!}" />--}}
-    <link rel="stylesheet" type="text/css" href="{!! asset('lineicons/style.css')!!}"/>
 
     <link rel="stylesheet" type="text/css" href="{!! asset('css/style.css')!!}" />
-    {{--<link rel="stylesheet" type="text/css" href="{!! asset('css/style-responsive.css')!!}"/>--}}
-
-    <link rel="stylesheet" type="text/css" href="{!! asset('css/_all-skins.css')!!}"/>
-    <link rel="stylesheet" type="text/css" href="{!! asset('charts/morris.css')!!}"/>
-    <link rel="stylesheet" type="text/css" href="{!! asset('select2/css/select2.min.css')!!}"/>
     <link rel="stylesheet" type="text/css" href="{!! asset('css/AdminLTE.css')!!}"/>
 
     <link rel="stylesheet" type="text/css" href="{!! asset('css/materialize.min.css')!!}"/>

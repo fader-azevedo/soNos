@@ -25,7 +25,7 @@
                 <div class="col-sm-12 box" style="padding: 2px">
                     <ul class="todo-list" id="contacto">
 
-                        <li class="" style="margin-bottom: 5px">
+                        <li class="cont" style="margin-bottom: 5px">
                             <span class="handle">
                                 <i class="fa fa-location-arrow"></i>
                             </span>
@@ -125,10 +125,24 @@
                 url : '?page='+page
             }).done(function (data) {
                 $('#divTableCandidatos').html(data);
+
+                $('.btn-ver').click(function () {
+                    var idCandidato = $(this).attr('data-id');
+                    var ultimoId = parseInt(document.getElementById('idCandidato').value);
+                    if (parseInt(idCandidato) === ultimoId) {
+                        return;
+                    }
+                    buscarDadosCandidato(idCandidato);
+                    $('#box-Info').animate({
+                        left: '0px'
+                    },"fast",voltar());
+                });
+
             }).fail(function () {
                 alert('Posts could not be loaded.');
             });
         }
+
 
         $('.btn-ver').click(function () {
             var idCandidato = $(this).attr('data-id');
@@ -158,13 +172,17 @@
 
                     document.getElementById('idCandidato').value = idCandidato;
                     document.getElementById('nomeAluno').innerHTML = rs.inscricao[0].nome;
-                    document.getElementById('idFoto').src =  '{{asset('img/upload/')}}'.concat('/' + rs.inscricao[0].picture);
+                    document.getElementById('idFoto').src =  '{{asset('img/alunos/')}}'.concat('/' + rs.inscricao[0].foto);
 
-//                    $('.cont').remove();
+                    $('.cont').remove();
                     $('.crs').remove();
                     for (var i = 0; i < rs.inscricao.length; i++) {
                         $('#curso').append('<li class="crs" style="margin-bottom: 3px"> <span class="handle"> <i style="color: #00a7d0;" class="fa fa-book"></i> </span> <span class="text">' + rs.inscricao[i].disciplina + '</span> <div class="tools"> <i class="fa fa-eye"></i> </div> </li>')
                     }
+
+                    $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <span class="handle"><i class="fa fa-location-arrow"></i> </span> <span class="text">'+rs.inscricao[0].residencia+'</span><div class="tools"> <i class="fa fa-location-arrow"></i> </div> </li>');
+                    $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <span class="handle"><i class="fa fa-phone"></i> </span> <span class="text">'+rs.inscricao[0].numero+'</span> <div class="tools"> <i class="fa fa-phone"></i> </div> </li>');
+                    $('#contacto').append('<li class="cont"> <span class="handle"><i class="fa fa-envelope"></i> </span> <span class="text">'+rs.inscricao[0].email+'</span>  </li>');
                 }
             });
         }

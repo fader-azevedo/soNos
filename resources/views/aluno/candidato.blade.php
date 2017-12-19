@@ -123,13 +123,10 @@
         });
 
         function getPosts(page) {
-
             $.ajax({
                 url : '?page='+page
             }).done(function (data) {
-//                alert(data);
                 $('#divTableCandidatos').html(data);
-//                location.hash = page;
             }).fail(function () {
                 alert('Posts could not be loaded.');
             });

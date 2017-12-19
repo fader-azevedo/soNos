@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77bd011e-7eac-43b4-9cf5-60ad60258165" name="Default" comment="redimensionamento d foto de aluno">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/aluno/candidatoLoad.blade.php" afterPath="$PROJECT_DIR$/resources/views/aluno/candidatoTabela.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AlunoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AlunoController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/aluno/candidato.blade.php" afterPath="$PROJECT_DIR$/resources/views/aluno/candidato.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,17 +17,17 @@
       <file leaf-file-name="candidato.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/aluno/candidato.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+            <state relative-caret-position="440">
+              <caret line="134" column="11" lean-forward="true" selection-start-line="134" selection-start-column="11" selection-end-line="134" selection-end-column="11" />
               <folding>
                 <element signature="e#245#270#0#HTML" expanded="true" />
                 <element signature="e#522#551#0#HTML" expanded="true" />
-                <marker date="1513660403448" expanded="true" signature="9:15" ph="..." />
-                <marker date="1513660403448" expanded="true" signature="26:36" ph="..." />
-                <marker date="1513660403448" expanded="true" signature="648:671" ph="..." />
-                <marker date="1513660403448" expanded="true" signature="1009:1033" ph="..." />
-                <marker date="1513660403448" expanded="true" signature="3960:3969" ph="..." />
-                <marker date="1513660403448" expanded="true" signature="3982:3993" ph="..." />
+                <marker date="1513660461168" expanded="true" signature="9:15" ph="..." />
+                <marker date="1513660461168" expanded="true" signature="26:36" ph="..." />
+                <marker date="1513660461168" expanded="true" signature="648:671" ph="..." />
+                <marker date="1513660461168" expanded="true" signature="1009:1033" ph="..." />
+                <marker date="1513660461168" expanded="true" signature="3960:3969" ph="..." />
+                <marker date="1513660461168" expanded="true" signature="3982:3993" ph="..." />
               </folding>
             </state>
           </provider>
@@ -535,12 +532,12 @@
       <workItem from="1513417040586" duration="65087000" />
       <workItem from="1513573667499" duration="5200000" />
       <workItem from="1513592886983" duration="3068000" />
-      <workItem from="1513596117677" duration="9355000" />
+      <workItem from="1513596117677" duration="9417000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197846000" />
+    <option name="totallyTimeSpent" value="197908000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1090,17 +1087,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/aluno/candidato.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+        <state relative-caret-position="440">
+          <caret line="134" column="11" lean-forward="true" selection-start-line="134" selection-start-column="11" selection-end-line="134" selection-end-column="11" />
           <folding>
             <element signature="e#245#270#0#HTML" expanded="true" />
             <element signature="e#522#551#0#HTML" expanded="true" />
-            <marker date="1513660403448" expanded="true" signature="9:15" ph="..." />
-            <marker date="1513660403448" expanded="true" signature="26:36" ph="..." />
-            <marker date="1513660403448" expanded="true" signature="648:671" ph="..." />
-            <marker date="1513660403448" expanded="true" signature="1009:1033" ph="..." />
-            <marker date="1513660403448" expanded="true" signature="3960:3969" ph="..." />
-            <marker date="1513660403448" expanded="true" signature="3982:3993" ph="..." />
+            <marker date="1513660461168" expanded="true" signature="9:15" ph="..." />
+            <marker date="1513660461168" expanded="true" signature="26:36" ph="..." />
+            <marker date="1513660461168" expanded="true" signature="648:671" ph="..." />
+            <marker date="1513660461168" expanded="true" signature="1009:1033" ph="..." />
+            <marker date="1513660461168" expanded="true" signature="3960:3969" ph="..." />
+            <marker date="1513660461168" expanded="true" signature="3982:3993" ph="..." />
           </folding>
         </state>
       </provider>

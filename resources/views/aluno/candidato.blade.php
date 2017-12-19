@@ -13,7 +13,7 @@
     </div>
     <div class="row" style=" margin-bottom: -20px" >
         <div class="col-sm-8 col-md-8 col-lg-8" id="divTableCandidatos">
-            @include('aluno.candidatoLoad')
+            @include('aluno.candidatoTabela')
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4">
             <div class="box box-widget widget-user" style="display: flex; padding: 5px; background-color: #f5f5f5;">
@@ -125,11 +125,7 @@
         function getPosts(page) {
 
             $.ajax({
-//                url : '?page=' + page,
                 url : '?page='+page
-//                type: 'GET',
-//                dataType: 'json'
-//                dataType: 'html'
             }).done(function (data) {
 //                alert(data);
                 $('#divTableCandidatos').html(data);

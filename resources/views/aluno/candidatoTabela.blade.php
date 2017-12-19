@@ -20,13 +20,11 @@
                 <td style="width: 18%">{{$ms->numBi}}</td>
                 <td style="width: 18%">{{$ms->dataNasc}}</td>
 
-                <td style="width: 15%; display: flex" class="center">
+                <td style="width: 15%; display: flex;" class="center">
                     <a class="btn btn-info btn-ver bt" data-id="{{$ms->id}}"><i class="zmdi zmdi-eye"></i></a>
                     <a class="btn btn-warning bt"><i class="zmdi zmdi-check"></i></a>
                     <a class="btn btn-danger bt"><i class="zmdi zmdi-delete"></i></a>
                 </td>
-                {{--<td style="width: 1.5%"></td>--}}
-                {{--<td style="width: 2%"></td>--}}
             </tr>
         @endforeach
     </tbody>

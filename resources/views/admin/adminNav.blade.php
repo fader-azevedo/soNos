@@ -48,7 +48,6 @@ use App\Inscricao;
             </li>
         </ul>
     </li>
-    <!-- Control Sidebar Toggle Button -->
     <li>
         <a style="border: none" href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
     </li>

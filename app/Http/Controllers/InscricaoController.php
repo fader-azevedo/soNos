@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Inscricao;
 
 class InscricaoController extends Controller{
+
     public function getInscricao(){
         $inscricao = Inscricao::query()->join('alunos','inscricaos.idAluno','=','alunos.id')->join('disciplinas','inscricaos.idDisciplina','=','disciplinas.id')
             ->join('contactos','alunos.idContacto','=','contactos.id')

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <title>Só Ciência Só Nós</title>
+    <title>Login</title>
 
     <link rel="stylesheet" type="text/css" href="{!! asset('css/bootstrap.css') !!}"/>
     <link rel="stylesheet" type="text/css" href="{!! asset('font-awesome/css/font-awesome.css')!!}"  />
@@ -56,7 +56,7 @@
         <h2 class="form-login-heading">Login</h2>
         <div class="login-wrap">
             <div class="input-field form-group{{ $errors->has('email') ? ' has-error' : '' }}" >
-                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
                 <label for="UserName"><i class="zmdi zmdi-account"></i>&nbsp;Email</label>
 
                 @if ($errors->has('email'))
@@ -108,12 +108,11 @@
         </div>
     </form>
 
-<script src="{!! asset('js/jquery.js')!!}"></script>
-<script src="{!! asset('js/bootstrap.min.js')!!}"></script>
-<script src="{!! asset('js/materialize.min.js')!!}"></script>
-<script type="text/javascript" src="{!! asset('js/jquery.backstretch.min.js')!!}"></script>
-<script>
-    $.backstretch("{!! asset('img/bak.jpg')!!}", {speed: 500});
-</script>
+    <script src="{!! asset('js/jquery.js')!!}"></script>
+    <script src="{!! asset('js/bootstrap.min.js')!!}"></script>
+    <script src="{!! asset('js/materialize.min.js')!!}"></script>
+    <script type="text/javascript" src="{!! asset('js/jquery.backstretch.min.js')!!}"></script>
+    <script>
+        $.backstretch("{!! asset('img/bak.jpg')!!}", {speed: 500});
+    </script>
 </body>
-{{--@endsection--}}

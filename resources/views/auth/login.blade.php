@@ -69,7 +69,7 @@
             </div>
             <label class="checkbox">
                 <span class="pull-right">
-                    <a data-toggle="modal" href="#myModal"> Esqueceste Password?</a>
+                    {{--<a data-toggle="modal" href="#myModal"> Esqueceste Password?</a>--}}
                 </span>
             </label>
             <button class="btn btn-theme btn-block" type="submit"><a><i class="zmdi zmdi-lock-open"></i> Login</a></button>
@@ -98,7 +98,6 @@
             </div>
         </div>
     </form>
-
     <script src="{!! asset('js/jquery.js')!!}"></script>
     <script src="{!! asset('js/bootstrap.min.js')!!}"></script>
     <script src="{!! asset('js/materialize.min.js')!!}"></script>

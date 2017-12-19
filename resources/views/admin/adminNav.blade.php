@@ -1,6 +1,7 @@
 <?php
 use App\Inscricao;
-    $numPrIns = Inscricao::query()->where('estado','=','pre-inscrito')->count();
+//    $numPrIns = Inscricao::query()->where('estado','=','pre-inscrito')->count();
+    $numPrIns = Inscricao::query()->where('estado','=','pre-inscrito')->distinct('idAluno');
 ?>
 <ul class="nav navbar-nav">
     <li style="border: none" class="dropdown notifications-menu">

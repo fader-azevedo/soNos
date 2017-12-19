@@ -1,4 +1,4 @@
-<table class="table-striped" id="tabela1">
+<table class="table-striped" id="tabela1" >
     <thead>
     <tr>
         <th style="width: 8%">Foto</th>

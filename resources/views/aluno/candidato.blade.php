@@ -15,8 +15,8 @@
         <div class="col-sm-8 col-md-8 col-lg-8" id="divTableCandidatos">
             @include('aluno.candidatoTabela')
         </div>
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <div class="box box-widget widget-user" style="display: flex; padding: 5px; background-color: #f5f5f5;">
+        <div id="box-Info" class="col-sm-4 col-md-4 col-lg-4">
+            <div  class="box box-widget widget-user" style="display: flex; padding: 5px; background-color: #f5f5f5;">
                 <div class="col-sm-9 text-center" id="divFoto" style="margin-left: -20px">
                     <img id="idFoto" class="img-circle" src="{!! asset('img/aluno.png') !!}" alt="" height="110"><br/><br/>
                     <h6 style="margin: -10px 0 0 1px; font-size: 19px" class="label label-default" id="nomeAluno">Nome</h6>
@@ -128,5 +128,41 @@
                 alert('Posts could not be loaded.');
             });
         }
+
+        $('.btn-ver').click(function () {
+            $('#box-Info').animate({
+                left: '0px'
+            },"fast",voltar())
+        });
+
+        function voltar() {
+            $('#box-Info').animate({
+                left: '+=380px'
+            },"fast")
+        }
+
+        var anoActual = new Date().getYear();
+        function buscarDadosCandidato(idCandidato) {
+            $.ajax({
+                url: '/api/getInscricao',
+                type: 'POST',
+                data: {'idAluno': idCandidato, 'ano': anoActual},
+                success: function (rs) {
+
+                    var ultimoId = parseInt(document.getElementById('idAl').value);
+                    if (idCandidato == ultimoId) {
+                        return;
+                    }
+                    document.getElementById('idAl').value = idCandidato;
+                    $('.cont').remove();
+                    $('.crs').remove();
+                    for (var i = 0; i < rs.inscricao.length; i++) {
+                        document.getElementById('nomeAluno').innerHTML = rs.inscricao[i].nome + ' ' + rs.inscricao[i].apelido;
+                        $('#curso').append('<li class="crs" style="margin-bottom: 3px"> <span class="handle"> <i style="color: #00a7d0;" class="fa fa-book"></i> </span> <span class="text">' + rs.inscricao[i].curso + '</span> <div class="tools"> <i class="fa fa-eye"></i> </div> </li>')
+                    }
+                }
+            });
+        }
     </script>
+
 @endsection

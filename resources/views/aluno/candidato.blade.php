@@ -178,7 +178,6 @@
                     for (var i = 0; i < rs.inscricao.length; i++) {
                         $('#curso').append('<li class="crs" style="margin-bottom:3px"><span class="handle"> <i style="color: #00a7d0;" class="fa fa-book"></i> </span> <span class="text">' + rs.inscricao[i].disciplina + '</span> <div class="tools"> <i class="fa fa-eye"></i> </div> </li>')
                     }
-
                     $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <span class="handle"><i class="fa fa-location-arrow"></i> </span> <span class="text">'+rs.inscricao[0].residencia+'</span><div class="tools"> <i class="fa fa-location-arrow"></i> </div> </li>');
                     $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <span class="handle"><i class="fa fa-phone"></i> </span> <span class="text">'+rs.inscricao[0].numero+'</span> <div class="tools"> <i class="fa fa-phone"></i> </div> </li>');
                     $('#contacto').append('<li class="cont"> <span class="handle"><i class="fa fa-envelope"></i> </span> <span class="text">'+rs.inscricao[0].email+'</span>  </li>');

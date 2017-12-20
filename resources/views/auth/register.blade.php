@@ -19,7 +19,7 @@ use App\Disciplina;
                 {{--</div>--}}
                 {{--action="{{ route('register') }}"--}}
                 <div class="box-body" style="background-color: #f8f8f8">
-                    <form id="formulario" class="form-horizontal" method="POST"  autocomplete="off" enctype="multipart/form-data">
+                    <form id="formulario" action="{{ route('register') }}" class="form-horizontal" method="POST"  autocomplete="off" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div id="Kar" class="carousel slide" data-ride="carousel" data-interval="false">
                             <div  class="carousel-inner" id="divKar">
@@ -251,7 +251,6 @@ use App\Disciplina;
                                 </div>
                             </div>
                         </div>
-
                     </form>
                 </div>
                 {{--<div class="box-footer">--}}

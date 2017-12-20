@@ -4,22 +4,17 @@ use App\Disciplina;
     $lastId = Aluno::query()->max('id');
     $disciplinas = Disciplina::all();
 ?>
-
 @extends('template.index')
-
 @section('filhote')
 <div class="container">
-    {{--{{ $lastId+1}}--}}
-
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="box box-info">
-                {{--<div class="box-header with-border">--}}
-                    {{--<h3 class="box-title"><i class="zmdi zmdi-edit"></i>&nbsp;Faça Pre-Inscrição</h3>--}}
-                {{--</div>--}}
-                {{--action="{{ route('register') }}"--}}
+                <div class="box-header with-border">
+                    <h6 class=""><i class="inputObrigatio">*</i>&nbsp;Campo Obigatório</h6>
+                </div>
                 <div class="box-body" style="background-color: #f8f8f8">
-                    <form id="formulario" class="form-horizontal" method="POST"  autocomplete="off" enctype="multipart/form-data">
+                    <form id="formulario" action="{{route('register')}}" class="form-horizontal" method="POST"  autocomplete="off" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div id="Kar" class="carousel slide" data-ride="carousel" data-interval="false">
                             <div  class="carousel-inner" id="divKar">

@@ -350,8 +350,6 @@ use App\Disciplina;
                 $('#karFoto').carousel(1);
             });
 
-            /*Inputs*/
-
             $("input").on('keyup',function() {
                 if ($(this).length > 0) {
                     $(this).css({"border-bottom": "1px solid #a0a2a6"});
@@ -508,9 +506,6 @@ use App\Disciplina;
             $('#btnTakePik').click(function () {
                snapshot();
             });
-//            openWebCam();
         });
     </script>
 @endsection
-
-{{--width="120" height="110"--}}

@@ -362,55 +362,55 @@ use App\Disciplina;
             });
 
             $('#btnNext').click(function () {
-//                var ctl = true;
-//                var apelido = $('#apelido').val().trim();
-//                var nome = $('#name').val().trim();
-//                var natulidade = $('#naturalidade').val().trim();
-//                var numBi = $('#numBi').val().trim();
-//                var residencia = $('#residencia').val().trim();
-//                var contacto = $('#contacto').val().trim();
-//                var dataNas = $('#dataN').val().trim();
-//                if(apelido ===''){
-//                    $("input#apelido").css({"border-bottom": "1px solid #EE6464"});
-//                    ctl =false;
-//                }
-//                if(nome ===''){
-//                    $("input#name").css({"border-bottom": "1px solid #EE6464"});
-//                    ctl =false;
-//                }
-//                if(natulidade ===''){
-//                    $("input#naturalidade").css({"border-bottom": "1px solid #EE6464"});
-//                    ctl =false;
-//                }
-//                if(numBi ===''){
-//                    $("input#numBi").css({"border-bottom": "1px solid #EE6464"});
-//                    ctl =false;
-//                }
-//                if(residencia ===''){
-//                    $("input#residencia").css({"border-bottom": "1px solid #EE6464"});
-//                    ctl =false;
-//                }
-//                if(contacto ===''){
-//                    $("input#contacto").css({"border-bottom": "1px solid #EE6464"});
-//                    ctl =false;
-//                }
-//                if(contacto ===''){
-//                    $("input#contacto").css({"border-bottom": "1px solid #EE6464"});
-//                    ctl =false;
-//                }
-//                if(dataNas ===''){
-//                    $("input#dataN").css({"border-bottom": "1px solid #EE6464"});
-//                    ctl =false;
-//                }
-//
-//                if(ctl === true) {
+                var ctl = true;
+                var apelido = $('#apelido').val().trim();
+                var nome = $('#name').val().trim();
+                var natulidade = $('#naturalidade').val().trim();
+                var numBi = $('#numBi').val().trim();
+                var residencia = $('#residencia').val().trim();
+                var contacto = $('#contacto').val().trim();
+                var dataNas = $('#dataN').val().trim();
+                if(apelido ===''){
+                    $("input#apelido").css({"border-bottom": "1px solid #EE6464"});
+                    ctl =false;
+                }
+                if(nome ===''){
+                    $("input#name").css({"border-bottom": "1px solid #EE6464"});
+                    ctl =false;
+                }
+                if(natulidade ===''){
+                    $("input#naturalidade").css({"border-bottom": "1px solid #EE6464"});
+                    ctl =false;
+                }
+                if(numBi ===''){
+                    $("input#numBi").css({"border-bottom": "1px solid #EE6464"});
+                    ctl =false;
+                }
+                if(residencia ===''){
+                    $("input#residencia").css({"border-bottom": "1px solid #EE6464"});
+                    ctl =false;
+                }
+                if(contacto ===''){
+                    $("input#contacto").css({"border-bottom": "1px solid #EE6464"});
+                    ctl =false;
+                }
+                if(contacto ===''){
+                    $("input#contacto").css({"border-bottom": "1px solid #EE6464"});
+                    ctl =false;
+                }
+                if(dataNas ===''){
+                    $("input#dataN").css({"border-bottom": "1px solid #EE6464"});
+                    ctl =false;
+                }
+
+                if(ctl === true) {
                     $('#Kar').carousel(1);
-//                }else{
-//                    $('#modalErro').modal({
-//                        show: true,
-//                        backdrop: "static"
-//                    });
-//                }
+                }else{
+                    $('#modalErro').modal({
+                        show: true,
+                        backdrop: "static"
+                    });
+                }
             });
 
             $('#check2').change(function () {
@@ -507,19 +507,5 @@ use App\Disciplina;
                snapshot();
             });
         });
-        
-        $('#formulario').submit(function () {
-            $.ajax({
-                url: '/salvarCandidato',
-                type: 'POST',
-                data: new FormData(this),
-                processData: false,
-                contentType: false,
-                cache: false,
-                success: function (rs) {
-                    alert(rs);
-                }
-            });
-        })
     </script>
 @endsection

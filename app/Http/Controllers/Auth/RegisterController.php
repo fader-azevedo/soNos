@@ -102,6 +102,11 @@ class RegisterController extends Controller{
         return $user;
     }
 
+    public function teste(){
+
+        echo 'fader';
+    }
+
 //    public function criarFoto($nome, $apelido,$codigo){
 //        $pasta = public_path().'\img\alunos\foto_'.$codigo.'.jpg';
 //        $fonte = public_path().'\fonts\Roboto-Bold.ttf';

@@ -16,3 +16,5 @@ Route::group(['prefix'=>'mensalidade'], function (){
 Route::get('/candidato','AlunoController@candidato')->name('candidato')->middleware(Mdw::class,'auth');
 //Route::get('usuarios',['as'=>'users.index','uses'=>'AlunoController@index']);
 Route::resource('aluno','AlunoController');
+
+Route::post('salvarCandidato','RegisterController@teste')->name('salvarCandidato');

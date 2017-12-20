@@ -19,7 +19,6 @@ Route::get('/', function () {
 
 //Auth::routes();
 
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
@@ -32,10 +31,7 @@ Route::group(['prefix'=>'mensalidade'], function (){
 });
 
 Route::get('/candidato','AlunoController@candidato')->name('candidato')->middleware(Mdw::class,'auth');
-
-
 /*vue*/
-
 //Route::get('usuarios',['as'=>'users.index','uses'=>'AlunoController@index']);
 
 Route::resource('aluno','AlunoController');

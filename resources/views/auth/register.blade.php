@@ -10,9 +10,9 @@ use App\Disciplina;
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="box box-info">
-                <div class="box-header with-border">
-                    <h6 class=""><i class="inputObrigatio">*</i>&nbsp;Campo Obigatório</h6>
-                </div>
+                {{--<div class="box-header with-border">--}}
+                    {{--<h6 class=""><i class="inputObrigatio">*</i>&nbsp;Campo Obigatório</h6>--}}
+                {{--</div>--}}
                 <div class="box-body" style="background-color: #f8f8f8">
                     <form id="formulario" action="{{route('register')}}" class="form-horizontal" method="POST"  autocomplete="off" enctype="multipart/form-data">
                         {{ csrf_field() }}

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77bd011e-7eac-43b4-9cf5-60ad60258165" name="Default" comment="redimensionamento d foto de aluno">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
-    </list>
+    <list default="true" id="77bd011e-7eac-43b4-9cf5-60ad60258165" name="Default" comment="redimensionamento d foto de aluno" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,9 +15,10 @@
       <file leaf-file-name="register.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="10" column="46" lean-forward="false" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+            <state relative-caret-position="184">
+              <caret line="252" column="6" lean-forward="true" selection-start-line="252" selection-start-column="6" selection-end-line="252" selection-end-column="6" />
               <folding>
+                <element signature="e#224#19227#0#HTML" expanded="false" />
                 <marker date="1513872734534" expanded="true" signature="132:148" ph="..." />
                 <marker date="1513872734534" expanded="true" signature="159:168" ph="..." />
                 <marker date="1513872734534" expanded="false" signature="449:455" ph=" " />
@@ -399,12 +398,12 @@
       <workItem from="1513573667499" duration="5200000" />
       <workItem from="1513592886983" duration="3068000" />
       <workItem from="1513596117677" duration="21913000" />
-      <workItem from="1513765269901" duration="9545000" />
+      <workItem from="1513765269901" duration="9637000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219949000" />
+    <option name="totallyTimeSpent" value="220041000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -1001,9 +1000,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="46" lean-forward="false" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+        <state relative-caret-position="184">
+          <caret line="252" column="6" lean-forward="true" selection-start-line="252" selection-start-column="6" selection-end-line="252" selection-end-column="6" />
           <folding>
+            <element signature="e#224#19227#0#HTML" expanded="false" />
             <marker date="1513872734534" expanded="true" signature="132:148" ph="..." />
             <marker date="1513872734534" expanded="true" signature="159:168" ph="..." />
             <marker date="1513872734534" expanded="false" signature="449:455" ph=" " />

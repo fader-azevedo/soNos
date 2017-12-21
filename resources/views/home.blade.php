@@ -19,4 +19,3 @@
 @section('content')
     @yield('conteudo')
 @endsection
-

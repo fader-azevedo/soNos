@@ -204,7 +204,7 @@ use App\Disciplina;
                                                     <div class="col-sm-4 input-field">
                                                         <input id="opcao1" class="form-control" type="text" name="opcao1">
                                                         <label for="opcao1"><i class="fa fa-pencil"></i>&nbsp;1ª Opção</label>
-                                                    </div>
+                                                     </div>
                                                     <div class="col-sm-8 input-field">
                                                         <input id="insti" class="form-control" type="text" name="insti1">
                                                         <label for="insti"><i class="fa fa-home"></i>&nbsp;Instituição</label>

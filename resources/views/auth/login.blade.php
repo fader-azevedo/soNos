@@ -42,7 +42,7 @@
             </div>
         </div>
     </nav>
-    <form class="form-login"  method="POST" action="{{ route('login') }}">
+    <form class="form-login"  method="POST" action="{{ route('login') }}" autocomplete="off">
         {{ csrf_field() }}
         <h2 class="form-login-heading">Login</h2>
         <div class="login-wrap">

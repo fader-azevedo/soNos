@@ -2,13 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77bd011e-7eac-43b4-9cf5-60ad60258165" name="Default" comment="redimensionamento d foto de aluno">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/camera/canvas-to-blob.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/camera/html5shiv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/camera/jpeg_camera_no_flash.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/camera/jpeg_camera_with_dependencies.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/camera/respond.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/camera/swfobject.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/camera/validacao.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/datatables.net-bs/.bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/datatables.net-bs/License.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/datatables.net-bs/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/datatables.net-bs/bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/datatables.net-bs/css/dataTables.bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/datatables.net-bs/css/dataTables.bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/datatables.net-bs/js/dataTables.bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/datatables.net-bs/js/dataTables.bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/datatables.net/.bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/datatables.net/License.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/datatables.net/Readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/datatables.net/bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/datatables.net/js/jquery.dataTables.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/datatables.net/js/jquery.dataTables.min.js" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -364,12 +371,12 @@
       <workItem from="1513573667499" duration="5200000" />
       <workItem from="1513592886983" duration="3068000" />
       <workItem from="1513596117677" duration="21913000" />
-      <workItem from="1513765269901" duration="5903000" />
+      <workItem from="1513765269901" duration="5958000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216307000" />
+    <option name="totallyTimeSpent" value="216362000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />

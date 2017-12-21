@@ -6,7 +6,7 @@ use App\Disciplina;
 ?>
 @extends('template.index')
 @section('filhote')
-<div class="container" style="background-color: #00b0ff">
+<div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="box box-info">

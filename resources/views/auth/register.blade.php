@@ -233,7 +233,6 @@ use App\Disciplina;
                                                     </div>
                                                 </div>
                                             </fieldset>
-
                                         </div>
                                     </div>
                                     {{--<input id="" type="text" class="form-control" name="" required oninvalid="this.setCustomValidity('Wua biwa')" oninput="this.setCustomValidity('')">--}}

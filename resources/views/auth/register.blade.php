@@ -257,7 +257,7 @@ use App\Disciplina;
         <div class="modal-content" style="border-radius: 6px;">
             <div class="modal-body">
                 <h4 class="center">
-                    <label class="btn btn-info" id="btnUpload" for="imgUpoad">Upload <i class="fa fa-file-image-o"></i></label>
+                    <label class="btn btn-info" id="btnUpload" for="imgUpoad">Upload<i class="fa fa-file-image-o"></i></label>
                     <label class="btn btn-info" id="btnCamera">Camera <i class="fa fa-camera"></i></label>
                 </h4>
                 <input type="file"  id="imgUpoad">

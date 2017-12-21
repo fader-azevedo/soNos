@@ -67,38 +67,10 @@
                     </span>
                 @endif
             </div>
-            <label class="checkbox">
-                <span class="pull-right">
-                    {{--<a data-toggle="modal" href="#myModal"> Esqueceste Password?</a>--}}
-                </span>
-            </label>
             <button class="btn btn-theme btn-block" type="submit"><a><i class="zmdi zmdi-lock-open"></i> Login</a></button>
             <hr>
         </div>
     </form>
-
-    <div aria-hidden="true" aria-labelledby="" role="dialog" tabindex="-1" id="myModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h5 class="modal-title">Esqueceste Password ?</h5>
-                </div>
-                <div class="modal-body">
-                    <p>Preenche com seu email para restaurar</p>
-                    <div class="input-field">
-                        <input id="email"  type="text" class="validate">
-                        <label for="email" ><i class="zmdi zmdi-email"></i>&nbsp;Email</label>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button data-dismiss="modal" class="btn btn-default" type="button">Cancelar</button>
-                    <button class="btn btn-theme" type="button">Enviar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script src="{!! asset('js/jquery.js')!!}"></script>
     <script src="{!! asset('js/bootstrap.min.js')!!}"></script>
     <script src="{!! asset('js/materialize.min.js')!!}"></script>

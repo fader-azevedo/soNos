@@ -428,18 +428,21 @@ use App\Disciplina;
             //upload de imagem
             var reader = new FileReader();
 
+            var contFile=0;
             $('#imgUpoad').on('change', function () {
                 reader.onload = function (e) {
                     $uploadCrop.croppie('bind', {
                         url: e.target.result
                     }).then(function () {
                         console.log('Foto Carregada com sucesso');
+                        contFile = 1;
                     });
                 };
                 reader.readAsDataURL(this.files[0]);
             });
 
             $('#btnSendImage').on('click', function (ev) {
+                
                 var index = $('#karFoto .active').index();
                 if(index === 0) {
                     $uploadCrop.croppie('result', {
@@ -493,6 +496,7 @@ use App\Disciplina;
                     resp2 = document.getElementById('fotoWebCam').src = canvas.toDataURL('image/png');
                     video.setAttribute('poster',resp2);
                 }
+                contFile=1;
             }
             $('#btnTakePik').click(function () {
                snapshot();

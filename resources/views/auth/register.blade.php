@@ -211,7 +211,6 @@ use App\Disciplina;
                                                     </div>
                                                 </div>
 
-
                                                 <div style="display: flex">
                                                     <div class="col-sm-4 input-field">
                                                         <input id="opcao2" class="form-control" type="text"  name="opcao2">
@@ -248,8 +247,6 @@ use App\Disciplina;
                         </div>
                     </form>
                 </div>
-                {{--<div class="box-footer">--}}
-                {{--</div>--}}
             </div>
         </div>
     </div>

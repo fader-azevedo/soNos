@@ -312,7 +312,6 @@ use App\Disciplina;
 
         $(document).ready(function() {
 
-            const mq = window.matchMedia("(max-width: 500px)");
             $uploadCrop = $('#upload-demo').croppie({
                 enableExif: true,
                 viewport: {

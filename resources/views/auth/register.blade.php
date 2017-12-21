@@ -8,7 +8,7 @@ use App\Disciplina;
 @section('filhote')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8 col-sm-8 col-lg-8 col-md-offset-2">
             <div class="box box-info">
                 {{--<div class="box-header with-border">--}}
                     {{--<h6 class=""><i class="inputObrigatio">*</i>&nbsp;Campo Obigatório</h6>--}}

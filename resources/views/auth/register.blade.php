@@ -251,7 +251,6 @@ use App\Disciplina;
         </div>
     </div>
 </div>
-
 <div class="modal fade" id="modalFoto">
     <div class="modal-dialog box box-info" id="modalWebCam">
         <div class="modal-content" style="border-radius: 6px;">
@@ -325,7 +324,6 @@ use App\Disciplina;
                 }
             });
 
-
             $('#openModal').on('click',function () {
                 $('#modalFoto').modal({
                     show: true,
@@ -346,6 +344,7 @@ use App\Disciplina;
                     $(this).css({"border-bottom": "1px solid #a0a2a6"});
                 }
             });
+
             $("input#dataN").on('change',function() {
                 if ($(this).length > 0) {
                     $(this).css({"border-bottom": "1px solid #a0a2a6"});
@@ -427,7 +426,6 @@ use App\Disciplina;
 
             //upload de imagem
             var reader = new FileReader();
-
             var contFile=0;
             $('#imgUpoad').on('change', function () {
                 reader.onload = function (e) {

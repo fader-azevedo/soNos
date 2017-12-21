@@ -442,7 +442,8 @@ use App\Disciplina;
             });
 
             $('#btnSendImage').on('click', function (ev) {
-                
+                if(contFile === 0)
+                    return;
                 var index = $('#karFoto .active').index();
                 if(index === 0) {
                     $uploadCrop.croppie('result', {

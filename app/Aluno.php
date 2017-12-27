@@ -11,7 +11,7 @@ use Sortable;
     protected $fillable =['codigo','apelido','nome','sexo','dataNasc','numBi','naturalidade','residencia','foto','idUser','idContacto','idEncarregado'];
 
     
-    protected $sortable = ['apelido','nome as ok','sexo'];
+//    protected $sortable = ['apelido','nome','sexo'];
 
     public function getInscricao(){
         return $this->hasMany(Inscricao::class,'idAluno');

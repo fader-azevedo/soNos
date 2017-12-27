@@ -30,7 +30,7 @@ class AlunoController extends Controller{
 //        $candidato = Inscricao::query()->join('alunos','inscricaos.idAluno','=','alunos.id')->select('alunos.*')->distinct('idAluno')->where('estado','=','pre-inscrito')->where('ano',$ano)->paginate(6);
         $candidato = Inscricao::query()->join('alunos','inscricaos.idAluno','=','alunos.id')
             ->select('alunos.*')->distinct('idAluno')->where('estado','=','pre-inscrito')
-            ->where('ano',$ano)->paginate(6);
+            ->where('ano',$ano)->sortable()->paginate(6);
 
 //        $candidato = Aluno::sortable()->paginate(4);
         if(request()->ajax()){

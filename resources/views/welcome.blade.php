@@ -76,7 +76,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Pagina
+                    Pagina Web
                 </div>
             </div>
         </div>

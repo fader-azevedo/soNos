@@ -1,5 +1,6 @@
 @extends('home')
 @section('conteudo')
+    {{--{{$al}}--}}
     <section style="position: relative;">
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-money"></i>&nbsp; Candidatos</a></li>

@@ -2,7 +2,7 @@
     <thead>
         <tr>
             <th style="width: 8%">Foto</th>
-            <th style="width: 26%">Nome Completo</th>
+            <th style="width: 26%">@sortablelink('ok') Nome Completo</th>
             <th style="width: 15%">Sexo</th>
             <th style="width: 18%">Num BI</th>
             <th style="width: 18%">Data Nasc</th>

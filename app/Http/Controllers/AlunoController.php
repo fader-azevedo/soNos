@@ -25,7 +25,14 @@ class AlunoController extends Controller{
 
     public function candidato(){
         $ano = date('Y');
-        $candidato = Inscricao::query()->join('alunos','inscricaos.idAluno','=','alunos.id')->select('alunos.*')->distinct('idAluno')->where('estado','=','pre-inscrito')->where('ano',$ano)->paginate(6);
+//        $al = Aluno::sortable()->paginate(1);
+//        $al = Aluno::all();
+//        $candidato = Inscricao::query()->join('alunos','inscricaos.idAluno','=','alunos.id')->select('alunos.*')->distinct('idAluno')->where('estado','=','pre-inscrito')->where('ano',$ano)->paginate(6);
+//        $candidato = Inscricao::query()->join('alunos','inscricaos.idAluno','=','alunos.id')
+//            ->select('alunos.*')->distinct('idAluno')->where('estado','=','pre-inscrito')
+//            ->where('ano',$ano)->paginate(6);
+
+        $candidato = Aluno::sortable()->paginate(4);
         if(request()->ajax()){
             return view('aluno.candidatoTabela',['candidato'=>$candidato])->render();
         }

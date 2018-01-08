@@ -42,9 +42,5 @@ class AlunoController extends Controller{
         return view('users.index')->with(compact('users'));
     }
 
-    public function getAlunos(){
-        $alunos = Inscricao::query()->join('alunos','inscricaos.idAluno','=','alunos.id')
-            ->select('alunos.*')->distinct('idAluno')->where('estado','=','inscrito')
-            ->where('ano','=',date('Y'))->paginate(6);
-    }
+
 }

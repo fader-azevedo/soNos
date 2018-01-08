@@ -1,7 +1,6 @@
 <?php
     use App\Inscricao;
     $anos = Inscricao::query()->distinct()->pluck('ano');
-    $alunos =
 ?>
 @extends('home')
 @section('conteudo')
@@ -29,6 +28,7 @@
         </ul>
 
         <div class="tab-content">
+            <div class="row">
             <div class="col-lg-8">
                 <table class="table-striped" id="tabela1" >
                     <thead>
@@ -42,7 +42,7 @@
                     </tr>
                     </thead>
                     <tbody id="tabela1Corpo" class="dados">
-                    @foreach($candidato  as $ms)
+                    @foreach($alunos  as $ms)
                         <tr>
                             <td style="width: 8%">
                                 <img src="{{asset('img/alunos/').'/'.$ms->foto}}" class="img-circle " width="50" height="50">
@@ -61,6 +61,7 @@
                     @endforeach
                     </tbody>
                 </table>
+            </div>
             </div>
         </div>
     </div>

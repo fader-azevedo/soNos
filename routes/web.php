@@ -13,6 +13,11 @@ Route::group(['prefix'=>'mensalidade'], function (){
     Route::get('registar','MensalidadeController@registarMensalidade')->middleware(Mdw::class,'auth');
 });
 
+Route::group(['prefix'=>'historico'], function (){
+    Route::get('/','HistoricoController@index')->middleware(Mdw::class,'auth');
+//    Route::get('registar','MensalidadeController@registarMensalidade')->middleware(Mdw::class,'auth');
+});
+
 Route::get('/candidato','AlunoController@candidato')->name('candidato')->middleware(Mdw::class,'auth');
 //Route::get('usuarios',['as'=>'users.index','uses'=>'AlunoController@index']);
 Route::resource('aluno','AlunoController');

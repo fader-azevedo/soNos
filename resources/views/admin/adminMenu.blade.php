@@ -75,7 +75,7 @@
         </ul>
     </li>
 
-    <li class="treeview">
+    <li class="treeview" id="li-Historico">
         <a href="#">
             <i class="fa fa-history"></i>
             <span>Históricos</span>
@@ -84,8 +84,8 @@
                     </span>
         </a>
         <ul class="treeview-menu">
-            <li><a href=""><i class="fa fa-users"></i> Alunos</a></li>
-            <li><a href=""><i class="fa fa-money"></i> Mensalidades</a></li>
+            <li id="li-HistoricoAluno"><a href="{{'/historico'}}"><i class="fa fa-users"></i> Alunos</a></li>
+            <li id="li-HistoricoMensalidade"><a href=""><i class="fa fa-money"></i> Mensalidades</a></li>
         </ul>
     </li>
 

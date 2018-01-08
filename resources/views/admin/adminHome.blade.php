@@ -2,7 +2,7 @@
 <?php
 use App\Turma,App\Inscricao,App\Disciplina;
     $numTurma = Turma::all()->count();
-    $numAlunos = Inscricao::all()->count();
+    $numInscricao = Inscricao::query()->where('ano','=',date('Y'))->count();
     $numDisc = Disciplina::all()->count();
 ?>
 @section('conteudo')
@@ -29,7 +29,7 @@ use App\Turma,App\Inscricao,App\Disciplina;
         <!-- small box -->
         <div class="small-box bg-yellow">
             <div class="inner">
-                <h3>{{$numAlunos}}</h3>
+                <h3>{{$numInscricao}}</h3>
 
                 <p>Incrições</p>
             </div>

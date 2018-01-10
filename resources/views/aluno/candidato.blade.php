@@ -23,16 +23,12 @@
                     {{--<h6 style="margin: -10px 0 0 1px; font-size: 19px" class="label label-default" id="nomeAluno">Nome</h6>--}}
                 {{--</div>--}}
 
-                <div class="lockscreen-item">
+                <div class="lockscreen-item text-right">
                     <div class="lockscreen-image" >
                         <img id="idFoto" class="img-circle" src="{!! asset('img/aluno.png') !!}" height="110">
                     </div>
-                    <form class="lockscreen-credentials">
-                        <div class="input-group">
-                            <input id="idCandidato" type="hidden" value="0">
-                            <input  type="text" class="form-control text-right" value="Nome" id="nomeAluno" style="background-color: transparent">
-                        </div>
-                    </form>
+                    <input id="idCandidato" type="hidden" value="0">
+                    <h5 id="nomeAluno">Nome do candidato</h5>
                 </div>
                 <div class="col-sm-12" style="padding: 2px; margin-top: 10px; background-color: white">
                     <ul class="todo-list" id="contacto">
@@ -170,9 +166,8 @@
                 type: 'POST',
                 data: {'idAluno': idCandidato, 'ano': anoActual},
                 success: function (rs) {
-
                     document.getElementById('idCandidato').value = idCandidato;
-                    document.getElementById('nomeAluno').value = rs.inscricao[0].nome;
+                    document.getElementById('nomeAluno').innerHTML =rs.inscricao[0].nome;
                     document.getElementById('idFoto').src =  '{{asset('img/alunos')}}'.concat('/' + rs.inscricao[0].foto);
 
                     $('.cont').remove();

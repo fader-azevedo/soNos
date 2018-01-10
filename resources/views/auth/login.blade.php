@@ -68,7 +68,7 @@
                 @endif
             </div>
             <button class="btn btn-theme btn-block" type="submit"><a><i class="zmdi zmdi-lock-open"></i> Login</a></button>
-            {{--<hr>--}}
+            <hr>
         </div>
     </form>
     <script src="{!! asset('js/jquery.js')!!}"></script>

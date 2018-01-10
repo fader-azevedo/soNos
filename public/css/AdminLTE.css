@@ -3430,7 +3430,7 @@ table.text-center th {
   padding: 0;
   background: #fff;
   position: relative;
-  margin: 10px auto 30px auto;
+  margin: 40px auto 30px auto;
   width: 290px;
 }
 /* User image */
@@ -3445,8 +3445,8 @@ table.text-center th {
 }
 .lockscreen-image > img {
   border-radius: 50%;
-  width: 70px;
-  height: 70px;
+  width: 95px;
+  height: 95px;
 }
 /* Contains the password input and the login button */
 .lockscreen-credentials {

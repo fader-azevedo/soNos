@@ -17,15 +17,25 @@
             @include('aluno.candidatoTabela')
         </div>
         <div id="box-Info" class="col-sm-4 col-md-4 col-lg-4">
-            <div  class="box box-widget widget-user" style="display: flex; padding: 5px; background-color: #f5f5f5;">
-                <div class="col-sm-9 text-center" id="divFoto" style="margin-left: -20px">
-                    <img id="idFoto" class="img-circle" src="{!! asset('img/aluno.png') !!}" alt="" height="110"><br/><br/>
-                    <input id="idCandidato" type="hidden" value="0">
-                    <h6 style="margin: -10px 0 0 1px; font-size: 19px" class="label label-default" id="nomeAluno">Nome</h6>
-                </div>
-                <div class="col-sm-12 box" style="padding: 2px">
-                    <ul class="todo-list" id="contacto">
+            <div  class="box box-widget widget-user" style="display: flex; flex-direction: column; padding: 5px; background-color: #f5f5f5;">
+                {{--<div class="col-sm-9 text-center" id="divFoto">--}}
+                    {{--<img id="idFoto" class="img-circle" src="{!! asset('img/aluno.png') !!}" alt="" height="110"><br/><br/>--}}
+                    {{--<h6 style="margin: -10px 0 0 1px; font-size: 19px" class="label label-default" id="nomeAluno">Nome</h6>--}}
+                {{--</div>--}}
 
+                <div class="lockscreen-item">
+                    <div class="lockscreen-image" >
+                        <img id="idFoto" class="img-circle" src="{!! asset('img/aluno.png') !!}" height="110">
+                    </div>
+                    <form class="lockscreen-credentials">
+                        <div class="input-group">
+                            <input id="idCandidato" type="hidden" value="0">
+                            <input  type="text" class="form-control text-right" value="Nome" id="nomeAluno" style="background-color: transparent">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-12" style="padding: 2px; margin-top: 10px; background-color: white">
+                    <ul class="todo-list" id="contacto">
                         <li class="cont" style="margin-bottom: 5px">
                             <span class="handle">
                                 <i class="fa fa-location-arrow"></i>
@@ -43,15 +53,6 @@
                             <span class="text">12345678</span>
                             <div class="tools">
                                 <i class="fa fa-phone"></i>
-                            </div>
-                        </li>
-                        <li class="cont">
-                            <span class="handle">
-                                <i class="fa fa-envelope"></i>
-                            </span>
-                            <span class="text">soNos@gamil.com</span>
-                            <div class="tools">
-                                <i class="fa fa-envelope"></i>
                             </div>
                         </li>
                     </ul>
@@ -171,8 +172,8 @@
                 success: function (rs) {
 
                     document.getElementById('idCandidato').value = idCandidato;
-                    document.getElementById('nomeAluno').innerHTML = rs.inscricao[0].nome;
-                    document.getElementById('idFoto').src =  '{{asset('img/alunos/')}}'.concat('/' + rs.inscricao[0].foto);
+                    document.getElementById('nomeAluno').value = rs.inscricao[0].nome;
+                    document.getElementById('idFoto').src =  '{{asset('img/alunos')}}'.concat('/' + rs.inscricao[0].foto);
 
                     $('.cont').remove();
                     $('.crs').remove();
@@ -181,7 +182,7 @@
                     }
                     $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <span class="handle"><i class="fa fa-location-arrow"></i> </span> <span class="text">'+rs.inscricao[0].residencia+'</span><div class="tools"> <i class="fa fa-location-arrow"></i> </div> </li>');
                     $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <span class="handle"><i class="fa fa-phone"></i> </span> <span class="text">'+rs.inscricao[0].numero+'</span> <div class="tools"> <i class="fa fa-phone"></i> </div> </li>');
-                    $('#contacto').append('<li class="cont"> <span class="handle"><i class="fa fa-envelope"></i> </span> <span class="text">'+rs.inscricao[0].email+'</span>  </li>');
+                    $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <span class="handle"><i class="fa fa-envelope"></i> </span> <span class="text">'+rs.inscricao[0].email+'</span>  </li>');
                 }
             });
         }

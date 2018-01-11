@@ -11,3 +11,5 @@ Route::post('kappa', 'RegisterController@create1')->name('kappa');
 
 /*Inscricao*/
 Route::post('/getInscricao','InscricaoController@getInscricao');
+Route::post('/getAlunos','InscricaoController@getAlunos');
+Route::post('/utimoCandidato','InscricaoController@getUltimoCandidato');

@@ -220,5 +220,14 @@
                 }
             });
         }
+
+        $.ajax({
+            url: '/api/utimoCandidato',
+            type: 'POST',
+            success: function (id) {
+                buscarDadosCandidato(id)
+            }
+        })
     </script>
+
 @endsection

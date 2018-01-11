@@ -13,4 +13,16 @@ class InscricaoController extends Controller{
             ->where('idAluno',$_POST['idAluno'])->where('ano',$_POST['ano'])->get();
         return  response()->json(array('inscricao'=>$inscricao));
     }
+    public function getAlunos(){
+        $inscricao = Inscricao::query()->join('alunos','inscricaos.idAluno','=','alunos.id')
+            ->join('disciplinas','inscricaos.idDisciplina','=','disciplinas.id')
+            ->join('contactos','alunos.idContacto','=','contactos.id')
+            ->select('disciplinas.*','disciplinas.nome as disciplina','disciplinas.id as idDisciplina','alunos.*','contactos.*')
+            ->where('ano',$_POST['ano'])->get();
+        return  response()->json(array('dados'=>$inscricao));
+    }
+
+    public function getUltimoCandidato(){
+        return Inscricao::query()->max('idAluno');
+    }
 }

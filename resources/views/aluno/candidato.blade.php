@@ -3,7 +3,7 @@
     {{--{{$al}}--}}
     <section style="position: relative;">
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-money"></i>&nbsp; Candidatos</a></li>
+            <li><a href="#"><i class="fa fa-users"></i>&nbsp; Candidatos</a></li>
         </ol>
     </section>
     <div class="row"  style="margin-top: -10px">
@@ -35,7 +35,7 @@
                         <li class="cont" style="margin-bottom: 5px">
 
                             <h6 style="font-size: 14px">
-                                <span class="handle" style="width: 40%">
+                                <span class="handle" style="width: 30%">
                                     <i class="fa fa-check text-aqua"></i>
                                     Sexo:
                                 </span>
@@ -47,7 +47,7 @@
                         <li class="cont" style="margin-bottom: 5px">
 
                             <h6 style="font-size: 14px">
-                                <span class="handle" style="width: 40%">
+                                <span class="handle" style="width: 30%">
                                     <i class="fa fa-location-arrow text-aqua"></i>
                                     Residência:
                                 </span>
@@ -60,7 +60,7 @@
                         <li class="cont" style="margin-bottom: 5px">
 
                             <h6 style="font-size: 14px">
-                                <span class="handle" style="width: 40%">
+                                <span class="handle" style="width: 30%">
                                     <i class="fa fa-phone text-aqua"></i>
                                     Contacto:
                                 </span>
@@ -73,7 +73,7 @@
                         <li class="cont" style="margin-bottom: 5px">
 
                             <h6 style="font-size: 14px">
-                                <span class="handle" style="width: 40%">
+                                <span class="handle" style="width: 30%">
                                     <i class="fa fa-phone text-aqua"></i>
                                     Email:
                                 </span>

@@ -425,3 +425,10 @@ thead tr .anoExport{
 td .label{
   /*font-size: 16px;*/
 }
+
+.crs:first-child{
+  margin-right: 10px;
+}
+.crs{
+  width: 50%;
+}

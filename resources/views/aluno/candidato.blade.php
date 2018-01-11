@@ -36,24 +36,24 @@
                             <span class="handle">
                                 <i class="fa fa-location-arrow" style="color: #00a7d0"></i>
                             </span>
-                            <span class="text" style="width: 10%; background-color: rebeccapurple">Residencia:</span>
-                            <span class="text right">Rua Costa do Sol</span>
+                            <span class="text text-right" style="width: 20%;">Residência:</span>
+                            <span class="text right text-right" style="width: 70%;">Rua Costa do Sol</span>
                         </li>
 
                         <li class="cont" style="margin-bottom: 5px">
                             <span class="handle">
                                 <i class="fa fa-phone" style="color: #00a7d0"></i>
                             </span>
-                            <span class="text">Contacto:</span>
-                            <span class="text right">12345678</span>
+                            <span class="text text-right" style="width: 20%;">Contacto:</span>
+                            <span class="text right text-right" style="width: 70%">12345678</span>
                         </li>
 
                         <li class="cont" style="margin-bottom: 5px">
                             <span class="handle">
                                 <i class="fa fa-envelope" style="color: #00a7d0"></i>
                             </span>
-                            <span class="text">Email:</span>
-                            <span class="text right">socienciasonos@gmail.com</span>
+                            <span class="text text-right" style="width: 19%;">Email:</span>
+                            <span class="text right text-right" style="width: 70%">socienciasonos@gmail.com</span>
                         </li>
                     </ul>
                 </div>
@@ -64,15 +64,18 @@
                         <h3 class="box-title">Disciplinas</h3>
                     </div>
                     <div class="box-body">
-                        <ul class="todo-list" id="curso" >
+                        <ul class="todo-list" id="curso" style="display: flex">
                             <li class="crs">
                                     <span class="handle">
-                                        <i class="fa fa-book"></i>
+                                        <i class="fa fa-book" style="color: #00b0ff"></i>
                                     </span>
                                 <span class="text">Disciplina</span>
-                                {{--<div class="tools2">--}}
-                                    {{--<button class="btn btn-xs">Mais Detalhes</button>--}}
-                                {{--</div>--}}
+                            </li>
+                            <li class="crs">
+                                    <span class="handle">
+                                        <i class="fa fa-book" style="color: #00b0ff"></i>
+                                    </span>
+                                <span class="text">Disciplina2</span>
                             </li>
                         </ul>
                     </div>
@@ -181,13 +184,20 @@
                     $('.cont').remove();
                     $('.crs').remove();
                     for (var i = 0; i < rs.inscricao.length; i++) {
-                        $('#curso').append('<li class="crs" style="margin-bottom:3px"><span class="handle"> <i style="color: #00a7d0;" class="fa fa-book"></i> </span> <span class="text">' + rs.inscricao[i].disciplina + '</span></li>')
+//                        $('#curso').append('<li class="crs" style="margin-bottom:3px"><span class="handle"> <i style="color: #00a7d0;" class="fa fa-book"></i> </span> <span class="text">' + rs.inscricao[i].disciplina + '</span></li>')
                     }
-                    $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <span class="handle"><i class="fa fa-location-arrow"></i> </span> <span class="text">'+rs.inscricao[0].residencia+'</span><div class="tools"> <i class="fa fa-location-arrow"></i> </div> </li>');
-                    $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <span class="handle"><i class="fa fa-phone"></i> </span> <span class="text">'+rs.inscricao[0].numero+'</span> <div class="tools"> <i class="fa fa-phone"></i> </div> </li>');
-                    $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <span class="handle"><i class="fa fa-envelope"></i> </span> <span class="text">'+rs.inscricao[0].email+'</span>  </li>');
+                    $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <span class="handle"><i class="fa fa-location-arrow" style="color: #00a7d0"></i> </span><span class="text text-right" style="width: 20%;">Residência:</span> <span class="text right text-right">'+rs.inscricao[0].residencia+'</span><div class="tools"> <i class="fa fa-location-arrow"></i> </div> </li>');
+                    $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <span class="handle"><i class="fa fa-phone" style="color: #00a7d0"></i> </span><span class="text text-right" style="width: 20%;">Contacto:</span> <span class="text right text-right">'+rs.inscricao[0].numero+'</span> <div class="tools"> <i class="fa fa-phone"></i> </div> </li>');
+                    $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <span class="handle"><i class="fa fa-envelope" style="color: #00a7d0"></i> </span><span class="text text-right" style="width: 19%;">Email:</span> <span class="text right text-right">'+rs.inscricao[0].email+'</span>  </li>');
                 }
             });
         }
     </script>
 @endsection
+{{--<li class="cont" style="margin-bottom: 5px">--}}
+                            {{--<span class="handle">--}}
+                                {{--<i class="fa fa-location-arrow" ></i>--}}
+                            {{--</span>--}}
+    {{--<span class="text text-right" style="width: 20%;">Residência:</span>--}}
+    {{--<span class="text right text-right" style="width: 70%;">Rua Costa do Sol</span>--}}
+{{--</li>--}}

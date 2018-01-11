@@ -34,22 +34,26 @@
                     <ul class="todo-list" id="contacto">
                         <li class="cont" style="margin-bottom: 5px">
                             <span class="handle">
-                                <i class="fa fa-location-arrow"></i>
+                                <i class="fa fa-location-arrow" style="color: #00a7d0"></i>
                             </span>
-                            <span class="text">Rua Costa do Sol</span>
-                            <div class="tools">
-                                <i class="fa fa-location-arrow"></i>
-                            </div>
+                            <span class="text" style="width: 10%; background-color: rebeccapurple">Residencia:</span>
+                            <span class="text right">Rua Costa do Sol</span>
                         </li>
 
                         <li class="cont" style="margin-bottom: 5px">
                             <span class="handle">
-                                <i class="fa fa-phone"></i>
+                                <i class="fa fa-phone" style="color: #00a7d0"></i>
                             </span>
-                            <span class="text">12345678</span>
-                            <div class="tools">
-                                <i class="fa fa-phone"></i>
-                            </div>
+                            <span class="text">Contacto:</span>
+                            <span class="text right">12345678</span>
+                        </li>
+
+                        <li class="cont" style="margin-bottom: 5px">
+                            <span class="handle">
+                                <i class="fa fa-envelope" style="color: #00a7d0"></i>
+                            </span>
+                            <span class="text">Email:</span>
+                            <span class="text right">socienciasonos@gmail.com</span>
                         </li>
                     </ul>
                 </div>
@@ -66,9 +70,9 @@
                                         <i class="fa fa-book"></i>
                                     </span>
                                 <span class="text">Disciplina</span>
-                                <div class="tools2">
-                                    <button class="btn btn-xs">Mais Detalhes</button>
-                                </div>
+                                {{--<div class="tools2">--}}
+                                    {{--<button class="btn btn-xs">Mais Detalhes</button>--}}
+                                {{--</div>--}}
                             </li>
                         </ul>
                     </div>
@@ -82,8 +86,8 @@
 @section('scripts')
     <script>
 
-        var idU = JSON.parse('{{json_decode($idUltomoCandidato)}}');
-        alert(idU);
+        {{--var idU = JSON.parse('{{json_decode($idUltomoCandidato)}}');--}}
+//        alert(idU);
         $('#li-Candidato').addClass('active');
 
         function filtrar() {
@@ -160,7 +164,7 @@
         function voltar() {
             $('#box-Info').animate({
                 left: '+=380px'
-            },"slow")
+            },"fast")
         }
 
         var anoActual =  (new Date()).getFullYear();

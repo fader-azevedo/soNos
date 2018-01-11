@@ -1,5 +1,4 @@
 {{--@sortablelink('estado')--}}
-<?php $idUltomoCandidato=0?>
 <table class="table-striped" id="tabela1" >
     <thead>
         <tr>
@@ -24,10 +23,9 @@
 
                 <td style="width: 20%; display: flex;" class="center">
                     <a class="btn btn-info btn-ver bt" data-id="{{$ms->id}}"><i class="zmdi zmdi-eye"></i>&nbsp;Mais Info</a>
-                    <a class="btn btn-warning bt"><i class="zmdi zmdi-check"></i>&nbsp;&nbsp;Validar&nbsp;&nbsp;</a>
+                    <a class="btn btn-success bt"><i class="zmdi zmdi-check"></i>&nbsp;&nbsp;Validar&nbsp;&nbsp;</a>
                 </td>
             </tr>
-            <?php $idUltomoCandidato = $ms->id?>
         @endforeach
     </tbody>
 </table>

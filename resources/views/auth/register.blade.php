@@ -22,7 +22,7 @@ use App\Disciplina;
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <fieldset >
-                                                <legend style="margin-bottom: 0; font-size: 15px;" class="center btn btn-info" id="openModal">Fotografia</legend>
+                                                <legend style="margin-bottom: 0; font-size: 15px;" class="center btn btn-info" id="openModal">Anexa Fotografia</legend>
                                                 <input type="hidden" id="id" name="id">
                                                 <input type="file" name="inputFoto" id="inputFoto">
                                                 {{--<a class="btn btn-info" >upload</a>--}}

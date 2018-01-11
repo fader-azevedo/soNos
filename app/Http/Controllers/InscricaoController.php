@@ -18,6 +18,7 @@ class InscricaoController extends Controller{
             ->join('disciplinas','inscricaos.idDisciplina','=','disciplinas.id')
             ->join('contactos','alunos.idContacto','=','contactos.id')
             ->select('disciplinas.*','disciplinas.nome as disciplina','disciplinas.id as idDisciplina','alunos.*','contactos.*')
+//            ->distinct('idAluno')
             ->where('ano',$_POST['ano'])->get();
         return  response()->json(array('dados'=>$inscricao));
     }

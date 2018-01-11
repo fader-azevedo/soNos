@@ -34,7 +34,7 @@
                     <ul class="todo-list" id="contacto">
                         <li class="cont" style="margin-bottom: 5px">
 
-                            <h6 style="font-size: 16px">
+                            <h6 style="font-size: 14px">
                                 <span class="handle" style="width: 40%">
                                     <i class="fa fa-check text-aqua"></i>
                                     Sexo:
@@ -43,11 +43,10 @@
                                     Masculino
                                 </span>
                             </h6>
-                            {{--<span class="text  text-right" style="width: 70%;">Masculino</span>--}}
                         </li>
                         <li class="cont" style="margin-bottom: 5px">
 
-                            <h6 style="font-size: 16px">
+                            <h6 style="font-size: 14px">
                                 <span class="handle" style="width: 40%">
                                     <i class="fa fa-location-arrow text-aqua"></i>
                                     Residência:
@@ -59,19 +58,29 @@
                         </li>
 
                         <li class="cont" style="margin-bottom: 5px">
-                            <span class="handle">
-                                <i class="fa fa-phone" style="color: #00a7d0"></i>
-                            </span>
-                            <span class="text text-right" style="width: 20%;">Contacto:</span>
-                            <span class="text right text-right" style="width: 70%">12345678</span>
+
+                            <h6 style="font-size: 14px">
+                                <span class="handle" style="width: 40%">
+                                    <i class="fa fa-phone text-aqua"></i>
+                                    Contacto:
+                                </span>
+                                <span class="text" style="width: 50%">
+                                    12345678
+                                </span>
+                            </h6>
                         </li>
 
                         <li class="cont" style="margin-bottom: 5px">
-                            <span class="handle">
-                                <i class="fa fa-envelope" style="color: #00a7d0"></i>
-                            </span>
-                            <span class="text text-right" style="width: 19%;">Email:</span>
-                            <span class="text right text-right" style="width: 70%">socienciasonos@gmail.com</span>
+
+                            <h6 style="font-size: 14px">
+                                <span class="handle" style="width: 40%">
+                                    <i class="fa fa-phone text-aqua"></i>
+                                    Email:
+                                </span>
+                                <span class="text" style="width: 50%">
+                                    socienciasonos@gmail.com
+                                </span>
+                            </h6>
                         </li>
                     </ul>
                 </div>

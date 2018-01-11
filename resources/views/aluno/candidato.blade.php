@@ -33,11 +33,29 @@
                 <div class="col-sm-12" style="padding: 2px; margin-top: 10px; background-color: white">
                     <ul class="todo-list" id="contacto">
                         <li class="cont" style="margin-bottom: 5px">
-                            <span class="handle">
-                                <i class="fa fa-location-arrow" style="color: #00a7d0"></i>
-                            </span>
-                            <span class="text text-right" style="width: 20%;">Residência:</span>
-                            <span class="text right text-right" style="width: 70%;">Rua Costa do Sol</span>
+
+                            <h6 style="font-size: 16px">
+                                <span class="handle" style="width: 40%">
+                                    <i class="fa fa-check text-aqua"></i>
+                                    Sexo:
+                                </span>
+                                <span class="text" style="width: 50%">
+                                    Masculino
+                                </span>
+                            </h6>
+                            {{--<span class="text  text-right" style="width: 70%;">Masculino</span>--}}
+                        </li>
+                        <li class="cont" style="margin-bottom: 5px">
+
+                            <h6 style="font-size: 16px">
+                                <span class="handle" style="width: 40%">
+                                    <i class="fa fa-location-arrow text-aqua"></i>
+                                    Residência:
+                                </span>
+                                <span class="text" style="width: 50%">
+                                    Rua Costa do Sol
+                                </span>
+                            </h6>
                         </li>
 
                         <li class="cont" style="margin-bottom: 5px">
@@ -186,12 +204,15 @@
                     for (var i = 0; i < rs.inscricao.length; i++) {
                         $('#curso').append('<li class="crs" style="margin-bottom:3px"><span class="handle"> <i style="color: #00a7d0;" class="fa fa-book"></i> </span> <span class="text">' + rs.inscricao[i].disciplina + '</span></li>')
                     }
-                    $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <span class="handle"><i class="fa fa-location-arrow" style="color: #00a7d0"></i> </span><span class="text text-right" style="width: 20%;">Residência:</span> <span class="text right text-right">'+rs.inscricao[0].residencia+'</span><div class="tools"> <i class="fa fa-location-arrow"></i> </div> </li>');
-                    $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <span class="handle"><i class="fa fa-phone" style="color: #00a7d0"></i> </span><span class="text text-right" style="width: 20%;">Contacto:</span> <span class="text right text-right">'+rs.inscricao[0].numero+'</span> <div class="tools"> <i class="fa fa-phone"></i> </div> </li>');
-                    $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <span class="handle"><i class="fa fa-envelope" style="color: #00a7d0"></i> </span><span class="text text-right" style="width: 19%;">Email:</span> <span class="text right text-right">'+rs.inscricao[0].email+'</span>  </li>');
+//                    $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <span class="handle"><i class="fa fa-location-arrow" style="color: #00a7d0"></i> </span><span class="text text-right" style="width: 20%;">Residência:</span> <span class="text right text-right">'+rs.inscricao[0].residencia+'</span><div class="tools"> <i class="fa fa-location-arrow"></i> </div> </li>');
+//                    $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <span class="handle"><i class="fa fa-phone" style="color: #00a7d0"></i> </span><span class="text text-right" style="width: 20%;">Contacto:</span> <span class="text right text-right">'+rs.inscricao[0].numero+'</span> <div class="tools"> <i class="fa fa-phone"></i> </div> </li>');
+//                    $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <span class="handle"><i class="fa fa-envelope" style="color: #00a7d0"></i> </span><span class="text text-right" style="width: 19%;">Email:</span> <span class="text right text-right">'+rs.inscricao[0].email+'</span>  </li>');
+                    $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <h6 style="font-size: 14px"> <span class="handle" style="width: 30%"> <i class="fa fa-check text-aqua"></i>&nbsp;Sexo:</span> <span class="text" style="width: 50%">'+rs.inscricao[0].sexo+' </span> </h6></li>');
+                    $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <h6 style="font-size: 14px"> <span class="handle" style="width: 30%"> <i class="fa fa-location-arrow text-aqua"></i>&nbsp;Residência:</span> <span class="text" style="width: 50%">'+rs.inscricao[0].residencia+'</span> </h6></li>');
+                    $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <h6 style="font-size: 14px"> <span class="handle" style="width: 30%"> <i class="fa fa-phone text-aqua"></i>&nbsp;Contacto:</span> <span class="text" style="width: 50%">'+rs.inscricao[0].numero+'</span> </h6></li>');
+                    $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <h6 style="font-size: 14px"> <span class="handle" style="width: 30%"> <i class="fa fa-envelope text-aqua"></i>&nbsp;Email:</span> <span class="text" style="width: 50%">'+rs.inscricao[0].email+' </span> </h6></li>');
                 }
             });
         }
     </script>
 @endsection
-

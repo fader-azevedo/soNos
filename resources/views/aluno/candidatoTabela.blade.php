@@ -23,7 +23,7 @@
 
                 <td style="width: 20%; display: flex;" class="center">
                     <a class="btn btn-info btn-ver bt" data-id="{{$ms->id}}"><i class="zmdi zmdi-eye"></i>&nbsp;Mais Info</a>
-                    <a class="btn btn-success btn-validar bt"><i class="zmdi zmdi-check"></i>&nbsp;&nbsp;Validar&nbsp;&nbsp;</a>
+                    <a class="btn btn-success btn-validar bt" data-id="{{$ms->id}}"><i class="zmdi zmdi-check"></i>&nbsp;&nbsp;Validar&nbsp;&nbsp;</a>
                 </td>
             </tr>
         @endforeach

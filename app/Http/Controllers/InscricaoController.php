@@ -24,6 +24,6 @@ class InscricaoController extends Controller{
     }
 
     public function getUltimoCandidato(){
-        return Inscricao::query()->max('idAluno');
+        return Inscricao::query()->where('estado','=','pre-inscrito')->where('ano','=',date('Y'))->max('idAluno');
     }
 }

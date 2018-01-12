@@ -110,14 +110,31 @@
             </div>
         </div>
     </div>
+
+    <div class="lock-screen">
+        <div class="modal fade" id="modalValidar"  role="dialog" data-keyboard="false" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h5 class="modal-title">Validar Pre-Inscrição</h5>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button style="float: left" data-dismiss="modal" class="btn btn-danger" type="button">Nao</button>
+                        <a> Validar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 <?php $idUltomoCandidato=04?>
 
 @section('scripts')
     <script>
-
-        {{--var idU = JSON.parse('{{json_decode($idUltomoCandidato)}}');--}}
-//        alert(idU);
         $('#li-Candidato').addClass('active');
 
         function filtrar() {
@@ -225,8 +242,18 @@
             url: '/api/utimoCandidato',
             type: 'POST',
             success: function (id) {
-//                buscarDadosCandidato(id)
+                buscarDadosCandidato(id)
             }
+        });
+
+
+        /*validacao de pre inscricao*/
+
+        $('.btn-validar').click(function () {
+            $('#modalValidar').modal({
+                show: true,
+                backdrop: "static"
+            })
         })
     </script>
 

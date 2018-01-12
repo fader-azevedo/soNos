@@ -221,7 +221,7 @@
                 data: {'idAluno': idCandidato, 'ano': anoActual},
                 success: function (rs) {
                     document.getElementById('idCandidato').value = idCandidato;
-                    document.getElementById('nomeAluno').innerHTML =rs.inscricao[0].nome;
+                    document.getElementById('nomeAluno').innerHTML = rs.inscricao[0].nome;
                     document.getElementById('idFoto').src =  '{{asset('img/alunos')}}'.concat('/' + rs.inscricao[0].foto);
 
                     $('.cont').remove();

@@ -359,6 +359,9 @@ use App\Disciplina;
                 var residencia = $('#residencia').val().trim();
                 var contacto = $('#contacto').val().trim();
                 var dataNas = $('#dataN').val().trim();
+                var anoActual = new Date().getFullYear();
+                var anoCandidato = new Date(dataNas).getFullYear();
+                var idade = anoActual-anoCandidato;
                 if(apelido ===''){
                     $("input#apelido").css({"border-bottom": "1px solid #EE6464"});
                     ctl =false;
@@ -390,6 +393,12 @@ use App\Disciplina;
                 if(dataNas ===''){
                     $("input#dataN").css({"border-bottom": "1px solid #EE6464"});
                     ctl =false;
+                }
+                if(idade < 15){
+                    $("input#dataN").css({"border-bottom": "1px solid #EE6464"});
+                    ctl =false;
+                    alert('idade inferior');
+                    return;
                 }
 
                 if(ctl === true) {

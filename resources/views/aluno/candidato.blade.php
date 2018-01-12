@@ -202,9 +202,9 @@
                 return;
             }
             buscarDadosCandidato(idCandidato);
-            $('#box-Info').animate({
-                left: '0px'
-            },"fast",voltar());
+//            $('#box-Info').animate({
+//                left: '0px'
+//            },"fast",voltar());
         });
 
         function voltar() {

@@ -35,7 +35,7 @@
                         <li class="cont" style="margin-bottom: 5px">
 
                             <h6 style="font-size: 14px">
-                                <span class="handle" style="width: 30%">
+                                <span class="handle" style="width: 30%;">
                                     <i class="fa fa-check text-aqua"></i>
                                     Sexo:
                                 </span>
@@ -225,7 +225,7 @@
             url: '/api/utimoCandidato',
             type: 'POST',
             success: function (id) {
-                buscarDadosCandidato(id)
+//                buscarDadosCandidato(id)
             }
         })
     </script>

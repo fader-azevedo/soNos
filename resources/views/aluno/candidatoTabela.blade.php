@@ -15,7 +15,7 @@
         @foreach($candidato  as $ms)
             <tr>
                 <td style="width: 10%">
-                    <img src="{{asset('img/alunos/').'/'.$ms->foto}}" class="img-circle " width="50" height="50">
+                    <img src="{{asset('img/alunos/').'/'.$ms->foto}}" class="img-rounded " width="50" height="50">
                 </td>
                 <td style="width: 30%">{{ucwords(strtolower($ms->nome.' '.$ms->apelido))}}</td>
                 <td style="width: 20%">{{$ms->numBi}}</td>

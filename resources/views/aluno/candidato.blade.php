@@ -25,7 +25,7 @@
 
                 <div class="lockscreen-item text-right">
                     <div class="lockscreen-image" >
-                        <img id="idFoto" class="img-circle" src="{!! asset('img/aluno.png') !!}" height="110">
+                        <img id="idFoto" class="img-rounded" src="{!! asset('img/aluno.png') !!}" height="110">
                     </div>
                     <input id="idCandidato" type="hidden" value="0">
                     <h5 id="nomeAluno">Nome do candidato</h5>
@@ -58,7 +58,6 @@
                         </li>
 
                         <li class="cont" style="margin-bottom: 5px">
-
                             <h6 style="font-size: 14px">
                                 <span class="handle" style="width: 30%">
                                     <i class="fa fa-phone text-aqua"></i>

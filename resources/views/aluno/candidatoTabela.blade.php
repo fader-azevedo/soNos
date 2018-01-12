@@ -11,19 +11,19 @@
         </tr>
     </thead>
     <tbody id="tabela1Corpo" class="dados">
+
         @foreach($candidato  as $ms)
             <tr>
                 <td style="width: 10%">
                     <img src="{{asset('img/alunos/').'/'.$ms->foto}}" class="img-circle " width="50" height="50">
                 </td>
-                <td style="width: 30%">{{$ms->nome.' '.$ms->apelido}}</td>
-                {{--<td style="width: 15%">{{$ms->sexo}}</td>--}}
+                <td style="width: 30%">{{ucwords(strtolower($ms->nome.' '.$ms->apelido))}}</td>
                 <td style="width: 20%">{{$ms->numBi}}</td>
-                <td style="width: 20%">{{$ms->dataNasc}}</td>
+                <td style="width: 20%">{{date('d-M-Y',strtotime($ms->dataNasc))}}</td>
 
                 <td style="width: 20%; display: flex;" class="center">
                     <a class="btn btn-info btn-ver bt" data-id="{{$ms->id}}"><i class="zmdi zmdi-eye"></i>&nbsp;Mais Info</a>
-                    <a class="btn btn-success bt"><i class="zmdi zmdi-check"></i>&nbsp;&nbsp;Validar&nbsp;&nbsp;</a>
+                    <a class="btn btn-success btn-validar bt"><i class="zmdi zmdi-check"></i>&nbsp;&nbsp;Validar&nbsp;&nbsp;</a>
                 </td>
             </tr>
         @endforeach

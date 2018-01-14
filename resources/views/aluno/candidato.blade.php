@@ -237,13 +237,13 @@
             });
         }
 
-        $.ajax({
-            url: '/api/utimoCandidato',
-            type: 'POST',
-            success: function (id) {
-                buscarDadosCandidato(id)
-            }
-        });
+//        $.ajax({
+//            url: '/api/utimoCandidato',
+//            type: 'POST',
+//            success: function (id) {
+//                buscarDadosCandidato(id)
+//            }
+//        });
 
 
         /*validacao de pre inscricao*/

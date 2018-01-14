@@ -23,7 +23,11 @@ class AlunoController extends Controller{
         file_put_contents(public_path().'\img\alunos\foto_'.$imageName, $data);
     }
 
-    public function candidato(){
+    public function getUltimoCandidato(){
+        return Inscricao::query()->where('estado','=','pre-inscrito')->where('ano','=',date('Y'))->min('idAluno');
+    }
+
+    public function index(){
 //        $al = Aluno::sortable()->paginate(1);
 //        $al = Aluno::all();
 //        $candidato = Inscricao::query()->join('alunos','inscricaos.idAluno','=','alunos.id')->select('alunos.*')->distinct('idAluno')->where('estado','=','pre-inscrito')->where('ano',$ano)->paginate(6);
@@ -34,12 +38,8 @@ class AlunoController extends Controller{
         if(request()->ajax()){
             return view('aluno.candidatoTabela',['candidato'=>$candidato])->render();
         }
-        return view('aluno.candidato',compact('candidato'));
-    }
 
-    public  function index(){
-        $users = User::all();
-        return view('users.index')->with(compact('users'));
+        return view('aluno.candidato',compact('candidato'));
     }
 
 

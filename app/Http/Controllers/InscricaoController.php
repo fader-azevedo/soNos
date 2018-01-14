@@ -23,7 +23,4 @@ class InscricaoController extends Controller{
         return  response()->json(array('dados'=>$inscricao));
     }
 
-    public function getUltimoCandidato(){
-        return Inscricao::query()->where('estado','=','pre-inscrito')->where('ano','=',date('Y'))->min('idAluno');
-    }
 }

@@ -20,10 +20,6 @@
             @foreach($primeiroCand as $pc)
 
                 <div  class="box box-widget widget-user" style="display: flex; flex-direction: column; padding: 5px; background-color: #f5f5f5;">
-                    {{--<div class="col-sm-9 text-center" id="divFoto">--}}
-                        {{--<img id="idFoto" class="img-circle" src="{!! asset('img/aluno.png') !!}" alt="" height="110"><br/><br/>--}}
-                        {{--<h6 style="margin: -10px 0 0 1px; font-size: 19px" class="label label-default" id="nomeAluno">Nome</h6>--}}
-                    {{--</div>--}}
                     <div class="lockscreen-item text-right">
                         <div class="lockscreen-image" >
                             <img id="idFoto" class="img-rounded" src="{!! asset('img/alunos/'.$pc->foto) !!}" height="110">

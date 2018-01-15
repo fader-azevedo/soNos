@@ -119,8 +119,8 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         <h5 class="modal-title">Validar Pre-Inscrição</h5>
                     </div>
-                    <div class="modal-body">
-
+                    <div class="modal-body" id="modalValidar">
+                        @include('candidato.validacao')
                     </div>
                     <div class="modal-footer">
                         <button style="float: left" data-dismiss="modal" class="btn btn-danger" type="button">Nao</button>
@@ -131,11 +131,11 @@
         </div>
     </div>
 @endsection
-<?php $idUltomoCandidato=04?>
 
 @section('scripts')
     <script>
         $('#li-Candidato').addClass('active');
+        var anoActual =  (new Date()).getFullYear();
 
         function filtrar() {
 
@@ -192,7 +192,7 @@
                 });
 
             }).fail(function () {
-                alert('Posts could not be loaded.');
+                alert('Ocorreu Algum Erro');
             });
         }
 
@@ -214,7 +214,6 @@
             },"fast")
         }
 
-        var anoActual =  (new Date()).getFullYear();
         function buscarDadosCandidato(idCandidato) {
             $.ajax({
                 url: '/api/getInscricao',
@@ -250,9 +249,20 @@
         /*validacao de pre inscricao*/
 
         $('.btn-validar').click(function () {
-            $('#modalValidar').modal({
-                show: true,
-                backdrop: "static"
+            var idCandidato = $(this).attr('data-id');
+
+
+            $.ajax({
+                url: '/api/getInscricao',
+                type: 'POST',
+                data: {'idAluno': idCandidato, 'ano': anoActual},
+                success: function (rs) {
+                    document.getElementById('kaka').innerHTML = idCandidato;
+                    $('#modalValidar').modal({
+                        show: true,
+                        backdrop: "static"
+                    });
+                }
             })
         })
     </script>

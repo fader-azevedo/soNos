@@ -9,4 +9,8 @@ class Inscricao extends Model{
     use Sortable;
     protected $fillable =['idAluno', 'idDisciplina','estado','ano'];
     protected $sortable = ['idAluno'];
+
+    public function getDisciplinas(){
+        return $this->hasMany(Disciplina::class, 'idDisciplina');
+    }
 }

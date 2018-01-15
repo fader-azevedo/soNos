@@ -17,96 +17,100 @@
             @include('aluno.candidatoTabela')
         </div>
         <div id="box-Info" class="col-sm-4 col-md-4 col-lg-4">
-            <div  class="box box-widget widget-user" style="display: flex; flex-direction: column; padding: 5px; background-color: #f5f5f5;">
-                {{--<div class="col-sm-9 text-center" id="divFoto">--}}
-                    {{--<img id="idFoto" class="img-circle" src="{!! asset('img/aluno.png') !!}" alt="" height="110"><br/><br/>--}}
-                    {{--<h6 style="margin: -10px 0 0 1px; font-size: 19px" class="label label-default" id="nomeAluno">Nome</h6>--}}
-                {{--</div>--}}
+            @foreach($primeiroCand as $pc)
 
-                <div class="lockscreen-item text-right">
-                    <div class="lockscreen-image" >
-                        <img id="idFoto" class="img-rounded" src="{!! asset('img/aluno.png') !!}" height="110">
+                <div  class="box box-widget widget-user" style="display: flex; flex-direction: column; padding: 5px; background-color: #f5f5f5;">
+                    {{--<div class="col-sm-9 text-center" id="divFoto">--}}
+                        {{--<img id="idFoto" class="img-circle" src="{!! asset('img/aluno.png') !!}" alt="" height="110"><br/><br/>--}}
+                        {{--<h6 style="margin: -10px 0 0 1px; font-size: 19px" class="label label-default" id="nomeAluno">Nome</h6>--}}
+                    {{--</div>--}}
+                    <div class="lockscreen-item text-right">
+                        <div class="lockscreen-image" >
+                            <img id="idFoto" class="img-rounded" src="{!! asset('img/alunos/'.$pc->foto) !!}" height="110">
+                        </div>
+                        <input id="idCandidato" type="hidden" value="0">
+                        <h5 id="nomeAluno">{{$pc->nome}}</h5>
                     </div>
-                    <input id="idCandidato" type="hidden" value="0">
-                    <h5 id="nomeAluno">Nome do candidato</h5>
-                </div>
-                <div class="col-sm-12" style="padding: 2px; margin-top: 10px; background-color: white">
-                    <ul class="todo-list" id="contacto">
-                        <li class="cont" style="margin-bottom: 5px">
+                    <div class="col-sm-12" style="padding: 2px; margin-top: 10px; background-color: white">
+                        <ul class="todo-list" id="contacto">
+                            <li class="cont" style="margin-bottom: 5px">
 
-                            <h6 style="font-size: 14px">
-                                <span class="handle" style="width: 30%;">
-                                    <i class="fa fa-check text-aqua"></i>
-                                    Sexo:
-                                </span>
-                                <span class="text" style="width: 50%">
-                                    Masculino
-                                </span>
-                            </h6>
-                        </li>
-                        <li class="cont" style="margin-bottom: 5px">
-
-                            <h6 style="font-size: 14px">
-                                <span class="handle" style="width: 30%">
-                                    <i class="fa fa-location-arrow text-aqua"></i>
-                                    Residência:
-                                </span>
-                                <span class="text" style="width: 50%">
-                                    Rua Costa do Sol
-                                </span>
-                            </h6>
-                        </li>
-
-                        <li class="cont" style="margin-bottom: 5px">
-                            <h6 style="font-size: 14px">
-                                <span class="handle" style="width: 30%">
-                                    <i class="fa fa-phone text-aqua"></i>
-                                    Contacto:
-                                </span>
-                                <span class="text" style="width: 50%">
-                                    12345678
-                                </span>
-                            </h6>
-                        </li>
-
-                        <li class="cont" style="margin-bottom: 5px">
-
-                            <h6 style="font-size: 14px">
-                                <span class="handle" style="width: 30%">
-                                    <i class="fa fa-phone text-aqua"></i>
-                                    Email:
-                                </span>
-                                <span class="text" style="width: 50%">
-                                    socienciasonos@gmail.com
-                                </span>
-                            </h6>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="box">
-                    <div class="box-header with-border text-center">
-                        <h3 class="box-title">Disciplinas Inscritas</h3>
-                    </div>
-                    <div class="box-body">
-                        <ul class="todo-list" id="curso" style="display: flex">
-                            <li class="crs">
-                                    <span class="handle">
-                                        <i class="fa fa-book" style="color: #00b0ff"></i>
+                                <h6 style="font-size: 14px">
+                                    <span class="handle" style="width: 30%;">
+                                        <i class="fa fa-check text-aqua"></i>
+                                        Sexo:
                                     </span>
-                                <span class="text">Disciplina</span>
+                                    <span class="text" style="width: 50%">
+                                        {{$pc->sexo}}
+                                    </span>
+                                </h6>
                             </li>
-                            <li class="crs">
-                                    <span class="handle">
-                                        <i class="fa fa-book" style="color: #00b0ff"></i>
+                            <li class="cont" style="margin-bottom: 5px">
+
+                                <h6 style="font-size: 14px">
+                                    <span class="handle" style="width: 30%">
+                                        <i class="fa fa-location-arrow text-aqua"></i>
+                                        Residência:
                                     </span>
-                                <span class="text">Disciplina2</span>
+                                    <span class="text" style="width: 50%">
+                                        {{$pc->residencia}}
+                                    </span>
+                                </h6>
+                            </li>
+
+                            <li class="cont" style="margin-bottom: 5px">
+                                <h6 style="font-size: 14px">
+                                    <span class="handle" style="width: 30%">
+                                        <i class="fa fa-phone text-aqua"></i>
+                                        Contacto:
+                                    </span>
+                                    <span class="text" style="width: 50%">
+                                        {{$pc->numero}}
+                                    </span>
+                                </h6>
+                            </li>
+
+                            <li class="cont" style="margin-bottom: 5px">
+
+                                <h6 style="font-size: 14px">
+                                    <span class="handle" style="width: 30%">
+                                        <i class="fa fa-phone text-aqua"></i>
+                                        Email:
+                                    </span>
+                                    <span class="text" style="width: 50%">
+                                        {{$pc->email}}
+                                    </span>
+                                </h6>
                             </li>
                         </ul>
                     </div>
                 </div>
-            </div>
+                <div class="row">
+                    <div class="box">
+                        <div class="box-header with-border text-center">
+                            <h3 class="box-title">Disciplinas Inscritas</h3>
+                        </div>
+                        <div class="box-body">
+                            <ul class="todo-list" id="curso" style="display: flex">
+                                @foreach($pc->getDisciplinas as $d)
+                                    <li class="crs">
+                                            <span class="handle">
+                                                <i class="fa fa-book" style="color: #00b0ff"></i>
+                                            </span>
+                                        <span class="text">{{$d->nome}}</span>
+                                    </li>
+                                    <li class="crs">
+                                            <span class="handle">
+                                                <i class="fa fa-book" style="color: #00b0ff"></i>
+                                            </span>
+                                        <span class="text">Disciplina2</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
 

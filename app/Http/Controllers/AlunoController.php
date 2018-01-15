@@ -28,18 +28,21 @@ class AlunoController extends Controller{
     }
 
     public function index(){
-//        $al = Aluno::sortable()->paginate(1);
-//        $al = Aluno::all();
-//        $candidato = Inscricao::query()->join('alunos','inscricaos.idAluno','=','alunos.id')->select('alunos.*')->distinct('idAluno')->where('estado','=','pre-inscrito')->where('ano',$ano)->paginate(6);
         $candidato = Inscricao::query()->join('alunos','inscricaos.idAluno','=','alunos.id')
             ->select('alunos.*')->distinct('idAluno')->where('estado','=','pre-inscrito')
             ->where('ano','=',date('Y'))->paginate(6);
+
+        $primeiroCand = Inscricao::query()
+            ->join('alunos','inscricaos.idAluno','=','alunos.id')
+            ->join('contactos','alunos.idContacto','=','contactos.id')
+            ->select('alunos.*','contactos.*')->distinct('idAluno')->where('estado','=','pre-inscrito')
+            ->where('ano','=',date('Y'))->where('idAluno','=',$this->getUltimoCandidato())->get();
 
         if(request()->ajax()){
             return view('aluno.candidatoTabela',['candidato'=>$candidato])->render();
         }
 
-        return view('aluno.candidato',compact('candidato'));
+        return view('aluno.candidato',compact('candidato','primeiroCand'));
     }
 
 

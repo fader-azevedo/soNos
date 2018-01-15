@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="77bd011e-7eac-43b4-9cf5-60ad60258165" name="Default" comment="redimensionamento d foto de aluno">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Aluno.php" afterPath="$PROJECT_DIR$/app/Aluno.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Disciplina.php" afterPath="$PROJECT_DIR$/app/Disciplina.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Inscricao.php" afterPath="$PROJECT_DIR$/app/Inscricao.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -527,12 +525,12 @@
       <workItem from="1515573711209" duration="21486000" />
       <workItem from="1515735581687" duration="7418000" />
       <workItem from="1515920445557" duration="2178000" />
-      <workItem from="1516004027722" duration="3960000" />
+      <workItem from="1516004027722" duration="3974000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="271646000" />
+    <option name="totallyTimeSpent" value="271660000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />

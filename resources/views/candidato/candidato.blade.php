@@ -14,7 +14,7 @@
     </div>
     <div class="row" style=" margin-bottom: -20px" >
         <div class="col-sm-8 col-md-8 col-lg-8" id="divTableCandidatos">
-            @include('aluno.candidatoTabela')
+            @include('candidato.candidatoTabela')
         </div>
         <div id="box-Info" class="col-sm-4 col-md-4 col-lg-4">
             @foreach($primeiroCand as $pc)
@@ -92,12 +92,13 @@
                         </div>
                         <div class="box-body">
                             <ul class="todo-list" id="curso" style="display: flex">
-                                @foreach($pc->getDisciplinas as $d)
+{{--                                @foreach($pc->getDisciplinas as $d)--}}
                                     <li class="crs">
                                             <span class="handle">
                                                 <i class="fa fa-book" style="color: #00b0ff"></i>
                                             </span>
-                                        <span class="text">{{$d->nome}}</span>
+                                        <span class="text">Disciplina</span>
+
                                     </li>
                                     <li class="crs">
                                             <span class="handle">
@@ -105,7 +106,7 @@
                                             </span>
                                         <span class="text">Disciplina2</span>
                                     </li>
-                                @endforeach
+                                {{--@endforeach--}}
                             </ul>
                         </div>
                     </div>

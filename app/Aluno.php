@@ -18,6 +18,6 @@ use Sortable;
 //    }
 
     public function getInscricao(){
-        return $this->morphToMany(Inscricao::class,'inscricao');
+        return $this->belongsToMany(Inscricao::class);
     }
 }

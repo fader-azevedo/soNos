@@ -18,8 +18,7 @@ Route::group(['prefix'=>'historico'], function (){
 //    Route::get('registar','MensalidadeController@registarMensalidade')->middleware(Mdw::class,'auth');
 });
 
-Route::get('/candidato','AlunoController@index')->name('index')->middleware(Mdw::class,'auth');
-//Route::get('usuarios',['as'=>'users.index','uses'=>'AlunoController@index']);
+Route::get('/candidato','AlunoController@candidatoIndex')->name('candidatoIndex')->middleware(Mdw::class,'auth');
 Route::resource('aluno','AlunoController');
 
 Route::post('salvarCandidato','RegisterController@teste')->name('salvarCandidato');

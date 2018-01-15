@@ -18,7 +18,6 @@
         </div>
         <div id="box-Info" class="col-sm-4 col-md-4 col-lg-4">
             @foreach($primeiroCand as $pc)
-
                 <div  class="box box-widget widget-user" style="display: flex; flex-direction: column; padding: 5px; background-color: #f5f5f5;">
                     <div class="lockscreen-item text-right">
                         <div class="lockscreen-image" >
@@ -257,7 +256,9 @@
                 type: 'POST',
                 data: {'idAluno': idCandidato, 'ano': anoActual},
                 success: function (rs) {
-                    document.getElementById('kaka').innerHTML = idCandidato;
+                    document.getElementById('nomeAlunoValidacao').innerHTML = rs.inscricao[0].nome;
+                    document.getElementById('idFotoValidacao').src =  '{{asset('img/alunos')}}'.concat('/' + rs.inscricao[0].foto);
+
                     $('#modalValidar').modal({
                         show: true,
                         backdrop: "static"

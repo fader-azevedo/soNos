@@ -3435,7 +3435,7 @@ table.text-center th {
 }
 /* User image */
 .lockscreen-image {
-  border-radius: 50%;
+  border-radius: 10%;
   position: absolute;
   left: -10px;
   top: -25px;

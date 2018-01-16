@@ -113,7 +113,7 @@
     <div class="lock-screen">
         <div class="modal fade" id="modalValidar"  role="dialog" data-keyboard="false" data-backdrop="static">
             <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content modal-lg">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         <h5 class="modal-title">Validar Pre-Inscrição</h5>
@@ -227,6 +227,7 @@
                     $('.crs').remove();
                     for (var i = 0; i < rs.inscricao.length; i++) {
                         $('#curso').append('<li class="crs" style="margin-bottom:3px"><span class="handle"> <i style="color: #00a7d0;" class="fa fa-book"></i> </span> <span class="text">' + rs.inscricao[i].disciplina + '</span></li>')
+                        $('#curso2').append('<li class="crs" style="margin-bottom:3px"><span class="text">' + rs.inscricao[i].disciplina + '</span></li>')
                     }
                     $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <h6 style="font-size: 14px"> <span class="handle" style="width: 30%"> <i class="fa fa-check text-aqua"></i>&nbsp;Sexo:</span> <span class="text" style="width: 50%">'+rs.inscricao[0].sexo+' </span> </h6></li>');
                     $('#contacto').append('<li class="cont" style="margin-bottom: 5px"> <h6 style="font-size: 14px"> <span class="handle" style="width: 30%"> <i class="fa fa-location-arrow text-aqua"></i>&nbsp;Residência:</span> <span class="text" style="width: 50%">'+rs.inscricao[0].residencia+'</span> </h6></li>');
@@ -249,8 +250,7 @@
 
         $('.btn-validar').click(function () {
             var idCandidato = $(this).attr('data-id');
-
-
+            buscarDadosCandidato(idCandidato);
             $.ajax({
                 url: '/api/getInscricao',
                 type: 'POST',

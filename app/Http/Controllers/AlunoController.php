@@ -13,7 +13,7 @@ class AlunoController extends Controller{
         $this->candidato = $aluno;
     }
 
-    public function getFoto(){
+    public function salvarFoto(){
         $data = $_POST['image'];
         list(, $data) = explode(';', $data);
         list(, $data) = explode(',', $data);
@@ -38,10 +38,12 @@ class AlunoController extends Controller{
             ->select('alunos.*','contactos.*')->distinct('idAluno')->where('estado','=','pre-inscrito')
             ->where('ano','=',date('Y'))->where('idAluno','=',$this->getUltimoCandidato())->get();
 
+        $disciplinas = Inscricao::query()
+            ->join('disciplinas','inscricaos.idDisciplina','=','disciplinas.id')
+            ->select('disciplinas.nome')->where('idAluno',$this->getUltimoCandidato())->get();
         if(request()->ajax()){
             return view('candidato.candidatoTabela',['candidato'=>$candidato])->render();
         }
-
-        return view('candidato.candidato',compact('candidato','primeiroCand'));
+        return view('candidato.candidato',compact('candidato','primeiroCand','disciplinas'));
     }
 }

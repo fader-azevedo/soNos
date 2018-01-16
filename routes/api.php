@@ -6,7 +6,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('criarFoto','AlunoController@getFoto')->name('criarFoto');//salvar foto no diretorio
+Route::post('criarFoto','AlunoController@salvarFoto')->name('criarFoto');//salvar foto no diretorio
 Route::post('kappa', 'RegisterController@create1')->name('kappa');
 
 /*Inscricao*/

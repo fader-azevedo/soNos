@@ -17,68 +17,71 @@
             @include('candidato.candidatoTabela')
         </div>
         <div id="box-Info" class="col-sm-4 col-md-4 col-lg-4">
-            @foreach($primeiroCand as $pc)
                 <div  class="box box-widget widget-user" style="display: flex; flex-direction: column; padding: 5px; background-color: #f5f5f5;">
-                    <div class="lockscreen-item text-right">
-                        <div class="lockscreen-image" >
-                            <img id="idFoto" class="img-rounded" src="{!! asset('img/alunos/'.$pc->foto) !!}" height="110">
+
+                    @foreach($primeiroCand as $pc)
+
+                        <div class="lockscreen-item text-right">
+                            <div class="lockscreen-image" >
+                                <img id="idFoto" class="img-rounded" src="{!! asset('img/alunos/'.$pc->foto) !!}" height="110">
+                            </div>
+                            <input id="idCandidato" type="hidden" value="0">
+                            <h5 id="nomeAluno">{{$pc->nome}}</h5>
                         </div>
-                        <input id="idCandidato" type="hidden" value="0">
-                        <h5 id="nomeAluno">{{$pc->nome}}</h5>
-                    </div>
-                    <div class="col-sm-12" style="padding: 2px; margin-top: 10px; background-color: white">
-                        <ul class="todo-list" id="contacto">
-                            <li class="cont" style="margin-bottom: 5px">
+                        <div class="col-sm-12" style="padding: 2px; margin-top: 10px; background-color: white">
+                            <ul class="todo-list" id="contacto">
+                                <li class="cont" style="margin-bottom: 5px">
 
-                                <h6 style="font-size: 14px">
-                                    <span class="handle" style="width: 30%;">
-                                        <i class="fa fa-check text-aqua"></i>
-                                        Sexo:
-                                    </span>
-                                    <span class="text" style="width: 50%">
-                                        {{$pc->sexo}}
-                                    </span>
-                                </h6>
-                            </li>
-                            <li class="cont" style="margin-bottom: 5px">
+                                    <h6 style="font-size: 14px">
+                                        <span class="handle" style="width: 30%;">
+                                            <i class="fa fa-check text-aqua"></i>
+                                            Sexo:
+                                        </span>
+                                        <span class="text" style="width: 50%">
+                                            {{$pc->sexo}}
+                                        </span>
+                                    </h6>
+                                </li>
+                                <li class="cont" style="margin-bottom: 5px">
 
-                                <h6 style="font-size: 14px">
-                                    <span class="handle" style="width: 30%">
-                                        <i class="fa fa-location-arrow text-aqua"></i>
-                                        Residência:
-                                    </span>
-                                    <span class="text" style="width: 50%">
-                                        {{$pc->residencia}}
-                                    </span>
-                                </h6>
-                            </li>
+                                    <h6 style="font-size: 14px">
+                                        <span class="handle" style="width: 30%">
+                                            <i class="fa fa-location-arrow text-aqua"></i>
+                                            Residência:
+                                        </span>
+                                        <span class="text" style="width: 50%">
+                                            {{$pc->residencia}}
+                                        </span>
+                                    </h6>
+                                </li>
 
-                            <li class="cont" style="margin-bottom: 5px">
-                                <h6 style="font-size: 14px">
-                                    <span class="handle" style="width: 30%">
-                                        <i class="fa fa-phone text-aqua"></i>
-                                        Contacto:
-                                    </span>
-                                    <span class="text" style="width: 50%">
-                                        {{$pc->numero}}
-                                    </span>
-                                </h6>
-                            </li>
+                                <li class="cont" style="margin-bottom: 5px">
+                                    <h6 style="font-size: 14px">
+                                        <span class="handle" style="width: 30%">
+                                            <i class="fa fa-phone text-aqua"></i>
+                                            Contacto:
+                                        </span>
+                                        <span class="text" style="width: 50%">
+                                            {{$pc->numero}}
+                                        </span>
+                                    </h6>
+                                </li>
 
-                            <li class="cont" style="margin-bottom: 5px">
+                                <li class="cont" style="margin-bottom: 5px">
 
-                                <h6 style="font-size: 14px">
-                                    <span class="handle" style="width: 30%">
-                                        <i class="fa fa-phone text-aqua"></i>
-                                        Email:
-                                    </span>
-                                    <span class="text" style="width: 50%">
-                                        {{$pc->email}}
-                                    </span>
-                                </h6>
-                            </li>
-                        </ul>
-                    </div>
+                                    <h6 style="font-size: 14px">
+                                        <span class="handle" style="width: 30%">
+                                            <i class="fa fa-phone text-aqua"></i>
+                                            Email:
+                                        </span>
+                                        <span class="text" style="width: 50%">
+                                            {{$pc->email}}
+                                        </span>
+                                    </h6>
+                                </li>
+                            </ul>
+                        </div>
+                    @endforeach
                 </div>
                 <div class="row">
                     <div class="box">
@@ -87,26 +90,25 @@
                         </div>
                         <div class="box-body">
                             <ul class="todo-list" id="curso" style="display: flex">
-{{--                                @foreach($pc->getDisciplinas as $d)--}}
+                                @foreach($disciplinas as $d)
                                     <li class="crs">
                                             <span class="handle">
                                                 <i class="fa fa-book" style="color: #00b0ff"></i>
                                             </span>
-                                        <span class="text">Disciplina</span>
-
+                                        {{--<span class="text">Disciplina</span>--}}
+                                        <span class="text">{{$d->nome}}</span>
                                     </li>
-                                    <li class="crs">
-                                            <span class="handle">
-                                                <i class="fa fa-book" style="color: #00b0ff"></i>
-                                            </span>
-                                        <span class="text">Disciplina2</span>
-                                    </li>
-                                {{--@endforeach--}}
+                                    {{--<li class="crs">--}}
+                                            {{--<span class="handle">--}}
+                                                {{--<i class="fa fa-book" style="color: #00b0ff"></i>--}}
+                                            {{--</span>--}}
+                                        {{--<span class="text">{{$d->nome}}</span>--}}
+                                    {{--</li>--}}
+                                @endforeach
                             </ul>
                         </div>
                     </div>
                 </div>
-            @endforeach
         </div>
     </div>
 

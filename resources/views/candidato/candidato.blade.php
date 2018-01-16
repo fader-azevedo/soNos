@@ -98,12 +98,6 @@
                                         {{--<span class="text">Disciplina</span>--}}
                                         <span class="text">{{$d->nome}}</span>
                                     </li>
-                                    {{--<li class="crs">--}}
-                                            {{--<span class="handle">--}}
-                                                {{--<i class="fa fa-book" style="color: #00b0ff"></i>--}}
-                                            {{--</span>--}}
-                                        {{--<span class="text">{{$d->nome}}</span>--}}
-                                    {{--</li>--}}
                                 @endforeach
                             </ul>
                         </div>
@@ -143,6 +137,7 @@
             var input = document.getElementById("txtPesquisar");
             var tabela = document.getElementById("tabela1");
             var linhas = tabela.getElementsByTagName("tr");
+            var tbCorpo = document.getElementById('tabela1Corpo').rows.length;
 
             for (var indice = 0; indice < linhas.length; indice++) {
                 var coluna = linhas[indice].getElementsByTagName("td")[1];
@@ -153,6 +148,11 @@
                         linhas[indice].style.display = "none";
                     }
                 }
+            }
+            var line = $('#tabela1Corpo > tr:visible').length;
+            if(line === 1){
+                var idCand = $('#tabela1Corpo > tr:visible').attr('data-id');
+                buscarDadosCandidato(idCand);
             }
         }
 

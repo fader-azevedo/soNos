@@ -13,7 +13,7 @@
     <tbody id="tabela1Corpo" class="dados">
 
         @foreach($candidato  as $ms)
-            <tr>
+            <tr data-id="{{$ms->id}}">
                 <td style="width: 10%">
                     <img src="{{asset('img/alunos/').'/'.$ms->foto}}" class="img-rounded " width="50" height="50">
                 </td>

@@ -119,7 +119,7 @@
                     </div>
                     <div class="modal-footer">
                         <button style="float: left" data-dismiss="modal" class="btn btn-danger" type="button">Nao</button>
-                        <a> Validar</a>
+                        <a title="Validar Inscrição"> Validar</a>
                     </div>
                 </div>
             </div>

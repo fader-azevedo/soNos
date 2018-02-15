@@ -7,7 +7,7 @@
             {{--<th style="width: 15%">Sexo</th>--}}
             <th style="width: 20%">Num BI</th>
             <th style="width: 20%">Data Nasc</th>
-            <th style="width: 20%">Opções</th>
+            <th style="width: 20%">Ações</th>
         </tr>
     </thead>
     <tbody id="tabela1Corpo" class="dados">

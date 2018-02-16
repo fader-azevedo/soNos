@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77bd011e-7eac-43b4-9cf5-60ad60258165" name="Default" comment="redimensionamento d foto de aluno">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/php.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/soNos2.iml" afterPath="$PROJECT_DIR$/.idea/soNos2.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/gulpfile.js" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -241,7 +238,13 @@
             <path>
               <item name="soNos" type="b2602c69:ProjectViewProjectNode" />
               <item name="soNos" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="soNos" type="b2602c69:ProjectViewProjectNode" />
+              <item name="soNos" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -405,12 +408,12 @@
       <workItem from="1518672907179" duration="1470000" />
       <workItem from="1518707151431" duration="1212000" />
       <workItem from="1518728551759" duration="819000" />
-      <workItem from="1518758233514" duration="772000" />
+      <workItem from="1518758233514" duration="1039000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="291499000" />
+    <option name="totallyTimeSpent" value="291766000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

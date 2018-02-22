@@ -11,7 +11,7 @@
 
         <div class="box">
             <div class="box-header with-border text-center">
-                <h3 class="box-title">Disciplinas Inscritas</h3>
+                <h3 class="box-title">Disciplinas Inscritass</h3>
             </div>
             <div class="box-body">
                 <ul class="todo-list" id="curso2" style="display: flex">

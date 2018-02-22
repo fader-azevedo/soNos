@@ -4,8 +4,7 @@
         <tr>
             <th style="width: 10%">Foto</th>
             <th style="width: 30%"> Nome Completo</th>
-            {{--<th style="width: 15%">Sexo</th>--}}
-            <th style="width: 20%">Num BI</th>
+            <th style="width: 20%">Nº de BI</th>
             <th style="width: 20%">Data Nasc</th>
             <th style="width: 20%">Ações</th>
         </tr>

@@ -30,7 +30,7 @@ class AlunoController extends Controller{
     public function candidatoIndex(){
         $candidato = Inscricao::query()->join('alunos','inscricaos.idAluno','=','alunos.id')
             ->select('alunos.*')->distinct('idAluno')->where('estado','=','pre-inscrito')
-            ->where('ano','=',date('Y'))->paginate(6);
+            ->where('ano','=',date('Y'))->paginate(2);
 
         $primeiroCand = Inscricao::query()
             ->join('alunos','inscricaos.idAluno','=','alunos.id')
